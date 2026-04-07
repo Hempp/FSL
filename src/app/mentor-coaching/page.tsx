@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Mentor Coaching — Every Athlete Deserves Someone in Their Corner",
   description:
-    "Donation-funded mentorship pairing certified coaches with student athletes. Sponsor weekly check-ins, goal tracking, and real accountability starting at $25/month.",
+    "Donation-funded mentorship pairing top coaches with student athletes. Sponsor real 1-on-1 sessions, goal tracking, and accountability starting at $75/session.",
 };
 
 import { NikeHeader } from "@/components/nike/NikeHeader";
@@ -22,66 +22,87 @@ const ZEFFY_URL =
 const steps = [
   {
     num: "01",
-    title: "Choose a Tier",
-    desc: "Pick your level of support — from weekly texts to full mentorship.",
+    title: "Sponsor Sessions",
+    desc: "Choose a package — from a single session to twice-weekly intensive coaching.",
     color: "#0052FE",
   },
   {
     num: "02",
     title: "We Match",
-    desc: "FSL pairs a certified coach with a student athlete based on sport, location, and needs.",
+    desc: "FSL pairs a top certified coach with a student athlete based on sport, location, and goals.",
     color: "#FF7900",
   },
   {
     num: "03",
     title: "Watch Them Grow",
-    desc: "Monthly progress reports, goal tracking, and real accountability.",
+    desc: "After every session, coaches log progress. You get monthly impact reports showing real results.",
     color: "#00D17E",
   },
 ];
 
 const tiers = [
   {
-    name: "Starter",
-    price: "$25",
-    period: "/month",
+    name: "Single Session",
+    price: "$75",
+    period: "one-time",
     color: "#00D17E",
     popular: false,
     features: [
-      "Weekly text check-ins",
-      "Goal setting & tracking",
-      "Monthly progress report to sponsor",
+      "One 1-hour session with a top coach",
+      "Goal review & action plan",
+      "Text check-in follow-up",
+      "Session notes & progress logged",
     ],
-    breakdown: { coach: "$17", operations: "$5", scholarship: "$3" },
+    breakdown: { coach: "$50", operations: "$19", scholarship: "$6" },
+    hourly: "$50/hr to coach",
   },
   {
-    name: "Pro",
-    price: "$50",
+    name: "Monthly",
+    price: "$125",
     period: "/month",
     color: "#0052FE",
     popular: true,
     features: [
-      "Everything in Starter",
-      "Bi-weekly 1-on-1 video calls",
+      "Two 1-hour sessions per month",
+      "Text check-ins between sessions",
       "Academic accountability tracking",
-      "Report card monitoring",
+      "Monthly progress report to sponsor",
     ],
-    breakdown: { coach: "$35", operations: "$10", scholarship: "$5" },
+    breakdown: { coach: "$85", operations: "$31", scholarship: "$9" },
+    hourly: "$42.50/hr to coach",
   },
   {
-    name: "Elite",
-    price: "$100",
+    name: "Weekly",
+    price: "$225",
+    period: "/month",
+    color: "#FF7900",
+    popular: false,
+    features: [
+      "Four 1-hour sessions per month",
+      "Full accountability & goal tracking",
+      "Report card monitoring",
+      "College prep guidance",
+      "Priority text/call access",
+    ],
+    breakdown: { coach: "$160", operations: "$52", scholarship: "$13" },
+    hourly: "$40/hr to coach",
+  },
+  {
+    name: "Intensive",
+    price: "$400",
     period: "/month",
     color: "#F4767C",
     popular: false,
     features: [
-      "Everything in Pro",
-      "Weekly video calls",
-      "College prep guidance",
-      "Family communication",
+      "Eight 1-hour sessions per month (2x/week)",
+      "Full mentorship & life coaching",
+      "College prep & scholarship guidance",
+      "Family communication & updates",
       "Priority event access",
+      "Direct coach phone line",
     ],
-    breakdown: { coach: "$65", operations: "$25", scholarship: "$10" },
+    breakdown: { coach: "$280", operations: "$95", scholarship: "$25" },
+    hourly: "$35/hr to coach",
   },
 ];
 
@@ -126,10 +147,11 @@ const requirements = [
 ];
 
 const benefits = [
-  "Competitive stipend per athlete",
-  "Flexible schedule",
+  "Earn $35-50/hr per session",
+  "Flexible schedule — you set your availability",
   "Training and certification provided",
-  "Make a real impact",
+  "Build a caseload of 10-20 athletes",
+  "Make a real, measurable impact",
 ];
 
 const bgCheckSteps = [
@@ -451,7 +473,7 @@ export default function MentorCoachingPage() {
               </div>
             </ScrollReveal>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
               {coachDuties.map((d, i) => (
                 <ScrollReveal key={d.title} animation="fade-up" delay={i * 80}>
                   <div className="group relative bg-[#fafafa] p-8 md:p-10 transition-all duration-500 hover:bg-white hover:shadow-[0_12px_40px_-10px_rgba(0,0,0,0.08)]">

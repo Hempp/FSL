@@ -105,18 +105,19 @@ export default function DonatePage() {
                   Fund a<br />Mentor <span className="text-fsl-coral">Coach</span>
                 </h2>
                 <p className="font-redhat text-[15px] sm:text-[16px] text-white/35 font-normal leading-[1.85] max-w-[560px] mx-auto">
-                  Your donation directly funds a coach who checks in on a student athlete weekly — tracking grades, goals, and growth.
+                  Your donation funds real 1-on-1 sessions with a top coach — tracking grades, goals, and growth. Less than the cost of a dinner out, and it changes a life.
                 </p>
               </div>
             </ScrollReveal>
 
             {/* Mini tier cards */}
             <ScrollReveal animation="fade-up" delay={150}>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-[900px] mx-auto mb-12">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-[1000px] mx-auto mb-12">
                 {[
-                  { amount: "$25", label: "Starter", period: "/mo", highlight: false },
-                  { amount: "$50", label: "Pro", period: "/mo", highlight: true },
-                  { amount: "$100", label: "Elite", period: "/mo", highlight: false },
+                  { amount: "$75", label: "Single Session", period: "", highlight: false },
+                  { amount: "$125", label: "Monthly", period: "/mo", highlight: true },
+                  { amount: "$225", label: "Weekly", period: "/mo", highlight: false },
+                  { amount: "$400", label: "Intensive", period: "/mo", highlight: false },
                 ].map((tier) => (
                   <div
                     key={tier.label}
