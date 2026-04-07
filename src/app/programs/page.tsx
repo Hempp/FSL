@@ -480,6 +480,103 @@ export default function ProgramsPage() {
         </section>
 
         {/* ═══════════════════════════════════════
+            ══  WHAT WE DO — 4 pillar cards       ══
+            ═══════════════════════════════════════ */}
+        <section className="py-20 sm:py-28 md:py-40 bg-white relative">
+          <div className="max-w-[1600px] mx-auto px-6 md:px-16 lg:px-24">
+            <ScrollReveal animation="fade-up">
+              <div className="text-center mb-16 md:mb-24">
+                <span className="font-redhat text-[11px] uppercase tracking-[0.4em] text-fsl-coral font-medium mb-5 inline-flex items-center gap-3">
+                  <span className="w-6 h-[1px] bg-fsl-coral/50" />
+                  Our Pillars
+                  <span className="w-6 h-[1px] bg-fsl-coral/50" />
+                </span>
+                <h2 className="font-barlow text-[42px] sm:text-[56px] md:text-[72px] font-bold text-fsl-dark uppercase leading-[0.88] tracking-[-0.02em] mt-5">
+                  What We Do
+                </h2>
+                <p className="font-redhat text-[14px] sm:text-[15px] text-[#999] font-normal leading-[1.8] mt-6 max-w-[500px] mx-auto">
+                  From competitive play to mentorship and gear — we invest in every part of a young athlete&apos;s journey.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              {[
+                {
+                  title: "Tournaments",
+                  desc: "Competitive events across 5 sports. Teams and individuals compete at city and regional level.",
+                  href: "/tournaments",
+                  color: "#0052FE",
+                  tag: "01",
+                },
+                {
+                  title: "Clinics",
+                  desc: "Focused skill development sessions led by professional coaches. Weekly and seasonal camps.",
+                  href: "/tournaments#clinics",
+                  color: "#FF7900",
+                  tag: "02",
+                },
+                {
+                  title: "Mentor Coaching",
+                  desc: "Donation-funded accountability coaches who check in on athletes, track goals, and keep them on track.",
+                  href: "/mentor-coaching",
+                  color: "#F4767C",
+                  tag: "03",
+                },
+                {
+                  title: "Equipment Donations",
+                  desc: "Jerseys, shoes, and gear donated to schools and youth programs in need across Los Angeles.",
+                  href: "/tournaments#equipment",
+                  color: "#00D17E",
+                  tag: "04",
+                },
+              ].map((card, i) => (
+                <ScrollReveal key={card.title} animation="fade-up" delay={i * 100}>
+                  <Link
+                    href={card.href}
+                    className="group relative block bg-[#fafafa] overflow-hidden transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.12)]"
+                  >
+                    {/* Top color bar */}
+                    <div className="h-[4px] w-full" style={{ backgroundColor: card.color }} />
+
+                    {/* Watermark number */}
+                    <span
+                      className="absolute -bottom-4 -right-2 font-barlow text-[120px] font-bold leading-none opacity-[0.03] select-none pointer-events-none transition-opacity duration-700 group-hover:opacity-[0.06]"
+                      style={{ color: card.color }}
+                    >
+                      {card.tag}
+                    </span>
+
+                    <div className="relative p-6 sm:p-8 md:p-10">
+                      <div
+                        className="w-10 h-[3px] mb-5 transition-all duration-700 group-hover:w-16"
+                        style={{ backgroundColor: card.color }}
+                      />
+                      <h3 className="font-barlow text-[22px] sm:text-[26px] font-bold text-fsl-dark uppercase leading-tight mb-3 tracking-[-0.01em]">
+                        {card.title}
+                      </h3>
+                      <p className="font-redhat text-[13px] sm:text-[14px] text-[#888] font-normal leading-[1.75] mb-6">
+                        {card.desc}
+                      </p>
+
+                      <div className="flex items-center gap-2">
+                        <span className="w-6 h-[1.5px] bg-current transition-all duration-500 group-hover:w-10" style={{ color: card.color }} />
+                        <span className="font-redhat text-[11px] font-bold uppercase tracking-[0.15em]" style={{ color: card.color }}>
+                          Learn More
+                        </span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="transition-transform duration-300 group-hover:translate-x-1" style={{ color: card.color }}>
+                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </Link>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════════════════════════════════
             ══  JOIN STRIP — bold CTA bar         ══
             ═══════════════════════════════════════ */}
         <section className="relative py-16 sm:py-20 bg-fsl-dark overflow-hidden">

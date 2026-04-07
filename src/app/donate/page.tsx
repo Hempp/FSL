@@ -88,6 +88,73 @@ export default function DonatePage() {
           </div>
         </section>
 
+        {/* ── Fund a Mentor Coach — Featured Banner ── */}
+        <section className="relative py-20 md:py-28 bg-[#0a0a0a] overflow-hidden">
+          {/* Ambient glow */}
+          <div className="absolute top-0 left-1/4 w-[600px] h-[400px] bg-fsl-coral/8 blur-[180px] pointer-events-none" />
+          <div className="absolute bottom-0 right-1/4 w-[400px] h-[300px] bg-fsl-blue/5 blur-[140px] pointer-events-none" />
+
+          <div className="relative z-10 max-w-[1200px] mx-auto px-6 md:px-16 lg:px-24">
+            <ScrollReveal animation="fade-up">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center gap-3 mb-6">
+                  <div className="w-2 h-2 rounded-full bg-fsl-coral animate-pulse" />
+                  <span className="font-redhat text-[11px] uppercase tracking-[0.4em] text-fsl-coral font-semibold">Featured Program</span>
+                </div>
+                <h2 className="font-barlow text-[42px] sm:text-[56px] md:text-[72px] font-bold text-white uppercase leading-[0.88] tracking-[-0.02em] mb-5">
+                  Fund a<br />Mentor <span className="text-fsl-coral">Coach</span>
+                </h2>
+                <p className="font-redhat text-[15px] sm:text-[16px] text-white/35 font-normal leading-[1.85] max-w-[560px] mx-auto">
+                  Your donation directly funds a coach who checks in on a student athlete weekly — tracking grades, goals, and growth.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            {/* Mini tier cards */}
+            <ScrollReveal animation="fade-up" delay={150}>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-[900px] mx-auto mb-12">
+                {[
+                  { amount: "$25", label: "Starter", period: "/mo", highlight: false },
+                  { amount: "$50", label: "Pro", period: "/mo", highlight: true },
+                  { amount: "$100", label: "Elite", period: "/mo", highlight: false },
+                ].map((tier) => (
+                  <div
+                    key={tier.label}
+                    className={`relative text-center py-8 px-6 border transition-all duration-500 ${
+                      tier.highlight
+                        ? "border-fsl-coral/40 bg-fsl-coral/[0.06] shadow-[0_0_60px_-15px_rgba(244,118,124,0.2)]"
+                        : "border-white/[0.08] bg-white/[0.02] hover:border-white/[0.15]"
+                    }`}
+                  >
+                    {tier.highlight && (
+                      <span className="absolute -top-3 left-1/2 -translate-x-1/2 font-redhat text-[9px] uppercase tracking-[0.3em] font-bold text-fsl-dark bg-fsl-coral px-4 py-1">
+                        Most Popular
+                      </span>
+                    )}
+                    <p className="font-barlow text-[48px] font-bold text-white leading-none tracking-[-0.02em]">
+                      {tier.amount}
+                      <span className="text-[16px] text-white/30 font-medium">{tier.period}</span>
+                    </p>
+                    <p className="font-barlow text-[14px] font-bold uppercase tracking-[0.1em] text-fsl-coral mt-2">{tier.label}</p>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal animation="fade-up" delay={300}>
+              <div className="text-center">
+                <a
+                  href="/mentor-coaching"
+                  className="group inline-flex items-center gap-3 font-redhat text-[13px] font-bold uppercase tracking-[0.2em] text-fsl-dark bg-white px-10 py-4 hover:bg-fsl-coral hover:text-white transition-all duration-500"
+                >
+                  Learn More
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="group-hover:translate-x-1 transition-transform duration-300"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                </a>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
         {/* ── Tier Cards with Sport-Colored Accents ── */}
         <section className="py-24 md:py-36">
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">

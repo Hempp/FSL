@@ -10,6 +10,7 @@ import { NikeHeader } from "@/components/nike/NikeHeader";
 import { Hero3D } from "@/components/nike/Hero3D";
 import { NikeMission } from "@/components/nike/NikeMission";
 import { NikePillars } from "@/components/nike/NikePillars";
+import { NikeShowcase } from "@/components/nike/NikeShowcase";
 import { NikePrograms } from "@/components/nike/NikePrograms";
 import { NikeImpact } from "@/components/nike/NikeImpact";
 import { NikeTestimonial } from "@/components/nike/NikeTestimonial";
@@ -35,6 +36,8 @@ export default function Home() {
         <ScrollReveal animation="fade-up">
           <NikePillars />
         </ScrollReveal>
+
+        <NikeShowcase />
 
         <ScrollReveal animation="fade-up">
           <NikePrograms />
