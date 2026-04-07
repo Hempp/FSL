@@ -232,7 +232,7 @@ export function Hero3D() {
       {/* ═══════════════════════════════════════════════
           ══  TEXT & CTA (bottom layer)  ══
           ═══════════════════════════════════════════════ */}
-      <div className="absolute inset-0 z-10 flex flex-col justify-end px-6 md:px-16 lg:px-24 pb-32 md:pb-40 pointer-events-none">
+      <div className="absolute inset-0 z-10 flex flex-col justify-end px-6 md:px-16 lg:px-24 pb-36 sm:pb-40 md:pb-44 pointer-events-none">
         <div className="max-w-[900px]">
           <p
             className={`font-redhat text-[11px] uppercase tracking-[0.4em] text-fsl-coral/80 font-medium flex items-center gap-3 mb-4 transition-all duration-1000 delay-500 ${
@@ -243,7 +243,7 @@ export function Hero3D() {
             Fundamental Sports Labs
           </p>
           <h1
-            className={`font-barlow text-[48px] sm:text-[72px] md:text-[96px] lg:text-[120px] xl:text-[140px] font-bold text-white uppercase leading-[0.88] tracking-[-0.025em] transition-all duration-[1.4s] ease-[cubic-bezier(0.16,1,0.3,1)] delay-700 ${
+            className={`font-barlow text-[40px] sm:text-[60px] md:text-[96px] lg:text-[120px] xl:text-[140px] font-bold text-white uppercase leading-[0.88] tracking-[-0.025em] transition-all duration-[1.4s] ease-[cubic-bezier(0.16,1,0.3,1)] delay-700 ${
               loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
             }`}
             style={{ textShadow: "0 4px 80px rgba(0,0,0,0.5)" }}
@@ -262,7 +262,7 @@ export function Hero3D() {
       </div>
 
       {/* ── Now Playing badge (below headline, left-aligned) ── */}
-      <div className="absolute left-6 md:left-16 lg:left-24 bottom-[120px] md:bottom-[135px] z-10 pointer-events-none">
+      <div className="absolute left-6 md:left-16 lg:left-24 bottom-[80px] sm:bottom-[100px] md:bottom-[135px] z-10 pointer-events-none">
         {sportNames.map((name, idx) => (
           <div
             key={name}
@@ -295,7 +295,7 @@ export function Hero3D() {
       </div>
 
       {/* ── CTA buttons ── */}
-      <div className="absolute bottom-12 left-6 md:left-16 lg:left-24 z-10 flex gap-3">
+      <div className="absolute bottom-14 sm:bottom-12 left-6 md:left-16 lg:left-24 z-10 flex gap-3">
         <Link
           href="/join"
           className="group relative bg-white text-black px-9 py-[14px] rounded-full font-redhat text-[12px] font-semibold uppercase tracking-[0.15em] overflow-hidden transition-shadow duration-500 hover:shadow-[0_0_50px_rgba(244,118,124,0.3)]"

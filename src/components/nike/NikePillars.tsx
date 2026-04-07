@@ -1,114 +1,138 @@
 import Image from "next/image";
-
-// Inline SVG icons for each pillar — clean, on-brand
-function AthleticIcon({ color }: { color: string }) {
-  return (
-    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="5" r="2" />
-      <path d="M6 21l3-9 3 3 3-3 3 9" />
-      <path d="M9 12l-3-3M15 12l3-3" />
-    </svg>
-  );
-}
-
-function BrainIcon({ color }: { color: string }) {
-  return (
-    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 2a5 5 0 015 5c0 1.5-.5 2.8-1.4 3.8L12 15l-3.6-4.2A5 5 0 017 7a5 5 0 015-5z" />
-      <path d="M12 15v7" />
-      <path d="M9 18h6" />
-      <circle cx="10" cy="7" r="1" fill={color} />
-      <circle cx="14" cy="7" r="1" fill={color} />
-    </svg>
-  );
-}
-
-function DollarIcon({ color }: { color: string }) {
-  return (
-    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 1v22" />
-      <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
-    </svg>
-  );
-}
-
-function VRIcon({ color }: { color: string }) {
-  return (
-    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="2" y="8" width="20" height="10" rx="3" />
-      <circle cx="8" cy="13" r="2" />
-      <circle cx="16" cy="13" r="2" />
-      <path d="M10 13h4" />
-      <path d="M7 8V6a2 2 0 012-2h6a2 2 0 012 2v2" />
-    </svg>
-  );
-}
-
-const pillarIcons = [AthleticIcon, BrainIcon, DollarIcon, VRIcon];
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const pillars = [
-  { num: "01", title: "Athletic\nTraining", desc: "Golf, football, basketball, soccer, and track & field coaching with professional trainers.", color: "#0052FE" },
-  { num: "02", title: "Mental\nWellness", desc: "Building resilience, emotional intelligence, and positive mindset development.", color: "#FF7900" },
-  { num: "03", title: "Financial\nLiteracy", desc: "Budgeting, saving, investing — real-world money management for young athletes.", color: "#00D17E" },
-  { num: "04", title: "VR/AR &\nAI Tech", desc: "Cutting-edge VR/AR training simulations and AI-powered performance analytics.", color: "#E9BB00" },
+  {
+    num: "01",
+    title: "Athletic Training",
+    desc: "Golf, football, basketball, soccer, and track & field coaching with professional trainers.",
+    color: "#0052FE",
+    colorClass: "from-[#0052FE]",
+    image: "/images/sports/football-action.jpg",
+  },
+  {
+    num: "02",
+    title: "Mental Wellness",
+    desc: "Building resilience, emotional intelligence, and positive mindset development.",
+    color: "#FF7900",
+    colorClass: "from-[#FF7900]",
+    image: "/images/premium/meditation-peace.jpg",
+  },
+  {
+    num: "03",
+    title: "Financial Literacy",
+    desc: "Budgeting, saving, investing — real-world money management for young athletes.",
+    color: "#00D17E",
+    colorClass: "from-[#00D17E]",
+    image: "/images/premium/financial-planning.jpg",
+  },
+  {
+    num: "04",
+    title: "VR/AR & AI Tech",
+    desc: "Cutting-edge VR/AR training simulations and AI-powered performance analytics.",
+    color: "#E9BB00",
+    colorClass: "from-[#E9BB00]",
+    image: "/images/sports/vr-headset.jpg",
+  },
 ];
 
 export function NikePillars() {
   return (
-    <section className="py-20 md:py-32">
+    <section className="py-20 md:py-32 bg-fsl-dark overflow-hidden">
       <div className="max-w-[1800px] mx-auto px-6 md:px-16 lg:px-24">
+        {/* Section header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-14 md:mb-20 gap-4">
-          <div>
-            <p className="font-redhat text-[11px] uppercase tracking-[0.4em] text-fsl-coral font-medium mb-4 flex items-center gap-3">
-              <span className="w-10 h-[1px] bg-fsl-coral/50" />
-              Our Approach
+          <ScrollReveal animation="fade-right">
+            <div>
+              <p className="font-redhat text-[11px] uppercase tracking-[0.4em] text-fsl-coral font-medium mb-4 flex items-center gap-3">
+                <span className="w-10 h-[1px] bg-fsl-coral/50" />
+                Our Approach
+              </p>
+              <h2 className="font-barlow text-[42px] md:text-[56px] lg:text-[72px] font-bold text-white uppercase leading-[0.88] tracking-[-0.02em]">
+                Four Pillars
+              </h2>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal animation="fade-left" delay={200}>
+            <p className="font-redhat text-[15px] text-white/40 font-normal max-w-[360px] leading-[1.7] md:text-right">
+              Four pillars of fundamental development — the same structure and discipline from sports, applied to every area of life.
             </p>
-            <h2 className="font-barlow text-[42px] md:text-[56px] lg:text-[72px] font-bold text-fsl-dark uppercase leading-[0.88] tracking-[-0.02em]">
-              Four Pillars
-            </h2>
-          </div>
-          <p className="font-redhat text-[15px] text-[#999] font-normal max-w-[360px] leading-[1.7] md:text-right">
-            Four pillars of fundamental development — the same structure and discipline from sports, applied to every area of life.
-          </p>
+          </ScrollReveal>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-black/[0.06]">
-          {pillars.map((pillar, i) => {
-            const Icon = pillarIcons[i];
-            return (
-              <div
-                key={pillar.num}
-                className="bg-white py-12 px-8 group cursor-default transition-all duration-700 hover:bg-[#fafafa] relative"
-              >
-                {/* Number watermark */}
+        {/* Sports Illustrated full-bleed cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-5">
+          {pillars.map((pillar, i) => (
+            <ScrollReveal key={pillar.num} animation="fade-up" delay={i * 120} duration={900}>
+              <div className="group relative aspect-[3/4] sm:aspect-[2/3] xl:aspect-[3/5] overflow-hidden cursor-default">
+                {/* Full-bleed background image */}
+                <Image
+                  src={pillar.image}
+                  alt={pillar.title}
+                  fill
+                  className="object-cover transition-transform duration-[1.8s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
+                  style={{ filter: "contrast(1.1) brightness(0.55) saturate(0.7)" }}
+                />
+
+                {/* Dark gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
+
+                {/* Colored bottom edge glow */}
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-[120px] opacity-30 group-hover:opacity-50 transition-opacity duration-700"
+                  style={{
+                    background: `linear-gradient(to top, ${pillar.color}40, transparent)`,
+                  }}
+                />
+
+                {/* Bold number watermark */}
                 <span
-                  className="font-barlow text-[100px] lg:text-[120px] font-bold leading-none opacity-[0.04] absolute top-4 right-4 transition-opacity duration-700 group-hover:opacity-[0.08] select-none"
-                  style={{ color: pillar.color }}
+                  className="font-barlow text-[180px] sm:text-[160px] md:text-[200px] xl:text-[180px] font-black leading-none absolute -top-4 -right-2 select-none transition-all duration-700 group-hover:scale-110 group-hover:-translate-y-2"
+                  style={{ color: pillar.color, opacity: 0.08 }}
                 >
                   {pillar.num}
                 </span>
 
-                {/* Accent bar top */}
+                {/* Animated accent line — top left */}
                 <div
-                  className="w-8 h-[3px] mb-8 transition-all duration-700 group-hover:w-14"
+                  className="absolute top-0 left-0 w-[3px] h-0 group-hover:h-[60%] transition-all duration-700 ease-out"
+                  style={{ backgroundColor: pillar.color }}
+                />
+                {/* Animated accent line — bottom */}
+                <div
+                  className="absolute bottom-0 left-0 w-0 group-hover:w-full h-[3px] transition-all duration-700 ease-out delay-100"
                   style={{ backgroundColor: pillar.color }}
                 />
 
-                {/* SVG Icon */}
-                <div className="mb-6 transition-transform duration-700 group-hover:scale-110 group-hover:-translate-y-1">
-                  <Icon color={pillar.color} />
+                {/* Content overlay — glass-morphism card */}
+                <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
+                  {/* Pillar number badge */}
+                  <div
+                    className="inline-flex items-center justify-center w-10 h-10 rounded-full mb-5 backdrop-blur-md border border-white/10"
+                    style={{ backgroundColor: `${pillar.color}25` }}
+                  >
+                    <span
+                      className="font-barlow text-[14px] font-bold"
+                      style={{ color: pillar.color }}
+                    >
+                      {pillar.num}
+                    </span>
+                  </div>
+
+                  <h3 className="font-barlow text-[26px] md:text-[30px] xl:text-[28px] font-bold text-white uppercase leading-[1.05] mb-3">
+                    {pillar.title}
+                  </h3>
+
+                  {/* Glass-morphism description panel */}
+                  <div className="backdrop-blur-sm bg-white/[0.06] border border-white/[0.08] rounded-sm p-4 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                    <p className="font-redhat text-[13px] md:text-[14px] text-white/70 font-normal leading-[1.7]">
+                      {pillar.desc}
+                    </p>
+                  </div>
                 </div>
-
-                <h3 className="font-barlow text-[22px] md:text-[26px] font-bold text-fsl-dark uppercase leading-[1.1] whitespace-pre-line mb-4">
-                  {pillar.title}
-                </h3>
-
-                <p className="font-redhat text-[14px] text-[#999] font-normal leading-[1.7]">
-                  {pillar.desc}
-                </p>
               </div>
-            );
-          })}
+            </ScrollReveal>
+          ))}
         </div>
       </div>
     </section>

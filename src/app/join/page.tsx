@@ -17,17 +17,34 @@ const benefits = [
     num: "01",
     title: "Partner with Us",
     description: "Collaborate through sponsorships, facility sharing, or joint programming to empower youth across communities.",
+    image: "/images/premium/team-meeting.jpg",
+    color: "#0052FE",
+    icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z",
   },
   {
     num: "02",
     title: "Become a Volunteer",
     description: "Share your time as a coach, mentor, or tutor in our impactful programs. Every hour makes a difference.",
+    image: "/images/action/coach-training.jpg",
+    color: "#FF7900",
+    icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
   },
   {
     num: "03",
     title: "Make a Donation",
-    description: "Your support funds programs and resources for youth participants in our community.",
+    description: "Your financial support funds programs, equipment, and resources for youth participants in our community.",
+    color: "#00D17E",
+    image: "/images/premium/community-together.jpg",
+    icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
     link: { text: "Donate Now", href: "https://www.zeffy.com/en-US/donation-form/donate-to-make-a-difference-19257" },
+  },
+  {
+    num: "04",
+    title: "Enroll Your Child",
+    description: "Register your young athlete for our multi-sport programs, mentorship tracks, and technology workshops.",
+    color: "#E9BB00",
+    image: "/images/action/teens-stretching.jpg",
+    icon: "M13 10V3L4 14h7v7l9-11h-7z",
   },
 ];
 
@@ -37,70 +54,161 @@ export default function JoinPage() {
       <SmoothScroll />
       <NikeHeader />
       <main>
-        {/* Hero — cinematic, Nike style */}
-        <section className="relative h-[70vh] min-h-[500px] overflow-hidden bg-black flex items-end">
+        {/* ── Nike Recruitment Campaign Hero ── */}
+        <section className="relative h-[90vh] min-h-[650px] overflow-hidden bg-black flex items-center justify-center">
           <Image
             src="/images/urban/hero-streetball.jpg"
             alt="Youth athletes"
             fill
-            className="object-cover"
-            style={{ filter: "contrast(1.1) brightness(0.35) saturate(0.6)" }}
+            className="object-cover scale-110"
+            style={{ filter: "contrast(1.15) brightness(0.2) saturate(0.4)" }}
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 z-[1]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent z-[1]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/40 z-[1]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black z-[1]" />
+          {/* Bold glow */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-fsl-coral/10 blur-[180px] z-[1]" />
 
-          <div className="relative z-[2] px-6 md:px-16 lg:px-24 pb-16 md:pb-24 max-w-[1600px] mx-auto w-full">
-            <p className="font-redhat text-[11px] uppercase tracking-[0.4em] text-fsl-coral/80 font-medium flex items-center gap-3 mb-4">
-              <span className="w-10 h-[1px] bg-fsl-coral/60" />
-              Join Us
-            </p>
-            <h1 className="font-barlow text-[48px] sm:text-[72px] md:text-[100px] lg:text-[130px] font-bold text-white uppercase leading-[0.88] tracking-[-0.025em]">
-              Empower<br />The <span className="text-fsl-coral">Youth</span>
-            </h1>
-            <p className="font-redhat text-[14px] md:text-[15px] text-white/40 font-normal mt-6 max-w-[400px] leading-[1.8]">
-              Join us to support urban youth through sports and education. Make a difference today.
-            </p>
+          <div className="relative z-[2] text-center px-6 max-w-[1100px] mx-auto">
+            <ScrollReveal animation="scale">
+              <p className="font-redhat text-[11px] uppercase tracking-[0.6em] text-fsl-coral font-bold mb-8">
+                The Movement Needs You
+              </p>
+              <h1 className="font-barlow text-[60px] sm:text-[90px] md:text-[120px] lg:text-[160px] xl:text-[180px] font-bold text-white uppercase leading-[0.82] tracking-[-0.04em]">
+                Join The<br />
+                <span className="text-fsl-coral">Movement</span>
+              </h1>
+              <p className="font-redhat text-[16px] md:text-[18px] text-white/35 font-normal mt-8 max-w-[500px] mx-auto leading-[1.85]">
+                Whether you coach, volunteer, donate, or enroll — every action fuels a future champion.
+              </p>
+              {/* Scroll indicator */}
+              <div className="mt-12 flex flex-col items-center gap-2 animate-bounce">
+                <p className="font-redhat text-[10px] uppercase tracking-[0.3em] text-white/20">Scroll</p>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" className="opacity-20">
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </div>
+            </ScrollReveal>
           </div>
         </section>
 
-        {/* Form section — clean, editorial */}
+        {/* ── Benefit Cards with Athlete Imagery ── */}
         <section className="py-24 md:py-36">
           <div className="max-w-[1600px] mx-auto px-6 md:px-16 lg:px-24">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
-              {/* Left — benefits */}
-              <div className="lg:col-span-4">
+            <ScrollReveal animation="fade-up">
+              <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 md:mb-24 gap-6">
+                <div>
+                  <p className="font-redhat text-[11px] uppercase tracking-[0.5em] text-fsl-coral font-semibold flex items-center gap-3 mb-6">
+                    <span className="w-12 h-[2px] bg-fsl-coral" />
+                    Ways To Help
+                  </p>
+                  <h2 className="font-barlow text-[42px] md:text-[56px] lg:text-[72px] font-bold text-fsl-dark uppercase leading-[0.88]">
+                    Four Ways<br />To Make An<br />Impact
+                  </h2>
+                </div>
+                <p className="font-redhat text-[14px] text-[#999] max-w-[340px] leading-[1.75]">
+                  Choose the path that fits you. Every role is essential to our mission.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {benefits.map((b, i) => (
+                <ScrollReveal key={b.num} animation="fade-up" delay={i * 100}>
+                  <div className="group relative overflow-hidden bg-[#fafafa] transition-all duration-700 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)]">
+                    {/* Image strip */}
+                    <div className="relative h-[200px] md:h-[240px] overflow-hidden">
+                      <Image
+                        src={b.image}
+                        alt={b.title}
+                        fill
+                        className="object-cover transition-transform duration-[1.5s] group-hover:scale-110"
+                        style={{ filter: "saturate(0.8) contrast(1.05)" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                      {/* Number overlay */}
+                      <span className="absolute bottom-4 right-6 font-barlow text-[80px] md:text-[100px] font-bold text-white/10 leading-none">
+                        {b.num}
+                      </span>
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-8 md:p-10">
+                      {/* Icon + color bar */}
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="w-12 h-12 rounded-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundColor: `${b.color}12` }}>
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={b.color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                            <path d={b.icon} />
+                          </svg>
+                        </div>
+                        <div className="w-8 h-[3px] transition-all duration-700 group-hover:w-16" style={{ backgroundColor: b.color }} />
+                      </div>
+
+                      <h3 className="font-barlow text-[28px] md:text-[34px] font-bold text-fsl-dark uppercase leading-[0.92] mb-4 group-hover:text-fsl-coral transition-colors duration-500">
+                        {b.title}
+                      </h3>
+                      <p className="font-redhat text-[14px] text-[#888] font-normal leading-[1.8] mb-6 max-w-[420px]">
+                        {b.description}
+                      </p>
+
+                      {b.link ? (
+                        <a
+                          href={b.link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 font-redhat text-[11px] font-bold uppercase tracking-[0.2em] transition-all duration-300 hover:gap-4" style={{ color: b.color }}
+                        >
+                          {b.link.text}
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                        </a>
+                      ) : (
+                        <span className="inline-flex items-center gap-2 font-redhat text-[11px] font-bold uppercase tracking-[0.2em] transition-all duration-300 group-hover:gap-4" style={{ color: b.color }}>
+                          Learn More
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Premium Application Form ── */}
+        <section className="relative py-24 md:py-36 bg-[#0a0a0a] overflow-hidden">
+          {/* Background image */}
+          <div className="absolute inset-0 opacity-[0.03]">
+            <Image src="/images/urban/hero-track-race.jpg" alt="" fill className="object-cover" style={{ filter: "grayscale(1)" }} />
+          </div>
+
+          <div className="relative max-w-[1200px] mx-auto px-6 md:px-16 lg:px-24">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+              {/* Left — CTA text */}
+              <div className="lg:col-span-5">
                 <ScrollReveal animation="fade-up">
-                  <p className="font-redhat text-[11px] uppercase tracking-[0.4em] text-fsl-coral font-medium mb-10 flex items-center gap-3">
-                    <span className="w-10 h-[1px] bg-fsl-coral/50" />
-                    How to Help
+                  <p className="font-redhat text-[11px] uppercase tracking-[0.5em] text-fsl-coral font-semibold flex items-center gap-3 mb-8">
+                    <span className="w-10 h-[2px] bg-fsl-coral" />
+                    Apply Now
+                  </p>
+                  <h2 className="font-barlow text-[42px] md:text-[56px] font-bold text-white uppercase leading-[0.88] mb-6">
+                    Ready To<br />Step Up?
+                  </h2>
+                  <p className="font-redhat text-[15px] text-white/30 font-normal leading-[1.85] mb-10 max-w-[400px]">
+                    Fill out the form and our team will reach out within 48 hours to discuss how you can make an impact.
                   </p>
 
-                  <div className="space-y-10">
-                    {benefits.map((b) => (
-                      <div key={b.num} className="group">
-                        <span className="font-barlow text-[48px] font-bold text-black/[0.04] leading-none block mb-2">
-                          {b.num}
-                        </span>
-                        <h3 className="font-barlow text-[22px] font-bold text-fsl-dark uppercase leading-tight mb-3">
-                          {b.title}
-                        </h3>
-                        <p className="font-redhat text-[14px] text-[#888] font-normal leading-[1.7]">
-                          {b.description}
-                        </p>
-                        {b.link && (
-                          <a
-                            href={b.link.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 font-redhat text-[11px] text-fsl-coral font-semibold uppercase tracking-[0.15em] mt-3 hover:gap-3 transition-all duration-300"
-                          >
-                            {b.link.text}
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                              <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
-                          </a>
-                        )}
+                  {/* Quick stats */}
+                  <div className="grid grid-cols-2 gap-6">
+                    {[
+                      { num: "150+", label: "Youth Served" },
+                      { num: "6", label: "Sports Programs" },
+                      { num: "92%", label: "Success Rate" },
+                      { num: "15+", label: "Years Experience" },
+                    ].map((s) => (
+                      <div key={s.label}>
+                        <p className="font-barlow text-[36px] font-bold text-fsl-coral leading-none">{s.num}</p>
+                        <p className="font-redhat text-[11px] text-white/25 uppercase tracking-[0.15em] mt-1">{s.label}</p>
                       </div>
                     ))}
                   </div>
@@ -108,35 +216,35 @@ export default function JoinPage() {
               </div>
 
               {/* Right — form */}
-              <div className="lg:col-span-7 lg:col-start-6">
-                <ScrollReveal animation="fade-up" delay={200}>
-                  <div className="bg-[#f8f8f8] p-8 md:p-12 lg:p-16">
-                    <h2 className="font-barlow text-[32px] md:text-[44px] font-bold text-fsl-dark uppercase leading-[0.9] mb-3">
+              <div className="lg:col-span-7">
+                <ScrollReveal animation="fade-left" delay={200}>
+                  <div className="bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm p-8 md:p-12 lg:p-14">
+                    <h3 className="font-barlow text-[28px] md:text-[36px] font-bold text-white uppercase leading-[0.92] mb-2">
                       Join Our Team
-                    </h2>
-                    <p className="font-redhat text-[14px] text-[#999] font-normal mb-10 max-w-[360px]">
-                      Fill out the form below and we&apos;ll get back to you within 48 hours.
+                    </h3>
+                    <p className="font-redhat text-[13px] text-white/25 mb-10">
+                      All fields are required unless marked optional.
                     </p>
 
-                    <form className="space-y-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <form className="space-y-7">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
                         <div>
-                          <label htmlFor="join-fname" className="block font-redhat text-[11px] font-semibold uppercase tracking-[0.15em] text-fsl-dark mb-2">First Name</label>
-                          <input type="text" id="join-fname" placeholder="John" className="w-full bg-white border-0 border-b-2 border-black/10 px-0 py-3 font-redhat text-[15px] text-fsl-dark placeholder:text-[#ccc] outline-none focus:border-fsl-coral transition-colors duration-300" />
+                          <label htmlFor="join-fname" className="block font-redhat text-[11px] font-bold uppercase tracking-[0.2em] text-white/50 mb-3">First Name</label>
+                          <input type="text" id="join-fname" placeholder="John" className="w-full bg-white/[0.04] border border-white/[0.08] px-5 py-4 font-redhat text-[15px] text-white placeholder:text-white/15 outline-none focus:border-fsl-coral transition-colors duration-500" />
                         </div>
                         <div>
-                          <label htmlFor="join-lname" className="block font-redhat text-[11px] font-semibold uppercase tracking-[0.15em] text-fsl-dark mb-2">Last Name</label>
-                          <input type="text" id="join-lname" placeholder="Doe" className="w-full bg-white border-0 border-b-2 border-black/10 px-0 py-3 font-redhat text-[15px] text-fsl-dark placeholder:text-[#ccc] outline-none focus:border-fsl-coral transition-colors duration-300" />
+                          <label htmlFor="join-lname" className="block font-redhat text-[11px] font-bold uppercase tracking-[0.2em] text-white/50 mb-3">Last Name</label>
+                          <input type="text" id="join-lname" placeholder="Doe" className="w-full bg-white/[0.04] border border-white/[0.08] px-5 py-4 font-redhat text-[15px] text-white placeholder:text-white/15 outline-none focus:border-fsl-coral transition-colors duration-500" />
                         </div>
                       </div>
                       <div>
-                        <label htmlFor="join-email" className="block font-redhat text-[11px] font-semibold uppercase tracking-[0.15em] text-fsl-dark mb-2">Email</label>
-                        <input type="email" id="join-email" placeholder="john@example.com" className="w-full bg-white border-0 border-b-2 border-black/10 px-0 py-3 font-redhat text-[15px] text-fsl-dark placeholder:text-[#ccc] outline-none focus:border-fsl-coral transition-colors duration-300" />
+                        <label htmlFor="join-email" className="block font-redhat text-[11px] font-bold uppercase tracking-[0.2em] text-white/50 mb-3">Email</label>
+                        <input type="email" id="join-email" placeholder="john@example.com" className="w-full bg-white/[0.04] border border-white/[0.08] px-5 py-4 font-redhat text-[15px] text-white placeholder:text-white/15 outline-none focus:border-fsl-coral transition-colors duration-500" />
                       </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
                         <div>
-                          <label htmlFor="join-path" className="block font-redhat text-[11px] font-semibold uppercase tracking-[0.15em] text-fsl-dark mb-2">Your Path</label>
-                          <select id="join-path" className="w-full bg-white border-0 border-b-2 border-black/10 px-0 py-3 font-redhat text-[15px] text-[#ccc] outline-none focus:border-fsl-coral transition-colors duration-300 appearance-none">
+                          <label htmlFor="join-path" className="block font-redhat text-[11px] font-bold uppercase tracking-[0.2em] text-white/50 mb-3">Your Path</label>
+                          <select id="join-path" className="w-full bg-white/[0.04] border border-white/[0.08] px-5 py-4 font-redhat text-[15px] text-white/30 outline-none focus:border-fsl-coral transition-colors duration-500 appearance-none">
                             <option value="">Select</option>
                             <option value="volunteer">Volunteer</option>
                             <option value="partner">Partner</option>
@@ -145,8 +253,8 @@ export default function JoinPage() {
                           </select>
                         </div>
                         <div>
-                          <label htmlFor="join-sport" className="block font-redhat text-[11px] font-semibold uppercase tracking-[0.15em] text-fsl-dark mb-2">Sport Interest</label>
-                          <select id="join-sport" className="w-full bg-white border-0 border-b-2 border-black/10 px-0 py-3 font-redhat text-[15px] text-[#ccc] outline-none focus:border-fsl-coral transition-colors duration-300 appearance-none">
+                          <label htmlFor="join-sport" className="block font-redhat text-[11px] font-bold uppercase tracking-[0.2em] text-white/50 mb-3">Sport Interest</label>
+                          <select id="join-sport" className="w-full bg-white/[0.04] border border-white/[0.08] px-5 py-4 font-redhat text-[15px] text-white/30 outline-none focus:border-fsl-coral transition-colors duration-500 appearance-none">
                             <option value="">Select a sport</option>
                             <option value="golf">Golf</option>
                             <option value="football">Football</option>
@@ -158,15 +266,22 @@ export default function JoinPage() {
                         </div>
                       </div>
                       <div>
-                        <label htmlFor="join-msg" className="block font-redhat text-[11px] font-semibold uppercase tracking-[0.15em] text-fsl-dark mb-2">Message</label>
-                        <textarea id="join-msg" placeholder="Tell us about your interest..." rows={4} className="w-full bg-white border-0 border-b-2 border-black/10 px-0 py-3 font-redhat text-[15px] text-fsl-dark placeholder:text-[#ccc] outline-none focus:border-fsl-coral transition-colors duration-300 resize-none" />
+                        <label htmlFor="join-msg" className="block font-redhat text-[11px] font-bold uppercase tracking-[0.2em] text-white/50 mb-3">Message <span className="text-white/15">(Optional)</span></label>
+                        <textarea id="join-msg" placeholder="Tell us about your interest..." rows={4} className="w-full bg-white/[0.04] border border-white/[0.08] px-5 py-4 font-redhat text-[15px] text-white placeholder:text-white/15 outline-none focus:border-fsl-coral transition-colors duration-500 resize-none" />
                       </div>
                       <button
                         type="submit"
-                        className="group relative bg-fsl-dark text-white px-12 py-4 rounded-full font-redhat text-[12px] font-semibold uppercase tracking-[0.15em] overflow-hidden transition-shadow duration-500 hover:shadow-[0_0_40px_rgba(244,118,124,0.2)] mt-4"
+                        className="group relative w-full md:w-auto bg-fsl-coral text-white px-14 py-5 font-redhat text-[13px] font-bold uppercase tracking-[0.2em] overflow-hidden transition-all duration-500 hover:shadow-[0_0_60px_rgba(244,118,124,0.25)]"
                       >
-                        <span className="relative z-10 group-hover:text-white transition-colors duration-500">Submit</span>
-                        <div className="absolute inset-0 bg-fsl-coral scale-x-0 group-hover:scale-x-100 transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] origin-left rounded-full" />
+                        <span className="relative z-10 flex items-center justify-center gap-3">
+                          Submit Application
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="group-hover:translate-x-1 transition-transform duration-300"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                        </span>
+                        <div className="absolute inset-0 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] origin-left" />
+                        <span className="absolute inset-0 flex items-center justify-center gap-3 font-redhat text-[13px] font-bold uppercase tracking-[0.2em] text-fsl-dark opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 z-20">
+                          Submit Application
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                        </span>
                       </button>
                     </form>
                   </div>

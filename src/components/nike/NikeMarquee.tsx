@@ -1,45 +1,48 @@
-// Infinite scrolling marquee — the "swag" element
-// Adds energy and movement between sections
+// ESPN bottom ticker — bold energy with sport-colored dots
 
 export function NikeMarquee({ dark = false }: { dark?: boolean }) {
   const items = [
-    "BASKETBALL",
-    "★",
-    "FOOTBALL",
-    "★",
-    "SOCCER",
-    "★",
-    "GOLF",
-    "★",
-    "TRACK & FIELD",
-    "★",
-    "AI & VR TECH",
-    "★",
-    "MENTAL WELLNESS",
-    "★",
-    "FINANCIAL RESPONSIBILITY",
-    "★",
+    { text: "BASKETBALL", color: "#FF7900" },
+    { text: "FOOTBALL", color: "#0052FE" },
+    { text: "SOCCER", color: "#00D17E" },
+    { text: "GOLF", color: "#E9BB00" },
+    { text: "TRACK & FIELD", color: "#F4767C" },
+    { text: "AI & VR TECH", color: "#0052FE" },
+    { text: "MENTAL WELLNESS", color: "#FF7900" },
+    { text: "FINANCIAL RESPONSIBILITY", color: "#00D17E" },
   ];
 
-  // Double for seamless loop
-  const doubled = [...items, ...items];
+  // Triple for seamless loop at faster speed
+  const tripled = [...items, ...items, ...items];
 
   return (
-    <div className={`overflow-hidden py-5 md:py-6 ${dark ? "bg-fsl-dark" : "bg-fsl-coral"}`}>
+    <div
+      className={`overflow-hidden py-4 md:py-5 border-y ${
+        dark
+          ? "bg-fsl-dark border-white/[0.06]"
+          : "bg-fsl-coral border-fsl-coral"
+      }`}
+    >
       <div
-        className="flex whitespace-nowrap animate-[marquee_25s_linear_infinite]"
+        className="flex whitespace-nowrap animate-[marquee_18s_linear_infinite]"
         style={{ width: "max-content" }}
       >
-        {doubled.map((item, i) => (
-          <span
-            key={i}
-            className={`font-barlow text-[13px] md:text-[15px] font-bold uppercase tracking-[0.3em] mx-4 md:mx-6 ${
-              item === "★"
-                ? dark ? "text-fsl-coral" : "text-white/50"
-                : dark ? "text-white/70" : "text-white"
-            }`}
-          >
-            {item}
+        {tripled.map((item, i) => (
+          <span key={i} className="inline-flex items-center">
+            {/* Sport-colored dot separator */}
+            <span
+              className="inline-block w-[6px] h-[6px] rounded-full mx-5 md:mx-7 shrink-0"
+              style={{
+                backgroundColor: dark ? item.color : "rgba(255,255,255,0.35)",
+              }}
+            />
+            <span
+              className={`font-barlow text-[14px] md:text-[17px] lg:text-[19px] font-black uppercase tracking-[0.2em] ${
+                dark ? "text-white/80" : "text-white"
+              }`}
+            >
+              {item.text}
+            </span>
           </span>
         ))}
       </div>

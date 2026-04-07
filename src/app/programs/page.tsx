@@ -13,89 +13,110 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import Image from "next/image";
 import Link from "next/link";
 
-const sportPrograms = [
+/* ── DATA ── */
+const sports = [
   {
     title: "Basketball",
+    tag: "01",
     desc: "Fundamental skill development, structured training, and game knowledge that builds discipline and character.",
-    image: "/images/sports/youth-basketball.jpg",
+    image: "/images/urban/basketball-rim.jpg",
     color: "#0052FE",
     features: ["5v5 & 3v3 leagues", "Position-specific training", "Summer camps & clinics"],
   },
   {
     title: "Football",
+    tag: "02",
     desc: "Learning the structure of the game — positioning, reads, and discipline that builds character beyond the field.",
-    image: "/images/sports/youth-football.jpg",
+    image: "/images/urban/football-play.jpg",
     color: "#FF7900",
-    features: ["Flag football (ages 8-12)", "Full-contact (ages 13-18)", "Skills combine events"],
+    features: ["Flag football (ages 8–12)", "Full-contact (ages 13–18)", "Skills combine events"],
   },
   {
     title: "Soccer",
+    tag: "03",
     desc: "Building from the ground up — ball control, spacing, and team structure that teaches communication and accountability.",
-    image: "/images/sports/youth-soccer-2.jpg",
+    image: "/images/urban/soccer-ball.jpg",
     color: "#00D17E",
     features: ["Co-ed recreational leagues", "Development travel teams", "Goalkeeper training"],
   },
   {
     title: "Golf",
-    desc: "The fundamentals of patience, precision, and process — a sport where the structure of practice directly mirrors the structure of success.",
-    image: "/images/sports/youth-golf.jpg",
+    tag: "04",
+    desc: "The fundamentals of patience, precision, and process — where the structure of practice directly mirrors success.",
+    image: "/images/sports/golf-swing.jpg",
     color: "#E9BB00",
     features: ["Beginner to intermediate", "On-course playing lessons", "PGA-trained instructors"],
   },
   {
     title: "Track & Field",
-    desc: "Sprint, distance, relay, and field event training. Building speed, endurance, and disciplined habits through structured coaching.",
-    image: "/images/sports/youth-track.jpg",
+    tag: "05",
+    desc: "Sprint, distance, relay, and field event training. Building speed, endurance, and disciplined habits.",
+    image: "/images/urban/hero-track-race.jpg",
     color: "#F4767C",
     features: ["Sprint & hurdle training", "Distance & cross country", "Field events (jump, throw)"],
   },
 ];
 
-const techPrograms = [
+const tech = [
   {
     title: "AI & Machine Learning",
     subtitle: "Powered by Phazur Labs",
-    desc: "Hands-on AI classes teaching youth to build, train, and deploy machine learning models. From computer vision for sports analytics to natural language processing — real-world AI skills for the next generation.",
+    desc: "Hands-on AI classes teaching youth to build, train, and deploy machine learning models — real-world skills for the next generation.",
     image: "/images/action/teens-collab.jpg",
     color: "#0052FE",
-    features: ["Intro to AI & prompt engineering", "Sports performance analytics with ML", "Build your own AI project", "Phazur Labs certified curriculum"],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6"><path d="M12 2a4 4 0 014 4v1a1 1 0 001 1h1a4 4 0 010 8h-1a1 1 0 00-1 1v1a4 4 0 01-8 0v-1a1 1 0 00-1-1H6a4 4 0 010-8h1a1 1 0 001-1V6a4 4 0 014-4z" /><circle cx="12" cy="12" r="2" /></svg>
+    ),
+    features: ["Intro to AI & prompt engineering", "Sports performance analytics", "Build your own AI project", "Phazur Labs certified"],
   },
   {
-    title: "VR/AR Sports Training",
+    title: "VR/AR Training",
     subtitle: "Immersive Performance Lab",
-    desc: "Step into virtual reality to train reaction time, spatial awareness, and game-day decision-making. AR overlays for real-time form analysis on the field.",
-    image: "/images/action/teens-learning.jpg",
+    desc: "Step into virtual reality to train reaction time, spatial awareness, and game-day decision-making.",
+    image: "/images/sports/vr-headset.jpg",
     color: "#FF7900",
-    features: ["VR game simulation drills", "AR form analysis & correction", "Reaction time training", "Virtual scouting experience"],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6"><rect x="2" y="7" width="20" height="10" rx="3" /><circle cx="8" cy="12" r="2" /><circle cx="16" cy="12" r="2" /><path d="M10 12h4" /></svg>
+    ),
+    features: ["VR game simulation drills", "AR form analysis", "Reaction time training", "Virtual scouting"],
   },
   {
     title: "Coding & Robotics",
     subtitle: "STEM Integration",
-    desc: "Learn to code through sports — build apps that track stats, program robots for field maintenance, and create data dashboards for team performance.",
+    desc: "Learn to code through sports — build apps that track stats, program robots, and create data dashboards.",
     image: "/images/action/coach-training.jpg",
     color: "#00D17E",
-    features: ["Python & JavaScript basics", "Sports stats app development", "Arduino robotics projects", "Data visualization dashboards"],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6" /></svg>
+    ),
+    features: ["Python & JavaScript", "Sports stats apps", "Arduino robotics", "Data visualization"],
   },
 ];
 
-const wellnessPrograms = [
+const wellness = [
   {
     title: "Sports Psychology",
-    desc: "Mindset training, visualization, stress management, and confidence building. Access to licensed sports psychologists.",
+    desc: "Mindset training, visualization, stress management, and confidence building with licensed professionals.",
     image: "/images/action/teens-stretching.jpg",
     color: "#0052FE",
+    stat: "93%",
+    statLabel: "improved focus",
   },
   {
-    title: "Financial Responsibility",
-    desc: "Interactive workshops on budgeting, saving, investing, and entrepreneurship. Teaching young athletes to win both on the field and in life.",
+    title: "Financial Literacy",
+    desc: "Interactive workshops on budgeting, saving, investing, and entrepreneurship — winning in life.",
     image: "/images/action/teens-workshop.jpg",
     color: "#00D17E",
+    stat: "500+",
+    statLabel: "youth trained",
   },
   {
     title: "Recovery & Nutrition",
-    desc: "Injury prevention, nutrition guidance, hydration science, and recovery protocols. Keeping athletes healthy, strong, and game-ready.",
-    image: "/images/action/teens-stretching.jpg",
+    desc: "Injury prevention, nutrition guidance, hydration science, and recovery protocols.",
+    image: "/images/sports/wellness-yoga.jpg",
     color: "#FF7900",
+    stat: "12",
+    statLabel: "week programs",
   },
 ];
 
@@ -104,62 +125,192 @@ export default function ProgramsPage() {
     <>
       <SmoothScroll />
       <NikeHeader />
-      <main>
-        {/* Hero */}
-        <section className="relative h-[60vh] min-h-[450px] overflow-hidden bg-black flex items-end">
-          <Image src="/images/sports/youth-track.jpg" alt="Youth track and field" fill className="object-cover" style={{ filter: "contrast(1.1) brightness(0.3) saturate(0.5)" }} priority />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 z-[1]" />
-          <div className="relative z-[2] px-6 md:px-16 lg:px-24 pb-16 md:pb-24 max-w-[1600px] mx-auto w-full">
-            <p className="font-redhat text-[11px] uppercase tracking-[0.4em] text-fsl-coral/80 font-medium flex items-center gap-3 mb-4">
-              <span className="w-10 h-[1px] bg-fsl-coral/60" />What We Do
-            </p>
-            <h1 className="font-barlow text-[48px] sm:text-[72px] md:text-[100px] lg:text-[120px] font-bold text-white uppercase leading-[0.88] tracking-[-0.025em]">
-              Our<br /><span className="text-fsl-coral">Programs</span>
-            </h1>
-            <p className="font-redhat text-[14px] text-white/40 font-normal mt-6 max-w-[450px] leading-[1.8]">
-              Five core sports. Cutting-edge technology. Mental wellness. Financial literacy. Everything a young athlete needs to lead — on and off the field.
-            </p>
+      <main className="overflow-hidden">
+
+        {/* ═══════════════════════════════════════
+            ══  HERO — full-bleed, diagonal cut  ══
+            ═══════════════════════════════════════ */}
+        <section className="relative h-[85vh] min-h-[600px] max-h-[1000px] bg-black flex items-end overflow-hidden">
+          <Image
+            src="/images/urban/hero-track-race.jpg"
+            alt="Athletes racing on track"
+            fill
+            className="object-cover"
+            style={{ filter: "contrast(1.2) brightness(0.2) saturate(0.3)" }}
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent" />
+
+          {/* Big number watermark */}
+          <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-[10%] font-barlow text-[30vw] font-bold text-white/[0.02] leading-none select-none pointer-events-none">
+            08
+          </div>
+
+          {/* Diagonal sport color strip */}
+          <div className="absolute bottom-0 left-0 right-0 h-[120px] overflow-hidden">
+            <div className="absolute inset-0 flex">
+              {["#0052FE", "#FF7900", "#00D17E", "#E9BB00", "#F4767C"].map((c, i) => (
+                <div
+                  key={c}
+                  className="flex-1 origin-bottom-left"
+                  style={{
+                    background: c,
+                    clipPath: "polygon(0 60%, 100% 30%, 100% 100%, 0 100%)",
+                    opacity: 0.15 + i * 0.03,
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Content */}
+          <div className="relative z-10 px-6 md:px-16 lg:px-24 pb-20 md:pb-28 max-w-[1800px] mx-auto w-full">
+            <ScrollReveal animation="fade-up">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex gap-1">
+                  {["#0052FE", "#FF7900", "#00D17E", "#E9BB00", "#F4767C"].map((c) => (
+                    <div key={c} className="w-2 h-2 rounded-full" style={{ backgroundColor: c }} />
+                  ))}
+                </div>
+                <span className="font-redhat text-[11px] uppercase tracking-[0.4em] text-white/40 font-medium">
+                  8 Programs &middot; 5 Sports
+                </span>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal animation="fade-up" delay={100}>
+              <h1 className="font-barlow text-[52px] sm:text-[80px] md:text-[110px] lg:text-[140px] xl:text-[160px] font-bold text-white uppercase leading-[0.85] tracking-[-0.03em]">
+                Our<br />
+                <span className="relative">
+                  Programs
+                  <span className="absolute -bottom-2 left-0 w-full h-[4px] bg-fsl-coral" />
+                </span>
+              </h1>
+            </ScrollReveal>
+
+            <ScrollReveal animation="fade-up" delay={200}>
+              <p className="font-redhat text-[15px] sm:text-[16px] text-white/35 font-normal mt-8 max-w-[480px] leading-[1.85]">
+                Five core sports. Cutting-edge technology. Mental wellness. Financial literacy. Everything a young leader needs — on and off the field.
+              </p>
+            </ScrollReveal>
+          </div>
+
+          {/* Scroll cue */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+            <span className="font-redhat text-[9px] uppercase tracking-[0.4em] text-white/15">Explore</span>
+            <div className="w-[1px] h-8 bg-white/10 relative overflow-hidden">
+              <div className="w-full h-3 bg-fsl-coral/50 absolute animate-[slideDown_2s_infinite]" />
+            </div>
           </div>
         </section>
 
-        {/* ═══ SPORTS SECTION ═══ */}
-        <section className="py-24 md:py-36">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
+        {/* ═══════════════════════════════════════
+            ══  CORE SPORTS — editorial cards    ══
+            ═══════════════════════════════════════ */}
+        <section className="py-20 sm:py-28 md:py-40 bg-white relative">
+          {/* Section label */}
+          <div className="absolute top-8 sm:top-12 left-6 md:left-16 lg:left-24">
+            <span className="font-redhat text-[10px] uppercase tracking-[0.35em] text-fsl-dark/20 font-medium">
+              Core Sports
+            </span>
+          </div>
+
+          <div className="max-w-[1600px] mx-auto px-6 md:px-16 lg:px-24">
             <ScrollReveal animation="fade-up">
-              <p className="font-redhat text-[11px] uppercase tracking-[0.4em] text-fsl-coral font-medium mb-5 flex items-center gap-3">
-                <span className="w-10 h-[1px] bg-fsl-coral/50" />Core Sports
-              </p>
-              <h2 className="font-barlow text-[36px] md:text-[52px] font-bold text-fsl-dark uppercase leading-[0.88] mb-4">
-                Five Sports.<br />One Mission.
-              </h2>
-              <p className="font-redhat text-[15px] text-[#888] font-normal leading-[1.7] mb-16 max-w-[500px]">
-                Professional coaching in golf, football, basketball, soccer, and track & field — developing strong fundamentals that transition from the field into life.
-              </p>
+              <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 md:mb-24">
+                <div>
+                  <h2 className="font-barlow text-[42px] sm:text-[56px] md:text-[72px] font-bold text-fsl-dark uppercase leading-[0.88] tracking-[-0.02em]">
+                    Five Sports.<br />
+                    <span className="text-fsl-coral">One Mission.</span>
+                  </h2>
+                </div>
+                <p className="font-redhat text-[14px] text-[#999] font-normal leading-[1.8] mt-6 md:mt-0 max-w-[380px] md:text-right">
+                  Professional coaching developing fundamentals that transition from the field into every area of life.
+                </p>
+              </div>
             </ScrollReveal>
 
-            <div className="space-y-6">
-              {sportPrograms.map((p, i) => (
-                <ScrollReveal key={p.title} animation="fade-up" delay={i * 60}>
-                  <div className="group grid grid-cols-1 lg:grid-cols-12 gap-0 bg-[#f8f8f8] overflow-hidden hover:bg-[#f3f3f3] transition-colors duration-500">
-                    <div className={`lg:col-span-5 relative aspect-[16/10] lg:aspect-auto overflow-hidden ${i % 2 === 1 ? "lg:order-2" : ""}`}>
-                      <Image src={p.image} alt={p.title} fill className="object-cover transition-transform duration-[1.5s] group-hover:scale-[1.04]" style={{ filter: "saturate(0.8) contrast(1.05)" }} />
+            {/* Sport cards — alternating layout with big numbers */}
+            <div className="space-y-4 sm:space-y-6">
+              {sports.map((s, i) => (
+                <ScrollReveal key={s.title} animation="fade-up" delay={i * 40}>
+                  <div className="group relative grid grid-cols-1 lg:grid-cols-2 gap-0 bg-[#fafafa] hover:bg-[#f5f5f5] transition-all duration-700 overflow-hidden">
+                    {/* Image side */}
+                    <div className={`relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto lg:min-h-[420px] overflow-hidden ${i % 2 === 1 ? "lg:order-2" : ""}`}>
+                      <Image
+                        src={s.image}
+                        alt={s.title}
+                        fill
+                        className="object-cover transition-transform duration-[2s] ease-out group-hover:scale-[1.06]"
+                        style={{ filter: "saturate(0.85) contrast(1.08)" }}
+                      />
+                      {/* Color overlay on hover */}
+                      <div
+                        className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700 mix-blend-multiply"
+                        style={{ backgroundColor: s.color }}
+                      />
+                      {/* Number overlay */}
+                      <div className="absolute top-4 sm:top-6 left-4 sm:left-8">
+                        <span
+                          className="font-barlow text-[64px] sm:text-[80px] font-bold leading-none"
+                          style={{ color: s.color, opacity: 0.25 }}
+                        >
+                          {s.tag}
+                        </span>
+                      </div>
+                      {/* Sport color bar at bottom */}
+                      <div
+                        className="absolute bottom-0 left-0 h-[3px] w-0 group-hover:w-full transition-all duration-1000"
+                        style={{ backgroundColor: s.color }}
+                      />
                     </div>
-                    <div className={`lg:col-span-7 p-8 md:p-12 lg:p-16 flex flex-col justify-center ${i % 2 === 1 ? "lg:order-1" : ""}`}>
-                      <div className="w-10 h-[3px] mb-6 transition-all duration-700 group-hover:w-16" style={{ backgroundColor: p.color }} />
-                      <h3 className="font-barlow text-[28px] md:text-[36px] font-bold text-fsl-dark uppercase leading-[1] mb-4">{p.title}</h3>
-                      <p className="font-redhat text-[15px] text-[#777] font-normal leading-[1.8] mb-6 max-w-[440px]">{p.desc}</p>
-                      <ul className="space-y-2 mb-8">
-                        {p.features.map((f) => (
-                          <li key={f} className="font-redhat text-[13px] text-[#555] flex items-center gap-3">
-                            <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: p.color }} />
-                            {f}
-                          </li>
-                        ))}
-                      </ul>
-                      <Link href="/join" className="group/link inline-flex items-center gap-2 font-redhat text-[11px] font-semibold uppercase tracking-[0.2em] text-fsl-coral hover:gap-3 transition-all duration-300">
-                        Join Program
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-                      </Link>
+
+                    {/* Content side */}
+                    <div className={`relative p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col justify-center ${i % 2 === 1 ? "lg:order-1" : ""}`}>
+                      {/* Background number */}
+                      <span className="absolute top-4 right-4 sm:top-8 sm:right-8 font-barlow text-[100px] sm:text-[140px] font-bold text-black/[0.02] leading-none select-none pointer-events-none">
+                        {s.tag}
+                      </span>
+
+                      <div className="relative z-10">
+                        <div
+                          className="w-10 h-[3px] mb-5 sm:mb-6 transition-all duration-700 group-hover:w-20"
+                          style={{ backgroundColor: s.color }}
+                        />
+                        <h3 className="font-barlow text-[32px] sm:text-[40px] md:text-[48px] font-bold text-fsl-dark uppercase leading-[0.9] mb-4 sm:mb-5 tracking-[-0.01em]">
+                          {s.title}
+                        </h3>
+                        <p className="font-redhat text-[14px] sm:text-[15px] text-[#777] font-normal leading-[1.8] mb-6 sm:mb-8 max-w-[440px]">
+                          {s.desc}
+                        </p>
+
+                        {/* Features */}
+                        <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8">
+                          {s.features.map((f) => (
+                            <span
+                              key={f}
+                              className="font-redhat text-[11px] sm:text-[12px] px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border font-medium uppercase tracking-wide"
+                              style={{
+                                borderColor: `${s.color}30`,
+                                color: s.color,
+                                backgroundColor: `${s.color}08`,
+                              }}
+                            >
+                              {f}
+                            </span>
+                          ))}
+                        </div>
+
+                        <Link
+                          href="/join"
+                          className="inline-flex items-center gap-3 font-redhat text-[11px] font-bold uppercase tracking-[0.2em] text-fsl-dark group-hover:text-fsl-coral transition-colors duration-500"
+                        >
+                          <span className="w-8 h-[1.5px] bg-current transition-all duration-500 group-hover:w-12" />
+                          Join Program
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="transition-transform duration-300 group-hover:translate-x-1"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </ScrollReveal>
@@ -168,42 +319,95 @@ export default function ProgramsPage() {
           </div>
         </section>
 
-        {/* ═══ TECHNOLOGY SECTION ═══ */}
-        <section className="py-24 md:py-36 bg-[#0a0a0a] text-white">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
+        {/* ═══════════════════════════════════════
+            ══  TECH — dark section, bold grid    ══
+            ═══════════════════════════════════════ */}
+        <section className="relative py-20 sm:py-28 md:py-40 bg-[#080810] text-white overflow-hidden">
+          {/* Background grid texture */}
+          <div
+            className="absolute inset-0 opacity-[0.03]"
+            style={{
+              backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
+              backgroundSize: "60px 60px",
+            }}
+          />
+          {/* Ambient glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-fsl-blue/5 blur-[200px] pointer-events-none" />
+
+          <div className="relative z-10 max-w-[1600px] mx-auto px-6 md:px-16 lg:px-24">
             <ScrollReveal animation="fade-up">
-              <p className="font-redhat text-[11px] uppercase tracking-[0.4em] text-fsl-coral font-medium mb-5 flex items-center gap-3">
-                <span className="w-10 h-[1px] bg-fsl-coral/50" />Innovation Lab
-              </p>
-              <h2 className="font-barlow text-[36px] md:text-[52px] font-bold text-white uppercase leading-[0.88] mb-4">
-                Technology<br />Programs
-              </h2>
-              <p className="font-redhat text-[15px] text-white/40 font-normal leading-[1.7] mb-16 max-w-[500px]">
-                Powered by partnerships with Phazur Labs and industry leaders — bringing AI, VR/AR, and coding to the next generation of athletes.
-              </p>
+              <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 md:mb-24">
+                <div>
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-2 h-2 rounded-full bg-fsl-coral animate-pulse" />
+                    <span className="font-redhat text-[11px] uppercase tracking-[0.4em] text-fsl-coral font-medium">Innovation Lab</span>
+                  </div>
+                  <h2 className="font-barlow text-[42px] sm:text-[56px] md:text-[72px] font-bold text-white uppercase leading-[0.88] tracking-[-0.02em]">
+                    Technology<br />
+                    <span className="text-fsl-coral">Programs</span>
+                  </h2>
+                </div>
+                <p className="font-redhat text-[14px] text-white/30 font-normal leading-[1.8] mt-6 md:mt-0 max-w-[350px] md:text-right">
+                  Powered by Phazur Labs — AI, VR/AR, and coding for the next generation of athletes.
+                </p>
+              </div>
             </ScrollReveal>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {techPrograms.map((p, i) => (
-                <ScrollReveal key={p.title} animation="fade-up" delay={i * 100}>
-                  <div className="group bg-white/[0.04] border border-white/[0.08] overflow-hidden hover:bg-white/[0.06] transition-all duration-500">
+            {/* Tech cards — stacked with glass effect */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
+              {tech.map((t, i) => (
+                <ScrollReveal key={t.title} animation="fade-up" delay={i * 120}>
+                  <div className="group relative bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm hover:bg-white/[0.06] hover:border-white/[0.12] transition-all duration-700 overflow-hidden h-full">
+                    {/* Image */}
                     <div className="relative aspect-[16/10] overflow-hidden">
-                      <Image src={p.image} alt={p.title} fill className="object-cover transition-transform duration-[1.5s] group-hover:scale-[1.04]" style={{ filter: "saturate(0.7) contrast(1.1) brightness(0.8)" }} />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
+                      <Image
+                        src={t.image}
+                        alt={t.title}
+                        fill
+                        className="object-cover transition-transform duration-[2s] group-hover:scale-[1.06]"
+                        style={{ filter: "saturate(0.6) contrast(1.15) brightness(0.7)" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#080810] via-[#080810]/40 to-transparent" />
+                      {/* Icon */}
+                      <div
+                        className="absolute top-4 sm:top-6 right-4 sm:right-6 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center border transition-all duration-500 group-hover:scale-110"
+                        style={{
+                          borderColor: `${t.color}40`,
+                          backgroundColor: `${t.color}15`,
+                          color: t.color,
+                        }}
+                      >
+                        {t.icon}
+                      </div>
                     </div>
-                    <div className="p-8">
-                      <div className="w-8 h-[3px] mb-5 transition-all duration-700 group-hover:w-14" style={{ backgroundColor: p.color }} />
-                      <p className="font-redhat text-[10px] uppercase tracking-[0.3em] text-fsl-coral/70 font-medium mb-2">{p.subtitle}</p>
-                      <h3 className="font-barlow text-[24px] font-bold text-white uppercase leading-tight mb-3">{p.title}</h3>
-                      <p className="font-redhat text-[14px] text-white/40 font-normal leading-[1.7] mb-5">{p.desc}</p>
-                      <ul className="space-y-2">
-                        {p.features.map((f) => (
-                          <li key={f} className="font-redhat text-[12px] text-white/50 flex items-center gap-3">
-                            <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: p.color }} />
-                            {f}
-                          </li>
+
+                    {/* Content */}
+                    <div className="p-6 sm:p-8">
+                      <span className="font-redhat text-[10px] uppercase tracking-[0.3em] font-semibold mb-3 block" style={{ color: t.color }}>
+                        {t.subtitle}
+                      </span>
+                      <h3 className="font-barlow text-[24px] sm:text-[28px] font-bold text-white uppercase leading-tight mb-3 tracking-[-0.01em]">
+                        {t.title}
+                      </h3>
+                      <p className="font-redhat text-[13px] sm:text-[14px] text-white/35 font-normal leading-[1.75] mb-6">
+                        {t.desc}
+                      </p>
+
+                      {/* Features */}
+                      <div className="space-y-2.5">
+                        {t.features.map((f) => (
+                          <div key={f} className="flex items-center gap-3">
+                            <div className="w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: t.color }} />
+                            <span className="font-redhat text-[12px] text-white/45">{f}</span>
+                          </div>
                         ))}
-                      </ul>
+                      </div>
+
+                      {/* Bottom accent */}
+                      <div
+                        className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-1000"
+                        style={{ backgroundColor: t.color }}
+                      />
                     </div>
                   </div>
                 </ScrollReveal>
@@ -212,34 +416,113 @@ export default function ProgramsPage() {
           </div>
         </section>
 
-        {/* ═══ WELLNESS & LIFE SKILLS ═══ */}
-        <section className="py-24 md:py-36">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
+        {/* ═══════════════════════════════════════
+            ══  WELLNESS — magazine editorial     ══
+            ═══════════════════════════════════════ */}
+        <section className="py-20 sm:py-28 md:py-40 bg-[#fafafa] relative">
+          <div className="max-w-[1600px] mx-auto px-6 md:px-16 lg:px-24">
             <ScrollReveal animation="fade-up">
-              <p className="font-redhat text-[11px] uppercase tracking-[0.4em] text-fsl-coral font-medium mb-5 flex items-center gap-3">
-                <span className="w-10 h-[1px] bg-fsl-coral/50" />Beyond the Field
-              </p>
-              <h2 className="font-barlow text-[36px] md:text-[52px] font-bold text-fsl-dark uppercase leading-[0.88] mb-4">
-                Wellness &<br />Life Skills
-              </h2>
-              <p className="font-redhat text-[15px] text-[#888] font-normal leading-[1.7] mb-16 max-w-[500px]">
-                The structure of sports mirrors the structure of life. Discipline, preparation, and fundamentals — on and off the field.
-              </p>
+              <div className="text-center mb-16 md:mb-24">
+                <span className="font-redhat text-[11px] uppercase tracking-[0.4em] text-fsl-coral font-medium mb-5 inline-flex items-center gap-3">
+                  <span className="w-6 h-[1px] bg-fsl-coral/50" />
+                  Beyond the Field
+                  <span className="w-6 h-[1px] bg-fsl-coral/50" />
+                </span>
+                <h2 className="font-barlow text-[42px] sm:text-[56px] md:text-[72px] font-bold text-fsl-dark uppercase leading-[0.88] tracking-[-0.02em] mt-5">
+                  Wellness &<br />Life Skills
+                </h2>
+                <p className="font-redhat text-[14px] sm:text-[15px] text-[#999] font-normal leading-[1.8] mt-6 max-w-[450px] mx-auto">
+                  The structure of sports mirrors the structure of life. Discipline, preparation, and fundamentals — on and off the field.
+                </p>
+              </div>
             </ScrollReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {wellnessPrograms.map((p, i) => (
-                <ScrollReveal key={p.title} animation="fade-up" delay={i * 100}>
-                  <div className="group cursor-default">
-                    <div className="relative aspect-[4/3] overflow-hidden mb-6">
-                      <Image src={p.image} alt={p.title} fill className="object-cover transition-transform duration-[1.5s] group-hover:scale-[1.04]" style={{ filter: "saturate(0.8) contrast(1.05)" }} />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+              {wellness.map((w, i) => (
+                <ScrollReveal key={w.title} animation="fade-up" delay={i * 100}>
+                  <div className="group bg-white hover:shadow-xl transition-all duration-700 overflow-hidden">
+                    {/* Image with stat overlay */}
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      <Image
+                        src={w.image}
+                        alt={w.title}
+                        fill
+                        className="object-cover transition-transform duration-[2s] group-hover:scale-[1.06]"
+                        style={{ filter: "saturate(0.8) contrast(1.05)" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                      {/* Stat badge */}
+                      <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6">
+                        <span className="font-barlow text-[40px] sm:text-[48px] font-bold text-white leading-none tracking-tight">
+                          {w.stat}
+                        </span>
+                        <span className="block font-redhat text-[10px] uppercase tracking-[0.2em] text-white/60 mt-1">
+                          {w.statLabel}
+                        </span>
+                      </div>
                     </div>
-                    <div className="w-8 h-[3px] mb-4 transition-all duration-700 group-hover:w-14" style={{ backgroundColor: p.color }} />
-                    <h3 className="font-barlow text-[24px] md:text-[28px] font-bold text-fsl-dark uppercase leading-tight mb-3">{p.title}</h3>
-                    <p className="font-redhat text-[14px] text-[#888] font-normal leading-[1.7]">{p.desc}</p>
+
+                    {/* Content */}
+                    <div className="p-6 sm:p-8">
+                      <div className="w-8 h-[3px] mb-4 sm:mb-5 transition-all duration-700 group-hover:w-14" style={{ backgroundColor: w.color }} />
+                      <h3 className="font-barlow text-[22px] sm:text-[26px] font-bold text-fsl-dark uppercase leading-tight mb-3 tracking-[-0.01em]">
+                        {w.title}
+                      </h3>
+                      <p className="font-redhat text-[13px] sm:text-[14px] text-[#888] font-normal leading-[1.75]">
+                        {w.desc}
+                      </p>
+                    </div>
                   </div>
                 </ScrollReveal>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════════════════════════════════
+            ══  JOIN STRIP — bold CTA bar         ══
+            ═══════════════════════════════════════ */}
+        <section className="relative py-16 sm:py-20 bg-fsl-dark overflow-hidden">
+          {/* Diagonal stripes */}
+          <div className="absolute inset-0 opacity-10">
+            {[0, 1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="absolute h-full w-[200px]"
+                style={{
+                  left: `${i * 25}%`,
+                  background: ["#0052FE", "#FF7900", "#00D17E", "#E9BB00", "#F4767C"][i],
+                  transform: "skewX(-15deg)",
+                  opacity: 0.3,
+                }}
+              />
+            ))}
+          </div>
+
+          <div className="relative z-10 max-w-[1600px] mx-auto px-6 md:px-16 lg:px-24 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div>
+              <h3 className="font-barlow text-[32px] sm:text-[40px] md:text-[48px] font-bold text-white uppercase leading-[0.9] tracking-[-0.02em]">
+                Ready to <span className="text-fsl-coral">play?</span>
+              </h3>
+              <p className="font-redhat text-[13px] sm:text-[14px] text-white/40 mt-3 max-w-[400px]">
+                Join 500+ young athletes building fundamentals that last a lifetime.
+              </p>
+            </div>
+            <div className="flex gap-3 sm:gap-4">
+              <Link
+                href="/join"
+                className="bg-fsl-coral text-white px-6 sm:px-10 py-3 sm:py-4 rounded-full font-redhat text-[12px] sm:text-[13px] font-semibold uppercase tracking-[0.15em] hover:bg-white hover:text-fsl-dark transition-all duration-500"
+              >
+                Join Now
+              </Link>
+              <a
+                href="https://www.zeffy.com/en-US/donation-form/donate-to-make-a-difference-19257"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-white/25 text-white/70 px-6 sm:px-10 py-3 sm:py-4 rounded-full font-redhat text-[12px] sm:text-[13px] font-medium uppercase tracking-[0.15em] hover:border-white hover:text-white transition-all duration-500"
+              >
+                Donate
+              </a>
             </div>
           </div>
         </section>
