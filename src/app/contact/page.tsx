@@ -9,6 +9,7 @@ import { NikeHeader } from "@/components/nike/NikeHeader";
 import { NikeFooter } from "@/components/nike/NikeFooter";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { ContactForm } from "@/components/forms/ContactForm";
 import Image from "next/image";
 
 const contactCards = [
@@ -178,56 +179,7 @@ export default function ContactPage() {
                       Fill out the form and we&apos;ll get back to you within 48 hours.
                     </p>
 
-                    <form className="space-y-8">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                          <label htmlFor="contact-name" className="block font-redhat text-[11px] font-bold uppercase tracking-[0.2em] text-fsl-dark mb-3">Name</label>
-                          <input
-                            id="contact-name"
-                            type="text"
-                            placeholder="Your name"
-                            className="w-full bg-white border-0 border-b-[3px] border-black/[0.06] px-4 py-4 font-redhat text-[15px] text-fsl-dark placeholder:text-[#ccc] outline-none focus:border-fsl-coral transition-colors duration-500"
-                          />
-                        </div>
-                        <div>
-                          <label htmlFor="contact-email" className="block font-redhat text-[11px] font-bold uppercase tracking-[0.2em] text-fsl-dark mb-3">Email</label>
-                          <input
-                            id="contact-email"
-                            type="email"
-                            placeholder="you@email.com"
-                            className="w-full bg-white border-0 border-b-[3px] border-black/[0.06] px-4 py-4 font-redhat text-[15px] text-fsl-dark placeholder:text-[#ccc] outline-none focus:border-fsl-coral transition-colors duration-500"
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <label htmlFor="contact-subject" className="block font-redhat text-[11px] font-bold uppercase tracking-[0.2em] text-fsl-dark mb-3">Subject</label>
-                        <input
-                          id="contact-subject"
-                          type="text"
-                          placeholder="How can we help?"
-                          className="w-full bg-white border-0 border-b-[3px] border-black/[0.06] px-4 py-4 font-redhat text-[15px] text-fsl-dark placeholder:text-[#ccc] outline-none focus:border-fsl-coral transition-colors duration-500"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="contact-message" className="block font-redhat text-[11px] font-bold uppercase tracking-[0.2em] text-fsl-dark mb-3">Message</label>
-                        <textarea
-                          id="contact-message"
-                          placeholder="Tell us what's on your mind..."
-                          rows={5}
-                          className="w-full bg-white border-0 border-b-[3px] border-black/[0.06] px-4 py-4 font-redhat text-[15px] text-fsl-dark placeholder:text-[#ccc] outline-none focus:border-fsl-coral transition-colors duration-500 resize-none"
-                        />
-                      </div>
-                      <button
-                        type="submit"
-                        className="group relative bg-fsl-dark text-white px-14 py-5 font-redhat text-[13px] font-bold uppercase tracking-[0.2em] overflow-hidden transition-shadow duration-500 hover:shadow-[0_0_50px_rgba(244,118,124,0.15)]"
-                      >
-                        <span className="relative z-10 flex items-center gap-3">
-                          Send Message
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover:translate-x-1 transition-transform duration-300"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-                        </span>
-                        <div className="absolute inset-0 bg-fsl-coral scale-x-0 group-hover:scale-x-100 transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] origin-left" />
-                      </button>
-                    </form>
+                    <ContactForm />
                   </div>
                 </ScrollReveal>
               </div>

@@ -10,6 +10,7 @@ import { NikeFooter } from "@/components/nike/NikeFooter";
 import { NikeCTA } from "@/components/nike/NikeCTA";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { JoinForm } from "@/components/forms/JoinForm";
 import Image from "next/image";
 
 const benefits = [
@@ -226,64 +227,7 @@ export default function JoinPage() {
                       All fields are required unless marked optional.
                     </p>
 
-                    <form className="space-y-7">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
-                        <div>
-                          <label htmlFor="join-fname" className="block font-redhat text-[11px] font-bold uppercase tracking-[0.2em] text-white/50 mb-3">First Name</label>
-                          <input type="text" id="join-fname" placeholder="John" className="w-full bg-white/[0.04] border border-white/[0.08] px-5 py-4 font-redhat text-[15px] text-white placeholder:text-white/15 outline-none focus:border-fsl-coral transition-colors duration-500" />
-                        </div>
-                        <div>
-                          <label htmlFor="join-lname" className="block font-redhat text-[11px] font-bold uppercase tracking-[0.2em] text-white/50 mb-3">Last Name</label>
-                          <input type="text" id="join-lname" placeholder="Doe" className="w-full bg-white/[0.04] border border-white/[0.08] px-5 py-4 font-redhat text-[15px] text-white placeholder:text-white/15 outline-none focus:border-fsl-coral transition-colors duration-500" />
-                        </div>
-                      </div>
-                      <div>
-                        <label htmlFor="join-email" className="block font-redhat text-[11px] font-bold uppercase tracking-[0.2em] text-white/50 mb-3">Email</label>
-                        <input type="email" id="join-email" placeholder="john@example.com" className="w-full bg-white/[0.04] border border-white/[0.08] px-5 py-4 font-redhat text-[15px] text-white placeholder:text-white/15 outline-none focus:border-fsl-coral transition-colors duration-500" />
-                      </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
-                        <div>
-                          <label htmlFor="join-path" className="block font-redhat text-[11px] font-bold uppercase tracking-[0.2em] text-white/50 mb-3">Your Path</label>
-                          <select id="join-path" className="w-full bg-white/[0.04] border border-white/[0.08] px-5 py-4 font-redhat text-[15px] text-white/30 outline-none focus:border-fsl-coral transition-colors duration-500 appearance-none">
-                            <option value="">Select</option>
-                            <option value="volunteer">Volunteer</option>
-                            <option value="partner">Partner</option>
-                            <option value="donor">Donor</option>
-                            <option value="participant">Participant</option>
-                          </select>
-                        </div>
-                        <div>
-                          <label htmlFor="join-sport" className="block font-redhat text-[11px] font-bold uppercase tracking-[0.2em] text-white/50 mb-3">Sport Interest</label>
-                          <select id="join-sport" className="w-full bg-white/[0.04] border border-white/[0.08] px-5 py-4 font-redhat text-[15px] text-white/30 outline-none focus:border-fsl-coral transition-colors duration-500 appearance-none">
-                            <option value="">Select a sport</option>
-                            <option value="golf">Golf</option>
-                            <option value="football">Football</option>
-                            <option value="basketball">Basketball</option>
-                            <option value="soccer">Soccer</option>
-                            <option value="track">Track &amp; Field</option>
-                            <option value="multiple">Multiple Sports</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div>
-                        <label htmlFor="join-msg" className="block font-redhat text-[11px] font-bold uppercase tracking-[0.2em] text-white/50 mb-3">Message <span className="text-white/15">(Optional)</span></label>
-                        <textarea id="join-msg" placeholder="Tell us about your interest..." rows={4} className="w-full bg-white/[0.04] border border-white/[0.08] px-5 py-4 font-redhat text-[15px] text-white placeholder:text-white/15 outline-none focus:border-fsl-coral transition-colors duration-500 resize-none" />
-                      </div>
-                      <button
-                        type="submit"
-                        className="group relative w-full md:w-auto bg-fsl-coral text-white px-14 py-5 font-redhat text-[13px] font-bold uppercase tracking-[0.2em] overflow-hidden transition-all duration-500 hover:shadow-[0_0_60px_rgba(244,118,124,0.25)]"
-                      >
-                        <span className="relative z-10 flex items-center justify-center gap-3">
-                          Submit Application
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="group-hover:translate-x-1 transition-transform duration-300"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-                        </span>
-                        <div className="absolute inset-0 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] origin-left" />
-                        <span className="absolute inset-0 flex items-center justify-center gap-3 font-redhat text-[13px] font-bold uppercase tracking-[0.2em] text-fsl-dark opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 z-20">
-                          Submit Application
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-                        </span>
-                      </button>
-                    </form>
+                    <JoinForm />
                   </div>
                 </ScrollReveal>
               </div>
