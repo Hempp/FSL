@@ -7,130 +7,95 @@ datasource db {
   provider = "postgresql"
 }
 
-// ── Tournament & Clinic Registrations ──
 model Registration {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-
-  // Program
-  programType String // "tournament" | "clinic" | "both"
-  eventName   String
-
-  // Athlete
-  firstName  String
-  lastName   String
-  dob        String
-  gender     String
-  tshirtSize String?
-  grade      String?
-  school     String?
-  sports     String[] // ["Basketball", "Football", etc.]
-
-  // Parent/Guardian
-  parentFirstName String
-  parentLastName  String
-  parentPhone     String
-  parentEmail     String
-  address         String?
-  city            String?
-  state           String?
-  zip             String?
-
-  // Emergency Contact
+  id                    String   @id @default(cuid())
+  createdAt             DateTime @default(now())
+  programType           String
+  eventName             String
+  firstName             String
+  lastName              String
+  dob                   String
+  gender                String
+  tshirtSize            String?
+  grade                 String?
+  school                String?
+  sports                String[]
+  parentFirstName       String
+  parentLastName        String
+  parentPhone           String
+  parentEmail           String
+  address               String?
+  city                  String?
+  state                 String?
+  zip                   String?
   emergencyName         String?
   emergencyPhone        String?
   emergencyRelationship String?
-
-  // Medical
-  allergies         String?
-  insuranceProvider  String?
-  policyNumber      String?
-
-  // Consent
-  waiverConsent Boolean @default(false)
-
-  // Status
-  status String @default("pending") // pending, confirmed, cancelled
+  allergies             String?
+  insuranceProvider     String?
+  policyNumber          String?
+  waiverConsent         Boolean  @default(false)
+  status                String   @default("pending")
 }
 
-// ── Join / Volunteer Requests ──
 model JoinRequest {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-
+  id            String   @id @default(cuid())
+  createdAt     DateTime @default(now())
   firstName     String
   lastName      String
   email         String
-  path          String? // "partner" | "volunteer" | "donate"
+  path          String?
   sportInterest String?
   message       String?
-
-  status String @default("new")
+  status        String   @default("new")
 }
 
-// ── Contact Messages ──
 model ContactMessage {
   id        String   @id @default(cuid())
   createdAt DateTime @default(now())
-
-  name    String
-  email   String
-  subject String?
-  message String
-
-  read Boolean @default(false)
+  name      String
+  email     String
+  subject   String?
+  message   String
+  read      Boolean  @default(false)
 }
 
-// ── Coach Applications ──
 model CoachApplication {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-
-  fullName    String
-  email       String
-  phone       String
-  sports      String[] // ["Basketball", "Soccer", etc.]
-  experience  String   // "2-5 years", "5-10 years", "10+ years"
-  availability String[] // ["Weekday mornings", "Weekends", etc.]
-  motivation  String?
-
-  backgroundCheckConsent Boolean @default(false)
-  backgroundCheckStatus  String  @default("pending") // pending, passed, failed
-
-  status String @default("new") // new, reviewing, approved, rejected
+  id                     String   @id @default(cuid())
+  createdAt              DateTime @default(now())
+  fullName               String
+  email                  String
+  phone                  String
+  sports                 String[]
+  experience             String
+  availability           String[]
+  motivation             String?
+  backgroundCheckConsent Boolean  @default(false)
+  backgroundCheckStatus  String   @default("pending")
+  status                 String   @default("new")
 }
 
-// ── Equipment / Jersey Donation Requests ──
 model EquipmentRequest {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-
+  id               String   @id @default(cuid())
+  createdAt        DateTime @default(now())
   organizationName String
   contactName      String
   email            String
   phone            String?
-  type             String // "jerseys" | "equipment" | "both"
+  type             String
   sportNeeds       String?
   numberOfAthletes String?
   message          String?
-
-  status String @default("new") // new, reviewing, fulfilled
+  status           String   @default("new")
 }
 
-// ── Mentor Coaching Sponsorships ──
 model Sponsorship {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-
-  // Sponsor info
+  id           String   @id @default(cuid())
+  createdAt    DateTime @default(now())
   sponsorName  String
   sponsorEmail String
   sponsorPhone String?
-
-  // Package
-  tier    String // "single" | "monthly" | "weekly" | "intensive"
-  amount  Int    // 75, 125, 225, 400
-
-  // Status
-  status String @default("pending") // pending, active, cancelled
+  tier         String
+  amount       Int
+  status       String   @default("pending")
 }
