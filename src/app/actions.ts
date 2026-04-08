@@ -1,16 +1,19 @@
 "use server";
 
+import { db } from "@/lib/db";
+
 /* ────────────────────────────────────────────
-   Helper: insert into Supabase or log to console
+   Helper: check if DB is available
    ──────────────────────────────────────────── */
-async function persist(table: string, data: Record<string, unknown>) {
-  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
-    console.log(`[Form Submission → ${table}]`, data);
-    return;
+type FormResult = { success: boolean; error?: string };
+
+async function withDb(operation: () => Promise<FormResult>, fallbackData: Record<string, unknown>): Promise<FormResult> {
+  const { db } = await import("@/lib/db");
+  if (!db) {
+    console.log("[Form Submission — no DB configured]", fallbackData);
+    return { success: true };
   }
-  const { supabase } = await import("@/lib/supabase");
-  const { error } = await supabase.from(table).insert(data);
-  if (error) throw error;
+  return operation();
 }
 
 /* ────────────────────────────────────────────
@@ -27,7 +30,7 @@ export async function submitRegistration(_prev: unknown, formData: FormData) {
     tshirtSize: formData.get("tshirtSize") as string,
     grade: formData.get("grade") as string,
     school: formData.get("school") as string,
-    sportInterests: formData.getAll("sports") as string[],
+    sports: formData.getAll("sports") as string[],
     parentFirstName: formData.get("parentFirst") as string,
     parentLastName: formData.get("parentLast") as string,
     parentPhone: formData.get("parentPhone") as string,
@@ -53,8 +56,13 @@ export async function submitRegistration(_prev: unknown, formData: FormData) {
   }
 
   try {
-    await persist("registrations", data);
-    return { success: true };
+    return await withDb(
+      async () => {
+        await db.registration.create({ data });
+        return { success: true };
+      },
+      data
+    );
   } catch {
     return { success: false, error: "Something went wrong. Please try again." };
   }
@@ -78,8 +86,13 @@ export async function submitJoin(_prev: unknown, formData: FormData) {
   }
 
   try {
-    await persist("join_requests", data);
-    return { success: true };
+    return await withDb(
+      async () => {
+        await db.joinRequest.create({ data });
+        return { success: true };
+      },
+      data
+    );
   } catch {
     return { success: false, error: "Something went wrong. Please try again." };
   }
@@ -101,8 +114,13 @@ export async function submitContact(_prev: unknown, formData: FormData) {
   }
 
   try {
-    await persist("contact_messages", data);
-    return { success: true };
+    return await withDb(
+      async () => {
+        await db.contactMessage.create({ data });
+        return { success: true };
+      },
+      data
+    );
   } catch {
     return { success: false, error: "Something went wrong. Please try again." };
   }
@@ -116,7 +134,7 @@ export async function submitCoachApplication(_prev: unknown, formData: FormData)
     fullName: formData.get("fullName") as string,
     email: formData.get("email") as string,
     phone: formData.get("phone") as string,
-    sportExpertise: formData.getAll("sports") as string[],
+    sports: formData.getAll("sports") as string[],
     experience: formData.get("experience") as string,
     availability: formData.getAll("availability") as string[],
     motivation: formData.get("motivation") as string,
@@ -131,8 +149,13 @@ export async function submitCoachApplication(_prev: unknown, formData: FormData)
   }
 
   try {
-    await persist("coach_applications", data);
-    return { success: true };
+    return await withDb(
+      async () => {
+        await db.coachApplication.create({ data });
+        return { success: true };
+      },
+      data
+    );
   } catch {
     return { success: false, error: "Something went wrong. Please try again." };
   }
@@ -158,8 +181,13 @@ export async function submitEquipmentRequest(_prev: unknown, formData: FormData)
   }
 
   try {
-    await persist("equipment_requests", data);
-    return { success: true };
+    return await withDb(
+      async () => {
+        await db.equipmentRequest.create({ data });
+        return { success: true };
+      },
+      data
+    );
   } catch {
     return { success: false, error: "Something went wrong. Please try again." };
   }
