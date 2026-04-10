@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Programs — Sports, Technology, Wellness & Financial Responsibility",
-  description: "Youth sports in golf, football, basketball, soccer, and track & field. Plus AI classes by Phazur Labs, VR/AR training, mental wellness, and financial responsibility.",
+  description: "Youth sports in basketball, football, soccer, golf, track & field, and baseball. Plus AI classes by Phazur Labs, VR/AR training, mental wellness, and financial responsibility.",
 };
 
 import { NikeHeader } from "@/components/nike/NikeHeader";
@@ -54,6 +54,14 @@ const sports = [
     image: "/images/urban/hero-track-race.jpg",
     color: "#F4767C",
     features: ["Sprint & hurdle training", "Distance & cross country", "Field events (jump, throw)"],
+  },
+  {
+    title: "Baseball",
+    tag: "06",
+    desc: "Hitting, pitching, fielding, and base running fundamentals. Building hand-eye coordination, patience, and team chemistry.",
+    image: "/images/sports/hero-athlete.jpg",
+    color: "#CC2222",
+    features: ["Batting & pitching clinics", "Fielding fundamentals", "Game strategy & situational play"],
   },
 ];
 
@@ -150,7 +158,7 @@ export default function ProgramsPage() {
           {/* Diagonal sport color strip */}
           <div className="absolute bottom-0 left-0 right-0 h-[120px] overflow-hidden">
             <div className="absolute inset-0 flex">
-              {["#0052FE", "#FF7900", "#00D17E", "#E9BB00", "#F4767C"].map((c, i) => (
+              {["#0052FE", "#FF7900", "#00D17E", "#E9BB00", "#F4767C", "#CC2222"].map((c, i) => (
                 <div
                   key={c}
                   className="flex-1 origin-bottom-left"
@@ -169,12 +177,12 @@ export default function ProgramsPage() {
             <ScrollReveal animation="fade-up">
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex gap-1">
-                  {["#0052FE", "#FF7900", "#00D17E", "#E9BB00", "#F4767C"].map((c) => (
+                  {["#0052FE", "#FF7900", "#00D17E", "#E9BB00", "#F4767C", "#CC2222"].map((c) => (
                     <div key={c} className="w-2 h-2 rounded-full" style={{ backgroundColor: c }} />
                   ))}
                 </div>
                 <span className="font-redhat text-[11px] uppercase tracking-[0.4em] text-white/40 font-medium">
-                  8 Programs &middot; 5 Sports
+                  9 Programs &middot; 6 Sports
                 </span>
               </div>
             </ScrollReveal>
@@ -191,7 +199,7 @@ export default function ProgramsPage() {
 
             <ScrollReveal animation="fade-up" delay={200}>
               <p className="font-redhat text-[15px] sm:text-[16px] text-white/35 font-normal mt-8 max-w-[480px] leading-[1.85]">
-                Five core sports. Cutting-edge technology. Mental wellness. Financial literacy. Everything a young leader needs — on and off the field.
+                Six core sports. Cutting-edge technology. Mental wellness. Financial literacy. Everything a young leader needs — on and off the field.
               </p>
             </ScrollReveal>
           </div>
@@ -221,7 +229,7 @@ export default function ProgramsPage() {
               <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 md:mb-24">
                 <div>
                   <h2 className="font-barlow text-[42px] sm:text-[56px] md:text-[72px] font-bold text-fsl-dark uppercase leading-[0.88] tracking-[-0.02em]">
-                    Five Sports.<br />
+                    Six Sports.<br />
                     <span className="text-fsl-coral">One Mission.</span>
                   </h2>
                 </div>
@@ -504,7 +512,7 @@ export default function ProgramsPage() {
               {[
                 {
                   title: "Tournaments",
-                  desc: "Competitive events across 5 sports. Teams and individuals compete at city and regional level.",
+                  desc: "Competitive events across 6 sports. Teams and individuals compete at city and regional level.",
                   href: "/tournaments",
                   color: "#0052FE",
                   tag: "01",
@@ -588,7 +596,7 @@ export default function ProgramsPage() {
                 className="absolute h-full w-[200px]"
                 style={{
                   left: `${i * 25}%`,
-                  background: ["#0052FE", "#FF7900", "#00D17E", "#E9BB00", "#F4767C"][i],
+                  background: ["#0052FE", "#FF7900", "#00D17E", "#E9BB00", "#F4767C", "#CC2222"][i],
                   transform: "skewX(-15deg)",
                   opacity: 0.3,
                 }}

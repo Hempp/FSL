@@ -4,8 +4,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const sportColors = ["#0052FE", "#FF7900", "#00D17E", "#E9BB00", "#F4767C"];
-const sportNames = ["Basketball", "Football", "Soccer", "Golf", "Track"];
+const sportColors = ["#0052FE", "#FF7900", "#00D17E", "#E9BB00", "#F4767C", "#CC2222"];
+const sportNames = ["Basketball", "Football", "Soccer", "Golf", "Track", "Baseball"];
 
 export function Hero3D() {
   const containerRef = useRef<HTMLDivElement>(null);

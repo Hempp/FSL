@@ -32,10 +32,10 @@ export const metadata: Metadata = {
     template: "%s | Fundamental Sports Labs",
   },
   description:
-    "Empowering urban youth through golf, football, basketball, soccer, and track & field — plus mental wellness, financial responsibility, and VR/AR technology. Developing fundamentals that last a lifetime.",
+    "Empowering urban youth through basketball, football, soccer, golf, track & field, and baseball — plus mental wellness, financial responsibility, and VR/AR technology. Developing fundamentals that last a lifetime.",
   keywords: [
     "youth sports", "urban youth", "basketball", "football", "soccer", "golf",
-    "track and field", "financial responsibility", "mental wellness", "VR sports",
+    "track and field", "baseball", "financial responsibility", "mental wellness", "VR sports",
     "youth mentorship", "sports coaching", "after school programs",
     "Los Angeles youth sports", "nonprofit sports organization",
   ],
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     siteName: "Fundamental Sports Labs",
     title: "Fundamental Sports Labs — Leaders of Tomorrow",
     description:
-      "Empowering urban youth through sports, wellness, financial responsibility, and cutting-edge technology. Golf, football, basketball, soccer, track & field — building fundamental skills and life structure.",
+      "Empowering urban youth through sports, wellness, financial responsibility, and cutting-edge technology. Basketball, football, soccer, golf, track & field, and baseball — building fundamental skills and life structure.",
     images: [{ url: "/images/ft-logo.png", width: 512, height: 512, alt: "Fundamental Sports Labs" }],
   },
   twitter: {

@@ -8,7 +8,7 @@ const showcaseItems = [
   {
     tag: "01",
     title: "Tournaments & Clinics",
-    desc: "Competitive events across 5 sports — city and regional tournaments plus focused skill clinics led by professional coaches.",
+    desc: "Competitive events across 6 sports — city and regional tournaments plus focused skill clinics led by professional coaches.",
     image: "/images/urban/team-huddle.jpg",
     href: "/tournaments",
     color: "#0052FE",
@@ -31,8 +31,8 @@ const showcaseItems = [
   },
   {
     tag: "04",
-    title: "5 Core Sports",
-    desc: "Basketball, football, soccer, golf, and track & field — professional coaching building fundamentals that last a lifetime.",
+    title: "6 Core Sports",
+    desc: "Basketball, football, soccer, golf, track & field, and baseball — professional coaching building fundamentals that last a lifetime.",
     image: "/images/urban/hero-streetball.jpg",
     href: "/programs",
     color: "#FF7900",

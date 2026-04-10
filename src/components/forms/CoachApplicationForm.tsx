@@ -3,7 +3,7 @@
 import { useActionState } from "react";
 import { submitCoachApplication } from "@/app/actions";
 
-const sports = ["Basketball", "Football", "Soccer", "Golf", "Track & Field"];
+const sports = ["Basketball", "Football", "Soccer", "Golf", "Track & Field", "Baseball"];
 const availability = ["Weekday mornings", "Weekday evenings", "Weekends"];
 const experienceOptions = ["2-5 years", "5-10 years", "10+ years"];
 

@@ -77,6 +77,20 @@ const tournaments = [
     image: "/images/sports/track-start.jpg",
     desc: "Sprint, relay, and field events with electronic timing and certified results. Open to all youth athletes in the greater LA area.",
   },
+  {
+    title: "Spring Baseball Classic",
+    date: "May 3-4, 2026",
+    day: "03",
+    month: "MAY",
+    location: "Rancho Cienega Sports Complex",
+    ages: "Ages 8-16",
+    capacity: "12 teams",
+    fee: "$150/team",
+    color: "#CC2222",
+    sport: "Baseball",
+    image: "/images/sports/hero-athlete.jpg",
+    desc: "Double-elimination tournament with umpire crews, live scoring, and MVP awards. Showcasing the next generation of diamond talent.",
+  },
 ];
 
 const clinics = [
@@ -187,6 +201,7 @@ export default function TournamentsPage() {
                   { color: "#00D17E", label: "Soccer" },
                   { color: "#E9BB00", label: "Golf" },
                   { color: "#F4767C", label: "Track" },
+                  { color: "#CC2222", label: "Baseball" },
                 ].map((s) => (
                   <span
                     key={s.label}

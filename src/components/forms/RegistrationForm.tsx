@@ -9,13 +9,14 @@ const allEvents = [
   { label: "Winter Football Skills Combine", type: "tournament" },
   { label: "Spring Soccer Showdown", type: "tournament" },
   { label: "Track & Field Invitational", type: "tournament" },
+  { label: "Spring Baseball Classic", type: "tournament" },
   { label: "Golf Fundamentals Clinic", type: "clinic" },
   { label: "Basketball Skills Lab", type: "clinic" },
   { label: "Speed & Agility Camp", type: "clinic" },
   { label: "Multi-Sport Introduction", type: "clinic" },
 ];
 
-const sportInterests = ["Basketball", "Football", "Soccer", "Golf", "Track & Field"];
+const sportInterests = ["Basketball", "Football", "Soccer", "Golf", "Track & Field", "Baseball"];
 
 export function RegistrationForm() {
   const [state, formAction, pending] = useActionState(submitRegistration, null);
