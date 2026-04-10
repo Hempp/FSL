@@ -46,6 +46,14 @@ const programs = [
     accent: "#F4767C",
     stat: "100m",
   },
+  {
+    title: "Baseball",
+    tagline: "Eye on the ball. Mind on the goal.",
+    desc: "Hitting, pitching, fielding, and base running fundamentals. Building hand-eye coordination, patience, and team chemistry.",
+    image: "/images/sports/hero-athlete.jpg",
+    accent: "#CC2222",
+    stat: "MVP",
+  },
 ];
 
 const techPrograms = [
