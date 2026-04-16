@@ -115,7 +115,7 @@ export function Hero3D() {
 
       {/* ── 3D LOGO STAGE ── */}
       <div
-        className="absolute inset-0 flex items-start sm:items-center justify-center lg:justify-end lg:pr-[10%] xl:pr-[12%] pt-[15vh] sm:pt-0 sm:pb-20"
+        className="absolute inset-0 flex items-start sm:items-center justify-center lg:justify-end lg:pr-[10%] xl:pr-[12%] pt-[12vh] sm:pt-0 sm:pb-20 pointer-events-none"
         style={{ perspective: "1000px" }}
       >
         <div
@@ -161,7 +161,7 @@ export function Hero3D() {
 
           {/* ── 3D SPORTS SHIELD ── */}
           <div
-            className="relative w-[180px] h-[200px] sm:w-[240px] sm:h-[270px] md:w-[320px] md:h-[360px] lg:w-[400px] lg:h-[450px] xl:w-[440px] xl:h-[500px]"
+            className="relative w-[120px] h-[135px] sm:w-[200px] sm:h-[225px] md:w-[280px] md:h-[315px] lg:w-[380px] lg:h-[430px] xl:w-[440px] xl:h-[500px]"
             style={{ transform: "translateZ(50px)" }}
           >
             {/* Glow behind shield */}
@@ -272,7 +272,7 @@ export function Hero3D() {
       </div>
 
       {/* ── Now Playing badge (below headline, left-aligned) ── */}
-      <div className="absolute left-4 sm:left-6 md:left-16 lg:left-24 bottom-[72px] sm:bottom-[90px] md:bottom-[135px] z-10 pointer-events-none">
+      <div className="absolute left-4 sm:left-6 md:left-16 lg:left-24 bottom-[56px] sm:bottom-[70px] md:bottom-[135px] z-10 pointer-events-none hidden sm:block">
         {sportNames.map((name, idx) => (
           <div
             key={name}
@@ -305,10 +305,10 @@ export function Hero3D() {
       </div>
 
       {/* ── CTA buttons ── */}
-      <div className="absolute bottom-10 sm:bottom-12 left-4 right-4 sm:left-6 sm:right-auto md:left-16 lg:left-24 z-10 flex flex-col sm:flex-row gap-3">
+      <div className="absolute bottom-10 sm:bottom-12 left-4 sm:left-6 md:left-16 lg:left-24 z-10 flex flex-row gap-3">
         <Link
           href="/join"
-          className="group relative bg-white text-black px-9 py-4 rounded-full font-redhat text-[12px] font-semibold uppercase tracking-[0.15em] overflow-hidden transition-shadow duration-500 hover:shadow-[0_0_50px_rgba(244,118,124,0.3)] text-center"
+          className="group relative bg-white text-black px-6 sm:px-9 py-3 sm:py-4 rounded-full font-redhat text-[11px] sm:text-[12px] font-semibold uppercase tracking-[0.15em] overflow-hidden transition-shadow duration-500 hover:shadow-[0_0_50px_rgba(244,118,124,0.3)]"
         >
           <span className="relative z-10 group-hover:text-white transition-colors duration-500">
             Join Now
@@ -319,7 +319,7 @@ export function Hero3D() {
           href="https://www.zeffy.com/en-US/donation-form/donate-to-make-a-difference-19257"
           target="_blank"
           rel="noopener noreferrer"
-          className="border border-white/25 text-white/70 px-9 py-4 rounded-full font-redhat text-[12px] font-medium uppercase tracking-[0.15em] hover:border-white/60 hover:text-white hover:bg-white/5 transition-all duration-500 text-center"
+          className="border border-white/25 text-white/70 px-6 sm:px-9 py-3 sm:py-4 rounded-full font-redhat text-[11px] sm:text-[12px] font-medium uppercase tracking-[0.15em] hover:border-white/60 hover:text-white hover:bg-white/5 transition-all duration-500"
         >
           Donate
         </a>
