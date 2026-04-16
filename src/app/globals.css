@@ -177,6 +177,68 @@ html.lenis body {
   100% { transform: translateX(-50%); }
 }
 
+/* === GPU hints for heavy animations (conservative) === */
+[style*="animation"][style*="float"],
+[class*="animate-"][class*="float"] {
+  will-change: transform;
+}
+
+[style*="animation"][style*="marquee"],
+[class*="animate-"][class*="marquee"] {
+  will-change: transform;
+}
+
+[style*="animation"][style*="moveClouds"],
+[class*="animate-"][class*="moveClouds"] {
+  will-change: background-position;
+}
+
+/* === Contain layout for independent sections === */
+main > section {
+  contain: layout style;
+}
+
+/* === Minimalist Hero entrance animations === */
+@keyframes heroFadeInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes heroFadeInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes heroFadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroFadeInUpLong {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroScaleIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.hero-fade-in-left {
+  animation: heroFadeInLeft 0.5s ease-out both;
+}
+.hero-fade-in-right {
+  animation: heroFadeInRight 0.5s ease-out both;
+}
+.hero-fade-in-up {
+  animation: heroFadeInUp 0.6s ease-out both;
+}
+.hero-fade-in-up-long {
+  animation: heroFadeInUpLong 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-scale-in {
+  animation: heroScaleIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-fade-in-up-short {
+  animation: heroFadeInUp 0.5s ease-out both;
+}
+
 /* === Selection color === */
 ::selection {
   background-color: #F4767C;

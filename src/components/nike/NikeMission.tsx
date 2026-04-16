@@ -81,6 +81,7 @@ export function NikeMission() {
                     src="/images/urban/team-huddle.jpg"
                     alt="Coach mentoring young athletes"
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
                     style={{ filter: "contrast(1.1) saturate(0.85)" }}
                   />

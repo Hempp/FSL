@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/ScrollReveal";
@@ -12,6 +10,7 @@ export function NikeCTA() {
         src="/images/premium/cta-dramatic.jpg"
         alt=""
         fill
+        sizes="100vw"
         className="object-cover"
         style={{ filter: "contrast(1.2) brightness(0.15) saturate(0.15)" }}
         aria-hidden="true"

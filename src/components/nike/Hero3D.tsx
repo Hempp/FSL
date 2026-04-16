@@ -12,27 +12,36 @@ export function Hero3D() {
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const [loaded, setLoaded] = useState(false);
   const [activeSport, setActiveSport] = useState(0);
-  const frameRef = useRef<number>(0);
+  const isMobileRef = useRef(false);
+  const lastMoveRef = useRef<number>(0);
 
-  /* ── Mouse tracking (RAF-throttled) ── */
+  /* ── Mouse tracking (throttled ~100ms, disabled on mobile) ── */
   const handleMouseMove = useCallback((e: MouseEvent) => {
-    if (frameRef.current) return;
-    frameRef.current = requestAnimationFrame(() => {
-      const rect = containerRef.current?.getBoundingClientRect();
-      if (!rect) { frameRef.current = 0; return; }
-      setMouse({
-        x: ((e.clientX - rect.left) / rect.width - 0.5) * 2,
-        y: ((e.clientY - rect.top) / rect.height - 0.5) * 2,
-      });
-      frameRef.current = 0;
+    if (isMobileRef.current) return;
+    const now = performance.now();
+    if (now - lastMoveRef.current < 100) return;
+    lastMoveRef.current = now;
+    const rect = containerRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    setMouse({
+      x: ((e.clientX - rect.left) / rect.width - 0.5) * 2,
+      y: ((e.clientY - rect.top) / rect.height - 0.5) * 2,
     });
   }, []);
 
   useEffect(() => {
+    const mql = window.matchMedia("(max-width: 767px)");
+    const updateMobile = () => { isMobileRef.current = mql.matches; };
+    updateMobile();
+    mql.addEventListener("change", updateMobile);
     const el = containerRef.current;
-    if (!el) return;
-    el.addEventListener("mousemove", handleMouseMove);
-    return () => el.removeEventListener("mousemove", handleMouseMove);
+    if (el) {
+      el.addEventListener("mousemove", handleMouseMove, { passive: true });
+    }
+    return () => {
+      mql.removeEventListener("change", updateMobile);
+      if (el) el.removeEventListener("mousemove", handleMouseMove);
+    };
   }, [handleMouseMove]);
 
   useEffect(() => {
@@ -65,6 +74,7 @@ export function Hero3D() {
             src="/images/urban/hero-streetball.jpg"
             alt=""
             fill
+            sizes="100vw"
             className="object-cover"
             style={{ filter: "contrast(1.15) brightness(0.2) saturate(0.35)" }}
             priority

@@ -57,6 +57,7 @@ export function NikeHero() {
           src="/images/urban/hero-streetball.jpg"
           alt="Urban youth playing streetball"
           fill
+          sizes="100vw"
           className={`object-cover transition-all duration-[1.5s] ${loaded ? "opacity-50" : "opacity-0"}`}
           style={{ filter: "contrast(1.2) brightness(0.5) saturate(0.6)", transitionDelay: "0.3s" }}
           priority
