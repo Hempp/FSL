@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Founded by a seasoned coach with 15+ years of experience. Learn about our mission, values, and journey empowering urban youth through sports and education.",
+  description: "Founded in Los Angeles, CA by a P.E. teacher, head football coach, and golf director with 15+ years in youth development. FSL combines six sports with mental wellness, financial literacy, and technology education.",
 };
 
 import { NikeHeader } from "@/components/nike/NikeHeader";
@@ -20,11 +20,11 @@ const values = [
 ];
 
 const timeline = [
-  { year: "2010", event: "Coach begins running basketball camps in local communities", accent: "#F4767C" },
-  { year: "2015", event: "Expanded to multi-sport programming with volunteer coaches", accent: "#0052FE" },
-  { year: "2020", event: "Added financial responsibility and technology education tracks", accent: "#FF7900" },
-  { year: "2023", event: "Fundamental Sports Labs officially founded as a nonprofit", accent: "#00D17E" },
-  { year: "2025", event: "Serving 150+ youth athletes across multiple programs", accent: "#E9BB00" },
+  { year: "2011", event: "Hoop It Up Training Camp launches in Los Angeles — youth basketball coaching for ages 8-17", accent: "#F4767C" },
+  { year: "2016", event: "P.E. teaching, head football coaching, and golf direction begins at View Park Preparatory", accent: "#0052FE" },
+  { year: "2020", event: "Expanded programming with life skills workshops — financial literacy, mental wellness, and technology", accent: "#FF7900" },
+  { year: "2023", event: "Fundamental Sports Labs officially founded as a 501(c)(3) nonprofit in Los Angeles", accent: "#00D17E" },
+  { year: "2025", event: "Six-sport platform live — adding mental wellness, financial literacy, and VR/AR technology tracks", accent: "#E9BB00" },
 ];
 
 export default function AboutPage() {
@@ -93,13 +93,13 @@ export default function AboutPage() {
 
                   <div className="space-y-5 max-w-[520px]">
                     <p className="font-redhat text-[15px] text-[#666] font-normal leading-[1.9]">
-                      Fundamental Sports Labs was founded by a seasoned coach with over 15 years of experience — from running basketball camps to teaching P.E. for nearly a decade, and leading as a head varsity coach.
+                      Fundamental Sports Labs was born in Los Angeles, California — founded by a P.E. teacher, head football coach, and golf director with over 15 years working directly with youth. From teaching physical education at View Park Preparatory to running basketball training camps for ages 8-17, to directing recreation programs for underserved communities.
                     </p>
                     <p className="font-redhat text-[15px] text-[#666] font-normal leading-[1.9]">
-                      We understand the unique challenges today&apos;s youth face. Our programs go beyond sports, teaching the same structure and discipline from sports — applied to mental health, technology, and financial responsibility.
+                      We saw what sports could do when paired with real-world skills. The discipline of practice. The accountability of a team. The resilience that comes from losing and getting back up. These aren&apos;t just athletic lessons — they&apos;re life lessons. And too many young people only got them during the season.
                     </p>
                     <p className="font-redhat text-[15px] text-[#666] font-normal leading-[1.9]">
-                      Together, we&apos;re raising resilient youth who are ready for whatever comes next.
+                      FSL was built to make them year-round. Our six-sport platform — basketball, football, soccer, golf, track &amp; field, and baseball — is the vehicle. But the destination is bigger: mental wellness, financial literacy, and technology fluency for every young athlete we reach.
                     </p>
                   </div>
                 </ScrollReveal>
