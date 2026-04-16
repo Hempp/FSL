@@ -12,19 +12,19 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: '#F4767C',
     icons: [
       {
-        src: '/favicon.svg',
-        type: 'image/svg+xml',
-        sizes: 'any',
+        src: '/icon-192.png',
+        type: 'image/png',
+        sizes: '192x192',
       },
       {
-        src: '/images/ft-logo.png',
+        src: '/icon-512.png',
         type: 'image/png',
-        sizes: '232x233',
+        sizes: '512x512',
       },
       {
-        src: '/images/ft-logo-4x-v2.png',
+        src: '/apple-icon.png',
         type: 'image/png',
-        sizes: '928x932',
+        sizes: '180x180',
       },
     ],
   }
