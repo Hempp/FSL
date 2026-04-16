@@ -76,20 +76,18 @@ export function NikeCTA() {
               href="/join"
               className="group relative bg-fsl-coral text-white px-12 md:px-16 py-5 md:py-6 font-barlow text-[14px] md:text-[16px] font-bold uppercase tracking-[0.2em] overflow-hidden transition-all duration-500 hover:shadow-[0_0_60px_rgba(244,118,124,0.35)] hover:scale-[1.02] active:scale-[0.98]"
             >
-              <span className="relative z-10">Get Started</span>
+              <span className="relative z-10">Enroll Free</span>
               {/* Shine sweep */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-[800ms]" />
               {/* Pulse ring */}
               <div className="absolute inset-0 border-2 border-fsl-coral animate-[ping_2s_ease-in-out_infinite] opacity-20" />
             </Link>
-            <a
-              href="https://www.zeffy.com/en-US/donation-form/donate-to-make-a-difference-19257"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/donate"
               className="group border-2 border-white/15 text-white/50 px-12 md:px-16 py-5 md:py-6 font-barlow text-[14px] md:text-[16px] font-bold uppercase tracking-[0.2em] hover:border-white/40 hover:text-white transition-all duration-500 hover:bg-white/[0.03]"
             >
-              Donate Now
-            </a>
+              Support Our Mission
+            </Link>
           </div>
         </ScrollReveal>
 
@@ -99,6 +97,10 @@ export function NikeCTA() {
             <div className="h-[1px] w-12 bg-white/10" />
             <p className="font-bonvivant text-[18px] md:text-[22px] text-white/15 italic">
               Every athlete deserves a chance
+            </p>
+            <span className="mx-4 h-[1px] w-6 bg-white/10" />
+            <p className="font-redhat text-[11px] text-white/20 uppercase tracking-[0.15em]">
+              501(c)(3) nonprofit — all programs free for youth athletes
             </p>
           </div>
         </ScrollReveal>

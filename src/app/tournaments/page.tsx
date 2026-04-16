@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Tournaments & Clinics",
   description:
-    "Register for FSL youth tournaments, skills combines, and weekly clinics across basketball, football, soccer, golf, and track & field in Los Angeles.",
+    "Register for free FSL youth tournaments, skills combines, and weekly clinics across basketball, football, soccer, golf, and track & field in Los Angeles.",
 };
 
 import { JsonLd } from "@/components/JsonLd";

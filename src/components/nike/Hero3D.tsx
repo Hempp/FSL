@@ -265,8 +265,8 @@ export function Hero3D() {
               loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Developing the fundamentals of sports, structure, and discipline
-            that transition into every area of life.
+            Six sports. Four pillars. Zero cost. Free youth sports
+            and life skills programming in Los Angeles.
           </p>
         </div>
       </div>

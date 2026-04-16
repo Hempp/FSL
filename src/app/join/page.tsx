@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Join — Empower The Youth",
-  description: "Partner with us, volunteer as a coach, or join our youth programs in golf, football, basketball, soccer, and track & field.",
+  description: "Partner with us, volunteer as a coach, or join our free youth programs in Los Angeles — golf, football, basketball, soccer, and track & field.",
 };
 
 import { NikeHeader } from "@/components/nike/NikeHeader";
@@ -42,7 +42,7 @@ const benefits = [
   {
     num: "04",
     title: "Enroll Your Child",
-    description: "Register your young athlete for our multi-sport programs, mentorship tracks, and technology workshops.",
+    description: "Register your young athlete for our FREE multi-sport programs, mentorship tracks, and technology workshops. No tryouts. No fees.",
     color: "#E9BB00",
     image: "/images/action/teens-stretching.jpg",
     icon: "M13 10V3L4 14h7v7l9-11h-7z",
@@ -184,6 +184,18 @@ export default function JoinPage() {
           </div>
 
           <div className="relative max-w-[1200px] mx-auto px-6 md:px-16 lg:px-24">
+            {/* ── Free Program Callout ── */}
+            <ScrollReveal animation="fade-up">
+              <div className="mb-16 md:mb-20 border border-fsl-coral/20 bg-fsl-coral/[0.04] px-8 py-6 md:px-10 md:py-8 max-w-[800px]">
+                <p className="font-barlow text-[20px] md:text-[24px] font-bold text-white uppercase leading-[1.2] mb-2">
+                  All programs are <span className="text-fsl-coral">FREE</span> for athletes ages 8-17.
+                </p>
+                <p className="font-redhat text-[14px] md:text-[15px] text-white/40 leading-[1.7]">
+                  No tryouts. No fees. Just show up ready to grow. Programs run across Los Angeles community facilities.
+                </p>
+              </div>
+            </ScrollReveal>
+
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
               {/* Left — CTA text */}
               <div className="lg:col-span-5">

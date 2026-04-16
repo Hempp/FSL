@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Upcoming Events",
-  description: "Join our youth golf clinics, basketball tournaments, track & field invitationals, football combines, and VR sports experience days in Los Angeles.",
+  description: "Free youth sports events in Los Angeles and Inglewood. Golf clinics, basketball tournaments, track & field invitationals, football combines, and VR sports days — all at no cost to families.",
 };
 
 import { JsonLd } from "@/components/JsonLd";
@@ -15,11 +15,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const events = [
-  { date: "Oct 15, 2025", day: "15", month: "OCT", title: "Youth Golf Clinic", location: "Community Golf Course, Downtown LA", time: "9:00 AM - 1:00 PM", desc: "Introduction to golf for ages 10-18. Learn swing mechanics, course etiquette, and sportsmanship from PGA-trained coaches.", image: "/images/sports/golf-course.jpg", color: "#00D17E", sport: "Golf" },
-  { date: "Nov 22, 2025", day: "22", month: "NOV", title: "Basketball Tournament", location: "Inglewood Recreation Center", time: "10:00 AM - 5:00 PM", desc: "3-on-3 and 5-on-5 tournament featuring teams from across the region. Prizes and awards for all age divisions.", image: "/images/sports/basketball-game.jpg", color: "#FF7900", sport: "Basketball" },
-  { date: "Dec 08, 2025", day: "08", month: "DEC", title: "Track & Field Invitational", location: "Compton Community Track", time: "8:00 AM - 2:00 PM", desc: "Sprint, relay, and field events for youth athletes. Timed results, medals, and college scout exposure.", image: "/images/sports/track-start.jpg", color: "#F4767C", sport: "Track" },
-  { date: "Jan 15, 2026", day: "15", month: "JAN", title: "Football Skills Combine", location: "Los Angeles, CA", time: "9:00 AM - 3:00 PM", desc: "Combine-style testing and position-specific training. Speed, agility, and football IQ development.", image: "/images/sports/football-field.jpg", color: "#0052FE", sport: "Football" },
-  { date: "Feb 20, 2026", day: "20", month: "FEB", title: "VR Sports Experience Day", location: "FSL Innovation Lab", time: "10:00 AM - 4:00 PM", desc: "Experience cutting-edge VR/AR sports training simulations. AI-powered performance analysis for every athlete.", image: "/images/action/teens-learning.jpg", color: "#E9BB00", sport: "Tech" },
+  { date: "2026-05-17", day: "17", month: "MAY", title: "Youth Golf Clinic", location: "Kenneth Hahn State Recreation Area", time: "9:00 AM - 1:00 PM", desc: "Free introduction to golf for ages 10-18. Learn swing mechanics, course etiquette, and sportsmanship from PGA-trained coaches. All equipment provided at no cost.", image: "/images/sports/golf-course.jpg", color: "#00D17E", sport: "Golf" },
+  { date: "2026-06-13", day: "13", month: "JUN", title: "Basketball Tournament", location: "Darby Park, Inglewood", time: "10:00 AM - 5:00 PM", desc: "Free 3-on-3 and 5-on-5 tournament for ages 8-17. Prizes and awards for all age divisions. No registration fee — open to all LA-area youth.", image: "/images/sports/basketball-game.jpg", color: "#FF7900", sport: "Basketball" },
+  { date: "2026-07-11", day: "11", month: "JUL", title: "Track & Field Invitational", location: "Jesse Owens Park, Los Angeles", time: "8:00 AM - 2:00 PM", desc: "Free sprint, relay, and field events for youth athletes ages 6-18. Timed results, medals, and college scout exposure. No cost to participate.", image: "/images/sports/track-start.jpg", color: "#F4767C", sport: "Track" },
+  { date: "2026-08-08", day: "08", month: "AUG", title: "Football Skills Combine", location: "Jim Gilliam Recreation Center, Los Angeles", time: "9:00 AM - 3:00 PM", desc: "Free combine-style testing and position-specific training for ages 8-17. Speed, agility, and football IQ development. All skill levels welcome.", image: "/images/sports/football-field.jpg", color: "#0052FE", sport: "Football" },
+  { date: "2026-09-19", day: "19", month: "SEP", title: "VR Sports Experience Day", location: "View Park Community Center", time: "10:00 AM - 4:00 PM", desc: "Free VR/AR sports training experience for youth athletes. AI-powered performance analysis and cutting-edge simulations. No cost, no experience needed.", image: "/images/action/teens-learning.jpg", color: "#E9BB00", sport: "Tech" },
 ];
 
 export default function EventsPage() {
@@ -134,7 +134,7 @@ export default function EventsPage() {
                   </h2>
                 </div>
                 <p className="font-redhat text-[14px] text-[#999] max-w-[340px] leading-[1.75]">
-                  From the court to the track, every event is a chance to grow, compete, and connect.
+                  Every event is free and open to all youth. From the court to the track, it&apos;s a chance to grow, compete, and connect.
                 </p>
               </div>
             </ScrollReveal>

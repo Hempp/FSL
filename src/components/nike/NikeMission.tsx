@@ -40,18 +40,19 @@ export function NikeMission() {
             <ScrollReveal animation="fade-up" delay={200} duration={900}>
               <div className="relative pl-6 border-l-[3px] border-fsl-coral/30 mb-10">
                 <p className="font-redhat text-[15px] md:text-[17px] text-[#555] font-normal leading-[1.85] max-w-[480px]">
-                  Our mission is to develop young athletes through the fundamentals of
-                  sports, wellness, financial responsibility, and technology — teaching the
-                  structure and discipline of the game that transitions directly into life.
+                  Our mission is to develop young athletes in Los Angeles through
+                  free programming in athletics, mental wellness, financial literacy,
+                  and technology — teaching the structure and discipline of the game
+                  that transitions directly into life.
                 </p>
               </div>
             </ScrollReveal>
 
             <ScrollReveal animation="fade-up" delay={300} duration={900}>
               <p className="font-redhat text-[14px] md:text-[15px] text-[#888] font-normal leading-[1.85] max-w-[440px] mb-12">
-                Founded by a seasoned coach with over 15 years of experience, we create
-                structured environments where young athletes learn that the
-                fundamentals on the field are the same fundamentals for life.
+                Founded by a seasoned coach with over 15 years of experience, every
+                program is completely free — because access to sports, mentorship,
+                and life skills should never depend on a family&apos;s income.
               </p>
             </ScrollReveal>
 
@@ -114,10 +115,10 @@ export function NikeMission() {
                     <div className="w-[1px] bg-white/10" />
                     <div>
                       <p className="font-barlow text-[36px] md:text-[48px] font-bold text-fsl-coral leading-none">
-                        5
+                        6
                       </p>
                       <p className="font-redhat text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-white/50 mt-1">
-                        Core Sports
+                        Sports
                       </p>
                     </div>
                   </div>

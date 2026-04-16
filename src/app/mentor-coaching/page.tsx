@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Mentor Coaching — Every Athlete Deserves Someone in Their Corner",
   description:
-    "Donation-funded mentorship pairing top coaches with student athletes. Sponsor real 1-on-1 sessions, goal tracking, and accountability starting at $75/session.",
+    "Free donation-funded mentorship in Los Angeles pairing top coaches with student athletes. Sponsor real 1-on-1 sessions, goal tracking, and accountability starting at $75/session.",
 };
 
 import { NikeHeader } from "@/components/nike/NikeHeader";

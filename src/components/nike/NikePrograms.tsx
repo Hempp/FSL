@@ -9,7 +9,7 @@ const programs = [
   {
     title: "Basketball",
     tagline: "Fundamentals first. Structure builds skill.",
-    desc: "Fundamental skill development, structured training, and game knowledge that translates to life off the court.",
+    desc: "Ball handling drills, shooting form, defensive footwork, and 5v5 scrimmages — building court IQ and teamwork every session.",
     image: "/images/urban/basketball-rim.jpg",
     accent: "#0052FE",
     stat: "5v5",
@@ -17,7 +17,7 @@ const programs = [
   {
     title: "Football",
     tagline: "Game structure. Life structure.",
-    desc: "Learning the structure of the game — positioning, reads, and discipline that builds character beyond the field.",
+    desc: "Route running, tackling form, positional drills, and play-reading — learning discipline and accountability through the structure of the game.",
     image: "/images/urban/football-play.jpg",
     accent: "#FF7900",
     stat: "200+",
@@ -25,7 +25,7 @@ const programs = [
   {
     title: "Soccer",
     tagline: "Footwork. Field vision. Foundation.",
-    desc: "Building from the ground up — ball control, spacing, and team structure that teaches communication and accountability.",
+    desc: "First-touch drills, passing patterns, small-sided games, and positional play — building communication and field vision from the ground up.",
     image: "/images/urban/soccer-ball.jpg",
     accent: "#00D17E",
     stat: "Co-ed",
@@ -33,7 +33,7 @@ const programs = [
   {
     title: "Golf",
     tagline: "Precision. Process. Patience.",
-    desc: "The fundamentals of patience, precision, and process — skills that transfer directly to academics and career readiness.",
+    desc: "Grip, stance, and swing mechanics on the driving range and putting green — learning patience, etiquette, and focus one stroke at a time.",
     image: "/images/sports/youth-golf.jpg",
     accent: "#E9BB00",
     stat: "PGA",
@@ -41,7 +41,7 @@ const programs = [
   {
     title: "Track & Field",
     tagline: "Form. Fundamentals. Finish.",
-    desc: "Mastering the basics — proper form, consistent training habits, and the discipline of measurable self-improvement.",
+    desc: "Sprint mechanics, relay handoffs, long jump technique, and timed trials — measurable progress that builds confidence and consistency.",
     image: "/images/urban/hero-track-race.jpg",
     accent: "#F4767C",
     stat: "100m",
@@ -49,7 +49,7 @@ const programs = [
   {
     title: "Baseball",
     tagline: "Eye on the ball. Mind on the goal.",
-    desc: "Hitting, pitching, fielding, and base running fundamentals. Building hand-eye coordination, patience, and team chemistry.",
+    desc: "Batting practice, pitching mechanics, fielding grounders, and base running — building hand-eye coordination, patience, and team chemistry.",
     image: "/images/sports/hero-athlete.jpg",
     accent: "#CC2222",
     stat: "MVP",

@@ -13,7 +13,7 @@ const pillars = [
   {
     num: "02",
     title: "Mental Wellness",
-    desc: "Building resilience, emotional intelligence, and positive mindset development.",
+    desc: "Guided breathing exercises, journaling, goal-setting workshops, and one-on-one mentorship to build resilience and emotional intelligence.",
     color: "#FF7900",
     colorClass: "from-[#FF7900]",
     image: "/images/premium/meditation-peace.jpg",
@@ -21,7 +21,7 @@ const pillars = [
   {
     num: "03",
     title: "Financial Literacy",
-    desc: "Budgeting, saving, investing — real-world money management for young athletes.",
+    desc: "Budgeting workshops, savings goals, understanding credit, and investment basics — real-world money skills athletes can use now.",
     color: "#00D17E",
     colorClass: "from-[#00D17E]",
     image: "/images/premium/financial-planning.jpg",
@@ -29,7 +29,7 @@ const pillars = [
   {
     num: "04",
     title: "VR/AR & AI Tech",
-    desc: "Cutting-edge VR/AR training simulations and AI-powered performance analytics.",
+    desc: "Hands-on VR/AR training simulations, AI-powered performance analysis, and intro-to-coding sessions through Phazur Labs.",
     color: "#E9BB00",
     colorClass: "from-[#E9BB00]",
     image: "/images/sports/vr-headset.jpg",

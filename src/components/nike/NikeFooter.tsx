@@ -160,12 +160,17 @@ export function NikeFooter() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="font-redhat text-[12px] text-white/30">
-            &copy; 2025 Fundamental Sports Labs. All rights reserved.
-          </p>
-          <p className="font-redhat text-[13px] text-white/50">
-            Info@fundamentalsportslabs.org
+        <div className="border-t border-white/10 pt-8 flex flex-col items-center gap-4">
+          <div className="w-full flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="font-redhat text-[12px] text-white/30">
+              &copy; 2025 Fundamental Sports Labs. All rights reserved.
+            </p>
+            <p className="font-redhat text-[13px] text-white/50">
+              Info@fundamentalsportslabs.org
+            </p>
+          </div>
+          <p className="font-redhat text-[11px] text-white/30 text-center">
+            Fundamental Sports Labs is a 501(c)(3) tax-exempt nonprofit organization. EIN: 39-4190687
           </p>
         </div>
       </div>

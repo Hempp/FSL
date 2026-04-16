@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Programs — Sports, Technology, Wellness & Financial Responsibility",
-  description: "Youth sports in basketball, football, soccer, golf, track & field, and baseball. Plus AI classes by Phazur Labs, VR/AR training, mental wellness, and financial responsibility.",
+  description: "Free youth sports programs in Los Angeles — basketball, football, soccer, golf, track & field, and baseball. Plus AI classes by Phazur Labs, VR/AR training, mental wellness, and financial responsibility.",
 };
 
 import { JsonLd } from "@/components/JsonLd";

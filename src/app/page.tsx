@@ -2,7 +2,14 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Home — Leaders of Tomorrow",
-  description: "Fundamental Sports Labs empowers urban youth through golf, football, basketball, soccer, track & field, mental wellness, financial responsibility, and VR/AR technology.",
+  description: "Fundamental Sports Labs empowers urban youth in Los Angeles through free golf, football, basketball, soccer, track & field, mental wellness, financial responsibility, and VR/AR technology.",
+  keywords: [
+    "free youth sports Los Angeles",
+    "nonprofit youth program LA",
+    "youth basketball football soccer Los Angeles",
+    "free after school sports program",
+    "youth mentorship Los Angeles",
+  ],
 };
 
 import { JsonLd } from "@/components/JsonLd";

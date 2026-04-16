@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Our Impact",
-  description: "150+ youth empowered, 85% improved academics, 92% graduate success rate, 5,000 community service hours. Real results from Fundamental Sports Labs.",
+  description: "150+ youth empowered in Los Angeles, 85% improved academics, 92% graduate success rate, 5,000 community service hours. Real results from Fundamental Sports Labs' free programs.",
 };
 
 import { NikeHeader } from "@/components/nike/NikeHeader";
