@@ -37,10 +37,11 @@ const contactCards = [
 ];
 
 const socials = [
-  { name: "Facebook", letter: "F", href: "#" },
-  { name: "Instagram", letter: "I", href: "#" },
-  { name: "Twitter", letter: "X", href: "#" },
-  { name: "LinkedIn", letter: "L", href: "#" },
+  { name: "Facebook", letter: "F", href: "#", ariaLabel: "Follow FSL on Facebook" },
+  { name: "Instagram", letter: "I", href: "#", ariaLabel: "Follow FSL on Instagram" },
+  { name: "Twitter / X", letter: "X", href: "#", ariaLabel: "Follow FSL on Twitter / X" },
+  { name: "LinkedIn", letter: "L", href: "#", ariaLabel: "Follow FSL on LinkedIn" },
+  { name: "YouTube", letter: "Y", href: "#", ariaLabel: "Subscribe to FSL on YouTube" },
 ];
 
 export default function ContactPage() {
@@ -48,7 +49,7 @@ export default function ContactPage() {
     <>
       <SmoothScroll />
       <NikeHeader />
-      <main>
+      <main id="main-content">
         {/* ── Bold Hero ── */}
         <section className="relative h-[70vh] min-h-[500px] overflow-hidden bg-black flex items-end">
           <Image
@@ -140,6 +141,7 @@ export default function ContactPage() {
                       <a
                         key={s.name}
                         href={s.href}
+                        aria-label={s.ariaLabel}
                         className="group/social flex items-center gap-4 bg-white/[0.04] border border-white/[0.06] p-4 hover:bg-white/[0.08] hover:border-fsl-coral/30 transition-all duration-500"
                       >
                         <span className="w-10 h-10 rounded-full bg-white/[0.06] flex items-center justify-center font-barlow text-[14px] font-bold text-white/40 group-hover/social:text-fsl-coral group-hover/social:bg-fsl-coral/10 transition-all duration-500">

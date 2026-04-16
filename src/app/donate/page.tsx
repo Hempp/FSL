@@ -23,7 +23,7 @@ export default function DonatePage() {
     <>
       <SmoothScroll />
       <NikeHeader />
-      <main>
+      <main id="main-content">
         {/* ── Nike Campaign Hero — Full Bleed ── */}
         <section className="relative h-[90vh] min-h-[650px] overflow-hidden bg-black flex items-center justify-center">
           <Image

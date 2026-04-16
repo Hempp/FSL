@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   description: "Fundamental Sports Labs empowers urban youth through golf, football, basketball, soccer, track & field, mental wellness, financial responsibility, and VR/AR technology.",
 };
 
+import { JsonLd } from "@/components/JsonLd";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { NikeHeader } from "@/components/nike/NikeHeader";
 import { Hero3D } from "@/components/nike/Hero3D";
@@ -23,9 +24,32 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 export default function Home() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "SportsOrganization",
+          name: "Fundamental Sports Labs",
+          alternateName: "FSL",
+          url: "https://fundamentalsportslabs.org",
+          logo: "https://fundamentalsportslabs.org/images/ft-logo.png",
+          description:
+            "Youth development through sports, wellness, financial literacy, and technology",
+          email: "Info@fundamentalsportslabs.org",
+          sameAs: [],
+          sport: [
+            "Basketball",
+            "Football",
+            "Soccer",
+            "Golf",
+            "Track and Field",
+            "Baseball",
+          ],
+          foundingDate: "2020",
+        }}
+      />
       <SmoothScroll />
       <NikeHeader />
-      <main>
+      <main id="main-content">
         <Hero3D />
         <NikeMarquee />
 

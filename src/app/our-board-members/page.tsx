@@ -21,7 +21,7 @@ export default function BoardMembersPage() {
     <>
       <SmoothScroll />
       <NikeHeader />
-      <main>
+      <main id="main-content">
         {/* ── Magazine Editorial Hero ── */}
         <section className="relative h-[80vh] min-h-[550px] overflow-hidden bg-black flex items-end">
           <Image

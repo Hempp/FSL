@@ -56,7 +56,7 @@ export default function ImpactPage() {
     <>
       <SmoothScroll />
       <NikeHeader />
-      <main>
+      <main id="main-content">
         {/* ── Cinematic Hero ── */}
         <section className="relative h-[85vh] min-h-[600px] overflow-hidden bg-black flex items-center">
           <Image

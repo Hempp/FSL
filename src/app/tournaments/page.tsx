@@ -6,6 +6,7 @@ export const metadata: Metadata = {
     "Register for FSL youth tournaments, skills combines, and weekly clinics across basketball, football, soccer, golf, and track & field in Los Angeles.",
 };
 
+import { JsonLd } from "@/components/JsonLd";
 import { NikeHeader } from "@/components/nike/NikeHeader";
 import { NikeFooter } from "@/components/nike/NikeFooter";
 import { NikeCTA } from "@/components/nike/NikeCTA";
@@ -147,9 +148,71 @@ const clinics = [
 export default function TournamentsPage() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Fundamental Sports Labs Tournaments & Clinics",
+          itemListElement: [
+            ...tournaments.map((t, i) => ({
+              "@type": "ListItem" as const,
+              position: i + 1,
+              item: {
+                "@type": "SportsEvent",
+                name: t.title,
+                description: t.desc,
+                startDate: t.date,
+                location: {
+                  "@type": "Place",
+                  name: t.location,
+                },
+                organizer: {
+                  "@type": "SportsOrganization",
+                  name: "Fundamental Sports Labs",
+                  url: "https://fundamentalsportslabs.org",
+                },
+                eventAttendanceMode:
+                  "https://schema.org/OfflineEventAttendanceMode",
+                image: `https://fundamentalsportslabs.org${t.image}`,
+                offers: {
+                  "@type": "Offer",
+                  price: t.fee,
+                  priceCurrency: "USD",
+                },
+              },
+            })),
+            ...clinics.map((c, i) => ({
+              "@type": "ListItem" as const,
+              position: tournaments.length + i + 1,
+              item: {
+                "@type": "Event",
+                name: c.title,
+                description: c.desc,
+                location: {
+                  "@type": "Place",
+                  name: c.location,
+                },
+                organizer: {
+                  "@type": "SportsOrganization",
+                  name: "Fundamental Sports Labs",
+                  url: "https://fundamentalsportslabs.org",
+                },
+                eventAttendanceMode:
+                  "https://schema.org/OfflineEventAttendanceMode",
+                image: `https://fundamentalsportslabs.org${c.image}`,
+                offers: {
+                  "@type": "Offer",
+                  price: c.fee,
+                  priceCurrency: "USD",
+                },
+              },
+            })),
+          ],
+        }}
+      />
       <SmoothScroll />
       <NikeHeader />
-      <main>
+      <main id="main-content">
         {/* ═══════════════════════════════════
             HERO — 85vh
         ═══════════════════════════════════ */}

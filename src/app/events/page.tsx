@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   description: "Join our youth golf clinics, basketball tournaments, track & field invitationals, football combines, and VR sports experience days in Los Angeles.",
 };
 
+import { JsonLd } from "@/components/JsonLd";
 import { NikeHeader } from "@/components/nike/NikeHeader";
 import { NikeFooter } from "@/components/nike/NikeFooter";
 import { NikeCTA } from "@/components/nike/NikeCTA";
@@ -27,9 +28,38 @@ export default function EventsPage() {
 
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Fundamental Sports Labs Upcoming Events",
+          itemListElement: events.map((e, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            item: {
+              "@type": "Event",
+              name: e.title,
+              description: e.desc,
+              startDate: e.date,
+              location: {
+                "@type": "Place",
+                name: e.location,
+              },
+              organizer: {
+                "@type": "SportsOrganization",
+                name: "Fundamental Sports Labs",
+                url: "https://fundamentalsportslabs.org",
+              },
+              eventAttendanceMode:
+                "https://schema.org/OfflineEventAttendanceMode",
+              image: `https://fundamentalsportslabs.org${e.image}`,
+            },
+          })),
+        }}
+      />
       <SmoothScroll />
       <NikeHeader />
-      <main>
+      <main id="main-content">
         {/* ── Featured Event Hero ── */}
         <section className="relative h-[85vh] min-h-[600px] overflow-hidden bg-black flex items-end">
           <Image

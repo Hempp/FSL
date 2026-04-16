@@ -54,7 +54,7 @@ export default function JoinPage() {
     <>
       <SmoothScroll />
       <NikeHeader />
-      <main>
+      <main id="main-content">
         {/* ── Nike Recruitment Campaign Hero ── */}
         <section className="relative h-[90vh] min-h-[650px] overflow-hidden bg-black flex items-center justify-center">
           <Image

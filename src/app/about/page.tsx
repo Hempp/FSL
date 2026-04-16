@@ -32,7 +32,7 @@ export default function AboutPage() {
     <>
       <SmoothScroll />
       <NikeHeader />
-      <main>
+      <main id="main-content">
         {/* ── Cinematic Hero — 85vh ESPN Feature ── */}
         <section className="relative h-[85vh] min-h-[600px] overflow-hidden bg-black flex items-end">
           <Image

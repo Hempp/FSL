@@ -183,7 +183,7 @@ export default function MentorCoachingPage() {
     <>
       <SmoothScroll />
       <NikeHeader />
-      <main>
+      <main id="main-content">
         {/* ═══════════════════════════════════════════
             HERO — 85vh
         ═══════════════════════════════════════════ */}

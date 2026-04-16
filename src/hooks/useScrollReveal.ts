@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 interface ScrollRevealOptions {
   threshold?: number;
@@ -12,28 +12,40 @@ export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(
   options: ScrollRevealOptions = {}
 ) {
   const { threshold = 0.15, rootMargin = "0px 0px -60px 0px", once = true } = options;
-  const ref = useRef<T>(null);
+  const [node, setNode] = useState<T | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
+  // Stable ref values to avoid effect re-runs on every render
+  const thresholdRef = useRef(threshold);
+  const rootMarginRef = useRef(rootMargin);
+  const onceRef = useRef(once);
+  thresholdRef.current = threshold;
+  rootMarginRef.current = rootMargin;
+  onceRef.current = once;
+
+  // Use callback ref so we know exactly when the DOM node is attached
+  const ref = useCallback((el: T | null) => {
+    setNode(el);
+  }, []);
+
   useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
+    if (!node) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          if (once) observer.unobserve(element);
-        } else if (!once) {
+          if (onceRef.current) observer.unobserve(node);
+        } else if (!onceRef.current) {
           setIsVisible(false);
         }
       },
-      { threshold, rootMargin }
+      { threshold: thresholdRef.current, rootMargin: rootMarginRef.current }
     );
 
-    observer.observe(element);
+    observer.observe(node);
     return () => observer.disconnect();
-  }, [threshold, rootMargin, once]);
+  }, [node]);
 
   return { ref, isVisible };
 }

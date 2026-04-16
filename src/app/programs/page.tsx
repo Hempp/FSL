@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   description: "Youth sports in basketball, football, soccer, golf, track & field, and baseball. Plus AI classes by Phazur Labs, VR/AR training, mental wellness, and financial responsibility.",
 };
 
+import { JsonLd } from "@/components/JsonLd";
 import { NikeHeader } from "@/components/nike/NikeHeader";
 import { NikeFooter } from "@/components/nike/NikeFooter";
 import { NikeCTA } from "@/components/nike/NikeCTA";
@@ -131,9 +132,30 @@ const wellness = [
 export default function ProgramsPage() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Fundamental Sports Labs Programs",
+          itemListElement: sports.map((s, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            item: {
+              "@type": "Service",
+              name: s.title,
+              description: s.desc,
+              provider: {
+                "@type": "SportsOrganization",
+                name: "Fundamental Sports Labs",
+              },
+              url: "https://fundamentalsportslabs.org/programs",
+            },
+          })),
+        }}
+      />
       <SmoothScroll />
       <NikeHeader />
-      <main className="overflow-hidden">
+      <main id="main-content" className="overflow-hidden">
 
         {/* ═══════════════════════════════════════
             ══  HERO — full-bleed, diagonal cut  ══

@@ -12,7 +12,7 @@ export function CoachApplicationForm() {
 
   if (state?.success) {
     return (
-      <div className="text-center py-16">
+      <div className="text-center py-16" role="status" aria-live="polite">
         <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4">
           <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" /></svg>
         </div>
@@ -25,7 +25,7 @@ export function CoachApplicationForm() {
   return (
     <form action={formAction} className="space-y-6">
       {state?.error && (
-        <div className="bg-red-500/10 border border-red-500/20 text-red-400 px-4 py-3 font-redhat text-[13px]">
+        <div className="bg-red-500/10 border border-red-500/20 text-red-400 px-4 py-3 font-redhat text-[13px]" role="alert" aria-live="assertive">
           {state.error}
         </div>
       )}
