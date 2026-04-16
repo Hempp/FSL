@@ -18,6 +18,7 @@ import { NikeTestimonial } from "@/components/nike/NikeTestimonial";
 import { NikeEvents } from "@/components/nike/NikeEvents";
 import { NikeCTA } from "@/components/nike/NikeCTA";
 import { NikeMarquee } from "@/components/nike/NikeMarquee";
+import { NikeTrustBar } from "@/components/nike/NikeTrustBar";
 import { NikeFooter } from "@/components/nike/NikeFooter";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
@@ -52,6 +53,7 @@ export default function Home() {
       <main id="main-content">
         <Hero3D />
         <NikeMarquee />
+        <NikeTrustBar />
 
         <ScrollReveal animation="fade-up">
           <NikeMission />

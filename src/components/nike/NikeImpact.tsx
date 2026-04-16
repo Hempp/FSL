@@ -8,7 +8,7 @@ const stats = [
   { end: 150, suffix: "+", label: "Youth Empowered", color: "#F4767C", icon: "M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4-4v2M9 7a4 4 0 100-8 4 4 0 000 8zM22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" },
   { end: 85, suffix: "%", label: "Improved Academics", color: "#0052FE", icon: "M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" },
   { end: 92, suffix: "%", label: "Graduate Success", color: "#00D17E", icon: "M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3" },
-  { end: 5000, suffix: "", label: "Service Hours", color: "#FF7900", icon: "M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" },
+  { end: 2500, suffix: "+", label: "Service Hours", color: "#FF7900", icon: "M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" },
 ];
 
 function Stat({
@@ -148,7 +148,7 @@ export function NikeImpact() {
         <div className="mt-10 flex items-center gap-4 justify-center">
           <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
           <span className="font-redhat text-[10px] uppercase tracking-[0.3em] text-white/20 shrink-0">
-            Live &bull; Updated 2025
+            Live &bull; Updated 2026
           </span>
           <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         </div>

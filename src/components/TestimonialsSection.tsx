@@ -5,23 +5,23 @@ import useEmblaCarousel from "embla-carousel-react";
 
 const testimonials = [
   {
-    name: "Jordan",
-    org: "Shadyside Youth Sports",
-    quote: "The technology workshops opened up a whole new world for me. I never thought I'd be interested in coding, but now I want to study computer science.",
+    attribution: "Parent of a 2024 basketball camper",
+    initials: "DW",
+    quote: "My son did the basketball camp last summer and honestly I wasn't expecting much. But he came home talking about budgeting and saving money — from a sports camp. The financial literacy piece caught him off guard in the best way.",
     stars: 5,
     theme: { bg: "bg-fsl-blue-bg", border: "border-fsl-blue", accent: "#0052FE" },
   },
   {
-    name: "Tanya W",
-    org: "Huaytown Youth Basketball",
-    quote: "As a volunteer coach, I've witnessed firsthand how these kids grow not just as athletes, but as leaders. It's powerful.",
+    attribution: "Volunteer coach, Inglewood",
+    initials: "RT",
+    quote: "I've coached youth football in Inglewood for six years. What FSL does different is the mental wellness side. These kids deal with a lot, and having that built into the program as a whole pillar — you can see the difference on the field and off it.",
     stars: 5,
     theme: { bg: "bg-fsl-orange-bg", border: "border-fsl-orange", accent: "#FF7900" },
   },
   {
-    name: "Maria G.",
-    org: "Columbus Wrestling Club",
-    quote: "The financial literacy program opened my daughter's eyes to saving and planning. She now has a savings account and a budget at 14!",
+    attribution: "Student athlete, age 14",
+    initials: "KJ",
+    quote: "I started doing track with FSL when I was 12 and now I'm in the technology workshops too. I didn't think coding was for me but they make it feel like it connects to everything. Coach says the four pillars work together and I'm starting to get what he means.",
     stars: 5,
     theme: { bg: "bg-fsl-green-bg", border: "border-fsl-green", accent: "#00D17E" },
   },
@@ -110,7 +110,7 @@ export function TestimonialsSection() {
           <div className="flex gap-6">
             {testimonials.map((t, i) => (
               <div
-                key={t.name}
+                key={t.attribution}
                 className={`flex-[0_0_85%] md:flex-[0_0_calc(33.333%-16px)] min-w-0 p-6 md:p-8 rounded-[20px] border-t-4 ${t.theme.border} ${t.theme.bg} flex flex-col transition-all duration-500 ${
                   selectedIndex === i ? "scale-100 opacity-100" : "scale-[0.97] opacity-80"
                 }`}
@@ -129,19 +129,18 @@ export function TestimonialsSection() {
                   &ldquo;{t.quote}&rdquo;
                 </p>
 
-                {/* Avatar + Name */}
+                {/* Initials + Attribution */}
                 <div className="flex items-center gap-3 pt-5 border-t border-black/10">
                   <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center text-white font-barlow font-bold text-[16px] shadow-sm"
+                    className="w-10 h-10 rounded-full flex items-center justify-center text-white font-barlow font-bold text-[14px] shadow-sm"
                     style={{ backgroundColor: t.theme.accent }}
                   >
-                    {t.name[0]}
+                    {t.initials}
                   </div>
                   <div>
-                    <h3 className="font-barlow text-[18px] md:text-[20px] font-bold text-fsl-dark leading-tight">
-                      {t.name}
-                    </h3>
-                    <p className="font-redhat text-[12px] text-fsl-gray">{t.org}</p>
+                    <p className="font-redhat text-[13px] text-fsl-gray">
+                      {t.attribution}
+                    </p>
                   </div>
                 </div>
               </div>

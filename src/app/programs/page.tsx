@@ -13,6 +13,7 @@ import { SmoothScroll } from "@/components/SmoothScroll";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import Image from "next/image";
 import Link from "next/link";
+import { Calendar, Clock, MapPin, DollarSign, Users, Shirt } from "lucide-react";
 
 /* ── DATA ── */
 const sports = [
@@ -602,6 +603,151 @@ export default function ProgramsPage() {
                   </Link>
                 </ScrollReveal>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════════════════════════════════
+            ══  PROGRAM DETAILS — practical info  ══
+            ═══════════════════════════════════════ */}
+        <section className="py-20 sm:py-28 md:py-40 bg-[#f5f5f5] relative">
+          <div className="max-w-[1600px] mx-auto px-6 md:px-16 lg:px-24">
+            <ScrollReveal animation="fade-up">
+              <div className="text-center mb-16 md:mb-24">
+                <span className="font-redhat text-[11px] uppercase tracking-[0.4em] text-fsl-coral font-medium mb-5 inline-flex items-center gap-3">
+                  <span className="w-6 h-[1px] bg-fsl-coral/50" />
+                  Everything You Need to Know
+                  <span className="w-6 h-[1px] bg-fsl-coral/50" />
+                </span>
+                <h2 className="font-barlow text-[42px] sm:text-[56px] md:text-[72px] font-bold text-fsl-dark uppercase leading-[0.88] tracking-[-0.02em] mt-5">
+                  Program Details
+                </h2>
+                <p className="font-redhat text-[14px] sm:text-[15px] text-[#999] font-normal leading-[1.8] mt-6 max-w-[500px] mx-auto">
+                  Year-round programming for young athletes ages 8&ndash;17 across Los Angeles. No experience necessary.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              {/* Schedule */}
+              <ScrollReveal animation="fade-up" delay={0}>
+                <div className="bg-white p-6 sm:p-8 md:p-10 h-full">
+                  <div className="w-12 h-12 rounded-full bg-fsl-coral/10 flex items-center justify-center mb-5">
+                    <Calendar className="w-5 h-5 text-fsl-coral" />
+                  </div>
+                  <h3 className="font-barlow text-[20px] sm:text-[22px] font-bold text-fsl-dark uppercase leading-tight mb-3 tracking-[-0.01em]">
+                    Schedule
+                  </h3>
+                  <div className="space-y-3">
+                    <p className="font-redhat text-[13px] sm:text-[14px] text-[#777] leading-[1.75]">
+                      <span className="font-semibold text-fsl-dark">Season:</span> Year-round programming
+                    </p>
+                    <p className="font-redhat text-[13px] sm:text-[14px] text-[#777] leading-[1.75]">
+                      <span className="font-semibold text-fsl-dark">Days:</span> Saturdays + select weekdays after school
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              {/* Times */}
+              <ScrollReveal animation="fade-up" delay={80}>
+                <div className="bg-white p-6 sm:p-8 md:p-10 h-full">
+                  <div className="w-12 h-12 rounded-full bg-fsl-blue/10 flex items-center justify-center mb-5">
+                    <Clock className="w-5 h-5 text-fsl-blue" />
+                  </div>
+                  <h3 className="font-barlow text-[20px] sm:text-[22px] font-bold text-fsl-dark uppercase leading-tight mb-3 tracking-[-0.01em]">
+                    Times
+                  </h3>
+                  <div className="space-y-3">
+                    <p className="font-redhat text-[13px] sm:text-[14px] text-[#777] leading-[1.75]">
+                      <span className="font-semibold text-fsl-dark">Weekends:</span> 9:00 AM &ndash; 12:00 PM
+                    </p>
+                    <p className="font-redhat text-[13px] sm:text-[14px] text-[#777] leading-[1.75]">
+                      <span className="font-semibold text-fsl-dark">Weekdays:</span> 3:30 PM &ndash; 5:30 PM
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              {/* Location */}
+              <ScrollReveal animation="fade-up" delay={160}>
+                <div className="bg-white p-6 sm:p-8 md:p-10 h-full">
+                  <div className="w-12 h-12 rounded-full bg-[#00D17E]/10 flex items-center justify-center mb-5">
+                    <MapPin className="w-5 h-5 text-[#00D17E]" />
+                  </div>
+                  <h3 className="font-barlow text-[20px] sm:text-[22px] font-bold text-fsl-dark uppercase leading-tight mb-3 tracking-[-0.01em]">
+                    Location
+                  </h3>
+                  <div className="space-y-3">
+                    <p className="font-redhat text-[13px] sm:text-[14px] text-[#777] leading-[1.75]">
+                      Los Angeles, CA
+                    </p>
+                    <p className="font-redhat text-[13px] sm:text-[14px] text-[#777] leading-[1.75]">
+                      Various community facilities, parks, and school campuses
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              {/* Cost */}
+              <ScrollReveal animation="fade-up" delay={240}>
+                <div className="bg-white p-6 sm:p-8 md:p-10 h-full">
+                  <div className="w-12 h-12 rounded-full bg-[#E9BB00]/10 flex items-center justify-center mb-5">
+                    <DollarSign className="w-5 h-5 text-[#E9BB00]" />
+                  </div>
+                  <h3 className="font-barlow text-[20px] sm:text-[22px] font-bold text-fsl-dark uppercase leading-tight mb-3 tracking-[-0.01em]">
+                    Cost
+                  </h3>
+                  <div className="space-y-3">
+                    <p className="font-redhat text-[13px] sm:text-[14px] text-[#777] leading-[1.75]">
+                      <span className="font-semibold text-fsl-dark">Registration:</span> Free for all athletes
+                    </p>
+                    <p className="font-redhat text-[13px] sm:text-[14px] text-fsl-coral font-medium leading-[1.75]">
+                      No child is turned away due to inability to pay.
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              {/* Ages */}
+              <ScrollReveal animation="fade-up" delay={320}>
+                <div className="bg-white p-6 sm:p-8 md:p-10 h-full">
+                  <div className="w-12 h-12 rounded-full bg-[#FF7900]/10 flex items-center justify-center mb-5">
+                    <Users className="w-5 h-5 text-[#FF7900]" />
+                  </div>
+                  <h3 className="font-barlow text-[20px] sm:text-[22px] font-bold text-fsl-dark uppercase leading-tight mb-3 tracking-[-0.01em]">
+                    Ages
+                  </h3>
+                  <div className="space-y-3">
+                    <p className="font-redhat text-[13px] sm:text-[14px] text-[#777] leading-[1.75]">
+                      <span className="font-semibold text-fsl-dark">Eligibility:</span> Ages 8&ndash;17
+                    </p>
+                    <p className="font-redhat text-[13px] sm:text-[14px] text-[#777] leading-[1.75]">
+                      All skill levels welcome — no experience required
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              {/* What to Bring */}
+              <ScrollReveal animation="fade-up" delay={400}>
+                <div className="bg-white p-6 sm:p-8 md:p-10 h-full">
+                  <div className="w-12 h-12 rounded-full bg-[#CC2222]/10 flex items-center justify-center mb-5">
+                    <Shirt className="w-5 h-5 text-[#CC2222]" />
+                  </div>
+                  <h3 className="font-barlow text-[20px] sm:text-[22px] font-bold text-fsl-dark uppercase leading-tight mb-3 tracking-[-0.01em]">
+                    What to Bring
+                  </h3>
+                  <div className="space-y-3">
+                    <p className="font-redhat text-[13px] sm:text-[14px] text-[#777] leading-[1.75]">
+                      Athletic shoes, water bottle, and a positive attitude
+                    </p>
+                    <p className="font-redhat text-[13px] sm:text-[14px] text-[#777] leading-[1.75]">
+                      <span className="font-semibold text-fsl-dark">Equipment:</span> Provided through our donation program
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>
