@@ -85,6 +85,7 @@ const columns = [
       { label: "Donate", href: "/donate" },
       { label: "Volunteer", href: "/join" },
       { label: "Events", href: "/events" },
+      { label: "Blog", href: "/blog" },
     ],
   },
 ];

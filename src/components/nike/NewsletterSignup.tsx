@@ -1,20 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useActionState } from "react";
+import { subscribeNewsletter } from "@/app/actions";
 
 export function NewsletterSignup() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const [state, formAction, pending] = useActionState(subscribeNewsletter, null);
 
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (email) {
-      setSubmitted(true);
-      setEmail("");
-    }
-  }
-
-  if (submitted) {
+  if (state?.success) {
     return (
       <div className="flex items-center gap-3">
         <div className="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center">
@@ -28,20 +20,28 @@ export function NewsletterSignup() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+    <form action={formAction} className="flex flex-col sm:flex-row gap-3">
+      <div className="absolute -left-[9999px]" aria-hidden="true">
+        <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+      </div>
+      {state?.error && (
+        <div className="text-red-400 font-redhat text-[13px] mb-1" role="alert" aria-live="assertive">
+          {state.error}
+        </div>
+      )}
       <input
         type="email"
+        name="email"
         required
         placeholder="Enter your email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
         className="flex-1 bg-white/[0.06] border border-white/10 px-4 py-3 font-redhat text-[14px] text-white placeholder:text-white/30 focus:outline-none focus:border-fsl-coral/50 transition-colors"
       />
       <button
         type="submit"
-        className="bg-fsl-coral hover:bg-fsl-coral/90 text-white font-redhat text-[12px] font-semibold uppercase tracking-[0.15em] px-8 py-3 transition-colors"
+        disabled={pending}
+        className="bg-fsl-coral hover:bg-fsl-coral/90 text-white font-redhat text-[12px] font-semibold uppercase tracking-[0.15em] px-8 py-3 transition-colors disabled:opacity-50"
       >
-        Subscribe
+        {pending ? "Subscribing..." : "Subscribe"}
       </button>
     </form>
   );

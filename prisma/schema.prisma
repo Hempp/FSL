@@ -99,3 +99,10 @@ model Sponsorship {
   amount       Int
   status       String   @default("pending")
 }
+
+model NewsletterSubscriber {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  email     String   @unique
+  status    String   @default("active")
+}

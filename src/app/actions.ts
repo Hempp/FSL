@@ -1,6 +1,7 @@
 "use server";
 
 import { db } from "@/lib/db";
+import { sendNotification, formatEmailTable } from "@/lib/email";
 
 /* ────────────────────────────────────────────
    TODO: Add rate limiting in production.
@@ -77,6 +78,10 @@ export async function submitRegistration(_prev: unknown, formData: FormData) {
     return await withDb(
       async () => {
         await db.registration.create({ data });
+        sendNotification(
+          `New Registration: ${data.firstName} ${data.lastName} for ${data.eventName || data.programType}`,
+          formatEmailTable("New Registration", data),
+        ).catch(() => {});
         return { success: true };
       },
       data
@@ -109,6 +114,10 @@ export async function submitJoin(_prev: unknown, formData: FormData) {
     return await withDb(
       async () => {
         await db.joinRequest.create({ data });
+        sendNotification(
+          `New ${data.path || "Join"} Application: ${data.firstName} ${data.lastName}`,
+          formatEmailTable("New Join / Volunteer Application", data),
+        ).catch(() => {});
         return { success: true };
       },
       data
@@ -139,6 +148,10 @@ export async function submitContact(_prev: unknown, formData: FormData) {
     return await withDb(
       async () => {
         await db.contactMessage.create({ data });
+        sendNotification(
+          `New Contact Message from ${data.name}: ${data.subject || "(no subject)"}`,
+          formatEmailTable("New Contact Message", data),
+        ).catch(() => {});
         return { success: true };
       },
       data
@@ -176,6 +189,10 @@ export async function submitCoachApplication(_prev: unknown, formData: FormData)
     return await withDb(
       async () => {
         await db.coachApplication.create({ data });
+        sendNotification(
+          `New Coach Application: ${data.fullName}`,
+          formatEmailTable("New Coach Application", data),
+        ).catch(() => {});
         return { success: true };
       },
       data
@@ -210,9 +227,42 @@ export async function submitEquipmentRequest(_prev: unknown, formData: FormData)
     return await withDb(
       async () => {
         await db.equipmentRequest.create({ data });
+        sendNotification(
+          `Equipment Request from ${data.organizationName}`,
+          formatEmailTable("New Equipment / Jersey Request", data),
+        ).catch(() => {});
         return { success: true };
       },
       data
+    );
+  } catch {
+    return { success: false, error: "Something went wrong. Please try again." };
+  }
+}
+
+/* ────────────────────────────────────────────
+   6. Newsletter Signup
+   ──────────────────────────────────────────── */
+export async function subscribeNewsletter(_prev: unknown, formData: FormData) {
+  if (isBot(formData)) return { success: true };
+
+  const email = (formData.get("email") as string)?.trim().toLowerCase();
+
+  if (!email || !email.includes("@")) {
+    return { success: false, error: "Please enter a valid email." };
+  }
+
+  try {
+    return await withDb(
+      async () => {
+        await db.newsletterSubscriber.upsert({
+          where: { email },
+          update: {},
+          create: { email },
+        });
+        return { success: true };
+      },
+      { email },
     );
   } catch {
     return { success: false, error: "Something went wrong. Please try again." };

@@ -3,5 +3,6 @@ Allow: /
 
 Disallow: /_next/static
 Disallow: /api
+Disallow: /admin
 
 Sitemap: https://fundamentalsportslabs.org/sitemap.xml
