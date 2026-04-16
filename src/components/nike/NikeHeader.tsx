@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useSyncExternalStore } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -41,6 +41,18 @@ export function NikeHeader() {
   const scrolled = useSyncExternalStore(subscribeScroll, getScrolled, getScrolledServer);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileSubOpen, setMobileSubOpen] = useState(false);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+      setMobileSubOpen(false);
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
 
   return (
     <header
@@ -51,7 +63,7 @@ export function NikeHeader() {
           : "bg-transparent"
       )}
     >
-      <div className="max-w-[1800px] mx-auto flex items-center justify-between px-6 md:px-12 py-4">
+      <div className="max-w-[1800px] mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-12 py-3 sm:py-4">
         <Link href="/" className="shrink-0 flex items-center gap-2.5">
           <div className={cn(
             "rounded-xl p-1.5 transition-all duration-500",
@@ -62,19 +74,20 @@ export function NikeHeader() {
               alt="F.S.L"
               width={80}
               height={36}
-              className="h-[32px] w-auto"
+              className="h-[28px] sm:h-[32px] w-auto"
               priority
             />
           </div>
           <span className={cn(
-            "hidden sm:block font-barlow text-[11px] font-bold uppercase tracking-[0.12em] leading-tight transition-colors duration-500",
+            "hidden sm:block font-barlow text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.12em] leading-tight transition-colors duration-500",
             scrolled ? "text-fsl-dark" : "text-white"
           )}>
             Fundamental<br />Sports Labs
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-10">
+        {/* Desktop nav — hidden below lg to avoid cramping on tablets */}
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-10">
           {NAV_LINKS.map((link) =>
             link.children ? (
               <div
@@ -86,7 +99,7 @@ export function NikeHeader() {
                 <Link
                   href={link.href}
                   className={cn(
-                    "font-redhat text-[13px] font-medium uppercase tracking-[0.15em] transition-colors duration-200 hover:text-fsl-coral flex items-center gap-1",
+                    "font-redhat text-[12px] xl:text-[13px] font-medium uppercase tracking-[0.12em] xl:tracking-[0.15em] transition-colors duration-200 hover:text-fsl-coral flex items-center gap-1",
                     scrolled ? "text-fsl-dark" : "text-white"
                   )}
                 >
@@ -134,7 +147,7 @@ export function NikeHeader() {
                 key={link.label}
                 href={link.href}
                 className={cn(
-                  "font-redhat text-[13px] font-medium uppercase tracking-[0.15em] transition-colors duration-200 hover:text-fsl-coral",
+                  "font-redhat text-[12px] xl:text-[13px] font-medium uppercase tracking-[0.12em] xl:tracking-[0.15em] transition-colors duration-200 hover:text-fsl-coral",
                   scrolled ? "text-fsl-dark" : "text-white"
                 )}
               >
@@ -144,64 +157,123 @@ export function NikeHeader() {
           )}
         </nav>
 
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4">
           <Link
             href="/join"
-            className="font-redhat text-[13px] font-medium uppercase tracking-[0.15em] text-white bg-fsl-dark px-6 py-2.5 rounded-full hover:bg-fsl-coral transition-colors duration-300"
+            className="font-redhat text-[12px] xl:text-[13px] font-medium uppercase tracking-[0.15em] text-white bg-fsl-dark px-5 xl:px-6 py-2.5 rounded-full hover:bg-fsl-coral transition-colors duration-300"
           >
             Join Now
           </Link>
         </div>
 
-        {/* Mobile menu button */}
+        {/* Mobile/Tablet menu button — 44px touch target */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden relative z-50 w-8 h-8 flex flex-col items-center justify-center gap-1.5"
-          aria-label="Menu"
+          className="lg:hidden relative z-50 w-11 h-11 flex flex-col items-center justify-center gap-1.5"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
         >
-          <span className={cn("block h-[2px] w-6 transition-all duration-300", scrolled || mobileOpen ? "bg-fsl-dark" : "bg-white", mobileOpen && "translate-y-[5px] rotate-45")} />
-          <span className={cn("block h-[2px] w-6 transition-all duration-300", scrolled || mobileOpen ? "bg-fsl-dark" : "bg-white", mobileOpen && "opacity-0")} />
-          <span className={cn("block h-[2px] w-6 transition-all duration-300", scrolled || mobileOpen ? "bg-fsl-dark" : "bg-white", mobileOpen && "-translate-y-[5px] -rotate-45")} />
+          <span className={cn("block h-[2px] w-6 transition-all duration-300 origin-center", scrolled || mobileOpen ? "bg-fsl-dark" : "bg-white", mobileOpen && "translate-y-[5px] rotate-45")} />
+          <span className={cn("block h-[2px] w-6 transition-all duration-300", scrolled || mobileOpen ? "bg-fsl-dark" : "bg-white", mobileOpen && "opacity-0 scale-0")} />
+          <span className={cn("block h-[2px] w-6 transition-all duration-300 origin-center", scrolled || mobileOpen ? "bg-fsl-dark" : "bg-white", mobileOpen && "-translate-y-[5px] -rotate-45")} />
         </button>
       </div>
 
-      {/* Mobile overlay */}
-      {mobileOpen && (
-        <div className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center gap-6 md:hidden">
-          {NAV_LINKS.map((link) => (
-            <div key={link.label} className="flex flex-col items-center">
-              <Link
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="font-barlow text-[32px] font-bold uppercase tracking-wide text-fsl-dark hover:text-fsl-coral transition-colors"
-              >
-                {link.label}
-              </Link>
-              {link.children && (
-                <div className="flex flex-col items-center gap-2 mt-2">
-                  {link.children.map((child) => (
-                    <Link
-                      key={child.href}
-                      href={child.href}
-                      onClick={() => setMobileOpen(false)}
-                      className="font-redhat text-[16px] font-medium text-[#888] hover:text-fsl-coral transition-colors"
+      {/* Mobile/Tablet overlay — scrollable, animated */}
+      <div
+        className={cn(
+          "fixed inset-0 bg-white z-40 lg:hidden transition-all duration-300 ease-out",
+          mobileOpen
+            ? "opacity-100 visible"
+            : "opacity-0 invisible pointer-events-none"
+        )}
+      >
+        <div className="h-full overflow-y-auto pt-24 pb-12 px-6 sm:px-12 flex flex-col">
+          {/* Nav links */}
+          <nav className="flex-1 flex flex-col gap-1">
+            {NAV_LINKS.map((link) => (
+              <div key={link.label}>
+                {link.children ? (
+                  <>
+                    <button
+                      onClick={() => setMobileSubOpen(!mobileSubOpen)}
+                      className="w-full flex items-center justify-between py-3 sm:py-4"
                     >
-                      {child.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-          <Link
-            href="/join"
-            onClick={() => setMobileOpen(false)}
-            className="mt-4 bg-fsl-dark text-white px-10 py-4 rounded-full font-redhat text-[14px] font-medium uppercase tracking-wide"
-          >
-            Join Now
-          </Link>
+                      <span className="font-barlow text-[24px] sm:text-[28px] font-bold uppercase tracking-wide text-fsl-dark">
+                        {link.label}
+                      </span>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        className={cn(
+                          "text-fsl-coral transition-transform duration-300",
+                          mobileSubOpen && "rotate-180"
+                        )}
+                      >
+                        <path d="M6 9l6 6 6-6" />
+                      </svg>
+                    </button>
+                    <div
+                      className={cn(
+                        "overflow-hidden transition-all duration-300",
+                        mobileSubOpen ? "max-h-[200px] opacity-100 mb-2" : "max-h-0 opacity-0"
+                      )}
+                    >
+                      <div className="pl-4 border-l-2 border-fsl-coral/20 flex flex-col gap-1">
+                        {link.children.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            onClick={() => setMobileOpen(false)}
+                            className="py-2.5 font-redhat text-[15px] sm:text-[16px] font-medium text-[#666] hover:text-fsl-coral transition-colors"
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <Link
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="block py-3 sm:py-4 font-barlow text-[24px] sm:text-[28px] font-bold uppercase tracking-wide text-fsl-dark hover:text-fsl-coral transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </nav>
+
+          {/* Bottom CTAs */}
+          <div className="flex flex-col gap-3 mt-8 pt-8 border-t border-black/10">
+            <Link
+              href="/join"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center justify-center bg-fsl-dark text-white py-4 rounded-full font-redhat text-[14px] font-medium uppercase tracking-wide hover:bg-fsl-coral transition-colors"
+            >
+              Enroll Free
+            </Link>
+            <Link
+              href="/donate"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center justify-center border-2 border-fsl-dark text-fsl-dark py-4 rounded-full font-redhat text-[14px] font-medium uppercase tracking-wide hover:bg-fsl-dark hover:text-white transition-colors"
+            >
+              Support Our Mission
+            </Link>
+          </div>
+
+          {/* Nonprofit badge */}
+          <p className="text-center font-redhat text-[11px] text-[#aaa] mt-6">
+            501(c)(3) Nonprofit · EIN: 39-4190687
+          </p>
         </div>
-      )}
+      </div>
     </header>
   );
 }
