@@ -109,12 +109,13 @@ export function Hero3D() {
 
       {/* ═══════════════════════════════════════════════
           ══  MAIN CONTENT LAYOUT  ══
-          Center: 3D logo  |  Bottom: headline text
+          Mobile: logo top-center, text below
+          Desktop: logo right, text left-bottom
           ═══════════════════════════════════════════════ */}
 
-      {/* ── 3D LOGO STAGE (right side, clear of text) ── */}
+      {/* ── 3D LOGO STAGE ── */}
       <div
-        className="absolute inset-0 flex items-center justify-center lg:justify-end lg:pr-[10%] xl:pr-[12%] pb-10 md:pb-20"
+        className="absolute inset-0 flex items-start sm:items-center justify-center lg:justify-end lg:pr-[10%] xl:pr-[12%] pt-[15vh] sm:pt-0 sm:pb-20"
         style={{ perspective: "1000px" }}
       >
         <div
@@ -148,19 +149,19 @@ export function Hero3D() {
             }}
           />
 
-          {/* ── Outer ring / orbit track ── */}
+          {/* ── Outer ring / orbit track (hidden on mobile) ── */}
           <div
-            className="absolute inset-[-50px] rounded-full border border-white/[0.04]"
+            className="absolute inset-[-50px] rounded-full border border-white/[0.04] hidden sm:block"
             style={{ transform: "translateZ(-10px)" }}
           />
           <div
-            className="absolute inset-[-80px] rounded-full border border-white/[0.02]"
+            className="absolute inset-[-80px] rounded-full border border-white/[0.02] hidden sm:block"
             style={{ transform: "translateZ(-15px)" }}
           />
 
           {/* ── THE LOGO ── */}
           <div
-            className="relative w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] md:w-[320px] md:h-[320px] lg:w-[360px] lg:h-[360px]"
+            className="relative w-[140px] h-[140px] sm:w-[200px] sm:h-[200px] md:w-[280px] md:h-[280px] lg:w-[340px] lg:h-[340px] xl:w-[360px] xl:h-[360px]"
             style={{ transform: "translateZ(50px)" }}
           >
             {/* Glass platform behind logo */}
@@ -197,7 +198,7 @@ export function Hero3D() {
             />
           </div>
 
-          {/* ── Orbiting sport dots ── */}
+          {/* ── Orbiting sport dots (hidden on small mobile) ── */}
           {sportColors.map((color, idx) => {
             const angle = (idx / sportColors.length) * Math.PI * 2 - Math.PI / 2;
             const radius = 180;
@@ -208,7 +209,7 @@ export function Hero3D() {
             return (
               <div
                 key={sportNames[idx]}
-                className="absolute top-1/2 left-1/2 pointer-events-none"
+                className="absolute top-1/2 left-1/2 pointer-events-none hidden sm:block"
                 style={{
                   transform: `translate(-50%, -50%) translateZ(${30 + idx * 6}px) translate(${
                     baseX + mouse.x * (12 + idx * 4)
@@ -246,7 +247,7 @@ export function Hero3D() {
       {/* ═══════════════════════════════════════════════
           ══  TEXT & CTA (bottom layer)  ══
           ═══════════════════════════════════════════════ */}
-      <div className="absolute inset-0 z-10 flex flex-col justify-end px-6 md:px-16 lg:px-24 pb-36 sm:pb-40 md:pb-44 pointer-events-none">
+      <div className="absolute inset-0 z-10 flex flex-col justify-end px-4 sm:px-6 md:px-16 lg:px-24 pb-28 sm:pb-36 md:pb-44 pointer-events-none">
         <div className="max-w-[900px]">
           <p
             className={`font-redhat text-[11px] uppercase tracking-[0.4em] text-fsl-coral/80 font-medium flex items-center gap-3 mb-4 transition-all duration-1000 delay-500 ${
@@ -257,7 +258,7 @@ export function Hero3D() {
             Fundamental Sports Labs
           </p>
           <h1
-            className={`font-barlow text-[40px] sm:text-[60px] md:text-[96px] lg:text-[120px] xl:text-[140px] font-bold text-white uppercase leading-[0.88] tracking-[-0.025em] transition-all duration-[1.4s] ease-[cubic-bezier(0.16,1,0.3,1)] delay-700 ${
+            className={`font-barlow text-[36px] sm:text-[52px] md:text-[80px] lg:text-[110px] xl:text-[140px] font-bold text-white uppercase leading-[0.92] sm:leading-[0.88] tracking-[-0.025em] transition-all duration-[1.4s] ease-[cubic-bezier(0.16,1,0.3,1)] delay-700 ${
               loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
             }`}
             style={{ textShadow: "0 4px 80px rgba(0,0,0,0.5)" }}
@@ -276,7 +277,7 @@ export function Hero3D() {
       </div>
 
       {/* ── Now Playing badge (below headline, left-aligned) ── */}
-      <div className="absolute left-6 md:left-16 lg:left-24 bottom-[80px] sm:bottom-[100px] md:bottom-[135px] z-10 pointer-events-none">
+      <div className="absolute left-4 sm:left-6 md:left-16 lg:left-24 bottom-[72px] sm:bottom-[90px] md:bottom-[135px] z-10 pointer-events-none">
         {sportNames.map((name, idx) => (
           <div
             key={name}
@@ -309,10 +310,10 @@ export function Hero3D() {
       </div>
 
       {/* ── CTA buttons ── */}
-      <div className="absolute bottom-14 sm:bottom-12 left-6 md:left-16 lg:left-24 z-10 flex flex-col sm:flex-row gap-3">
+      <div className="absolute bottom-10 sm:bottom-12 left-4 right-4 sm:left-6 sm:right-auto md:left-16 lg:left-24 z-10 flex flex-col sm:flex-row gap-3">
         <Link
           href="/join"
-          className="group relative bg-white text-black px-9 py-4 rounded-full font-redhat text-[12px] font-semibold uppercase tracking-[0.15em] overflow-hidden transition-shadow duration-500 hover:shadow-[0_0_50px_rgba(244,118,124,0.3)]"
+          className="group relative bg-white text-black px-9 py-4 rounded-full font-redhat text-[12px] font-semibold uppercase tracking-[0.15em] overflow-hidden transition-shadow duration-500 hover:shadow-[0_0_50px_rgba(244,118,124,0.3)] text-center"
         >
           <span className="relative z-10 group-hover:text-white transition-colors duration-500">
             Join Now
@@ -323,7 +324,7 @@ export function Hero3D() {
           href="https://www.zeffy.com/en-US/donation-form/donate-to-make-a-difference-19257"
           target="_blank"
           rel="noopener noreferrer"
-          className="border border-white/25 text-white/70 px-9 py-4 rounded-full font-redhat text-[12px] font-medium uppercase tracking-[0.15em] hover:border-white/60 hover:text-white hover:bg-white/5 transition-all duration-500"
+          className="border border-white/25 text-white/70 px-9 py-4 rounded-full font-redhat text-[12px] font-medium uppercase tracking-[0.15em] hover:border-white/60 hover:text-white hover:bg-white/5 transition-all duration-500 text-center"
         >
           Donate
         </a>
@@ -331,7 +332,7 @@ export function Hero3D() {
 
       {/* ── Scroll indicator ── */}
       <div
-        className={`absolute bottom-12 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 transition-all duration-1000 delay-[1.5s] ${
+        className={`absolute bottom-12 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-2 transition-all duration-1000 delay-[1.5s] ${
           loaded ? "opacity-100" : "opacity-0"
         }`}
       >
