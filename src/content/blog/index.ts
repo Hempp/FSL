@@ -17,7 +17,7 @@ export const blogPosts: BlogPost[] = [
       "Discover free youth sports programs in Los Angeles, including basketball camps, after-school sports, and more. Learn how Fundamental Sports Labs is making athletics accessible to every kid in LA.",
     date: "2026-04-15",
     author: "Fundamental Sports Labs",
-    image: "/images/urban/community.jpg",
+    image: "/images/urban/hero-basketball-court.jpg",
     tags: [
       "youth sports",
       "los angeles",
@@ -78,7 +78,7 @@ export const blogPosts: BlogPost[] = [
       "A comprehensive guide to free after-school programs in Los Angeles, including sports, tutoring, and enrichment. Learn why Fundamental Sports Labs is the top choice for LA families.",
     date: "2026-04-11",
     author: "Fundamental Sports Labs",
-    image: "/images/urban/community.jpg",
+    image: "/images/action/teens-learning.jpg",
     tags: [
       "after school programs",
       "los angeles",
@@ -95,7 +95,7 @@ export const blogPosts: BlogPost[] = [
       "Golf teaches patience, etiquette, and individual focus like no other sport. Discover how Fundamental Sports Labs makes youth golf accessible and free for kids in Los Angeles.",
     date: "2026-04-10",
     author: "Fundamental Sports Labs",
-    image: "/images/urban/cta-athletes.jpg",
+    image: "/images/action/coach-training.jpg",
     tags: ["golf", "youth sports", "beginners", "kids", "los angeles"],
   },
   {
@@ -106,7 +106,7 @@ export const blogPosts: BlogPost[] = [
       "Youth sports are one of the most powerful tools for building confidence in children. Learn how Fundamental Sports Labs transforms shy kids into confident leaders through its Four Pillars approach.",
     date: "2026-04-09",
     author: "Fundamental Sports Labs",
-    image: "/images/urban/team-huddle.jpg",
+    image: "/images/action/teen-basketball.jpg",
     tags: [
       "confidence",
       "youth development",
@@ -123,13 +123,30 @@ export const blogPosts: BlogPost[] = [
       "Everything you need to know about volunteering as a youth sports coach in LA. Learn about FSL's volunteer program, background check process, and how coaching changes lives.",
     date: "2026-04-08",
     author: "Fundamental Sports Labs",
-    image: "/images/urban/hero-basketball-court.jpg",
+    image: "/images/action/teens-collab.jpg",
     tags: [
       "volunteer",
       "coaching",
       "los angeles",
       "youth sports",
       "community",
+    ],
+  },
+  {
+    slug: "nil-deals-high-school-college-athletes",
+    title:
+      "NIL Deals Explained: What High School and College Athletes Need to Know in 2026",
+    description:
+      "Name, Image, and Likeness (NIL) deals are changing youth sports forever. Learn how high school and college athletes in Los Angeles can prepare for NIL opportunities — and why financial literacy matters more than ever.",
+    date: "2026-04-16",
+    author: "Fundamental Sports Labs",
+    image: "/images/action/teen-football.jpg",
+    tags: [
+      "NIL",
+      "college athletes",
+      "high school sports",
+      "financial literacy",
+      "los angeles",
     ],
   },
 ];
@@ -144,6 +161,7 @@ const wordCounts: Record<string, number> = {
   "golf-for-youth-beginners": 600,
   "building-confidence-through-sports": 650,
   "volunteer-youth-sports-coach-guide": 700,
+  "nil-deals-high-school-college-athletes": 900,
 };
 
 export function getReadingTime(slug: string): number {

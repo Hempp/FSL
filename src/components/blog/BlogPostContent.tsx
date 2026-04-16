@@ -1351,6 +1351,120 @@ function VolunteerYouthSportsCoachGuide() {
   );
 }
 
+function NILDealsHighSchoolCollege() {
+  return (
+    <>
+      <p>
+        The game has changed. Since the NCAA&apos;s 2021 ruling, college athletes
+        can now earn money from their Name, Image, and Likeness (NIL). And in
+        many states &mdash; including California &mdash; high school athletes can
+        too.
+      </p>
+      <p>
+        But here&apos;s what nobody&apos;s telling young athletes: getting an NIL
+        deal is the easy part. Keeping the money, managing taxes, and building a
+        brand that outlasts your playing days? That takes financial literacy most
+        kids never receive.
+      </p>
+
+      <h2>What Is an NIL Deal?</h2>
+      <p>
+        NIL stands for Name, Image, and Likeness. It means athletes can earn
+        money from:
+      </p>
+      <ul>
+        <li><strong>Social media endorsements</strong> &mdash; getting paid to post about a brand</li>
+        <li><strong>Autograph signings and appearances</strong> &mdash; showing up at events for a fee</li>
+        <li><strong>Merchandise</strong> &mdash; selling branded gear with your name</li>
+        <li><strong>Local business partnerships</strong> &mdash; a restaurant, barbershop, or car dealer sponsors you</li>
+        <li><strong>Content creation</strong> &mdash; YouTube, TikTok, or podcast deals</li>
+      </ul>
+      <p>
+        In California, the Fair Pay to Play Act (SB 206) was the first law in
+        the nation to protect student-athlete NIL rights. CA high school athletes
+        can participate in NIL deals as long as they don&apos;t conflict with
+        school contracts.
+      </p>
+
+      <h2>The Numbers Are Real</h2>
+      <ul>
+        <li>The average Division I athlete earns <strong>$500&ndash;$2,000/year</strong> from NIL (not millions &mdash; that&apos;s the top 1%)</li>
+        <li>Female athletes in volleyball, gymnastics, and softball are outearning many male athletes in NIL</li>
+        <li>Social media following matters more than stats &mdash; a 10K Instagram following can land local deals</li>
+        <li>High school athletes in California are now signing deals as young as 14</li>
+      </ul>
+
+      <h2>Why Most Young Athletes Aren&apos;t Ready</h2>
+      <p>
+        Here&apos;s the problem: a 16-year-old signs a $5,000 deal and thinks
+        they&apos;re rich. Six months later, they owe $1,500 in taxes they
+        didn&apos;t know about. Or they sign an exclusive contract that locks them
+        out of better deals later.
+      </p>
+      <p>
+        This is exactly why FSL teaches financial literacy as one of our Four
+        Pillars.
+      </p>
+
+      <h3>What Every Young Athlete Needs to Know Before Signing</h3>
+      <ol>
+        <li><strong>Taxes are real.</strong> NIL income is taxable. Set aside 25&ndash;30% of every check.</li>
+        <li><strong>Read the contract.</strong> Exclusivity clauses can lock you in. Always have an adult review.</li>
+        <li><strong>Build your brand now.</strong> Start a clean social media presence before the deals come.</li>
+        <li><strong>Don&apos;t spend the check.</strong> Open a savings account. Learn to invest.</li>
+        <li><strong>Your value isn&apos;t just stats.</strong> Community involvement, personality, and storytelling matter.</li>
+      </ol>
+
+      <h2>How FSL Prepares Athletes for NIL</h2>
+      <p>
+        At Fundamental Sports Labs, our financial literacy pillar covers:
+      </p>
+      <ul>
+        <li><strong>Budgeting workshops</strong> &mdash; how to manage money when it comes in waves</li>
+        <li><strong>Understanding taxes</strong> &mdash; what self-employment tax means for athletes</li>
+        <li><strong>Savings goals</strong> &mdash; building an emergency fund before buying sneakers</li>
+        <li><strong>Brand building</strong> &mdash; how to present yourself professionally online</li>
+        <li><strong>Contract basics</strong> &mdash; what to look for (and what to avoid) in sponsorship agreements</li>
+      </ul>
+      <p>
+        We don&apos;t wait until college to teach this. Our athletes learn money
+        management starting at age 8 &mdash; so when the NIL opportunities come,
+        they&apos;re ready.
+      </p>
+
+      <h2>California NIL Rules for High School Athletes</h2>
+      <ul>
+        <li>You <strong>CAN</strong> earn NIL money as a CA high school athlete</li>
+        <li>You <strong>CANNOT</strong> use your school&apos;s name, logo, or uniform in NIL deals</li>
+        <li>You <strong>CANNOT</strong> miss class or practice for NIL activities</li>
+        <li>Your school <strong>CANNOT</strong> punish you for having NIL deals</li>
+        <li>You <strong>SHOULD</strong> keep records of all income for tax purposes</li>
+      </ul>
+
+      <h2>The Bottom Line</h2>
+      <p>
+        NIL is the biggest opportunity in youth sports history. But opportunity
+        without preparation is just another way to lose. The athletes who win
+        long-term won&apos;t be the ones with the biggest deals &mdash;
+        they&apos;ll be the ones who understood money, contracts, and branding
+        before the first check arrived.
+      </p>
+      <p>
+        That&apos;s what FSL is building. Not just athletes. Leaders who are
+        financially literate, mentally resilient, and ready for whatever comes
+        next.
+      </p>
+      <p>
+        <strong>Want your child prepared for the NIL era?</strong>{" "}
+        <Link href="/join" className="text-fsl-coral hover:underline">
+          Enroll free at Fundamental Sports Labs
+        </Link>{" "}
+        &mdash; all programs are free for youth ages 8&ndash;17 in Los Angeles.
+      </p>
+    </>
+  );
+}
+
 const postComponents: Record<string, React.FC> = {
   "free-youth-sports-los-angeles": FreeYouthSportsLA,
   "benefits-youth-sports-mental-health": BenefitsYouthSportsMentalHealth,
@@ -1360,6 +1474,7 @@ const postComponents: Record<string, React.FC> = {
   "golf-for-youth-beginners": GolfForYouthBeginners,
   "building-confidence-through-sports": BuildingConfidenceThroughSports,
   "volunteer-youth-sports-coach-guide": VolunteerYouthSportsCoachGuide,
+  "nil-deals-high-school-college-athletes": NILDealsHighSchoolCollege,
 };
 
 export function BlogPostContent({ slug }: { slug: string }) {
