@@ -159,40 +159,35 @@ export function Hero3D() {
             style={{ transform: "translateZ(-15px)" }}
           />
 
-          {/* ── THE LOGO ── */}
+          {/* ── 3D SPORTS SHIELD ── */}
           <div
-            className="relative w-[140px] h-[140px] sm:w-[200px] sm:h-[200px] md:w-[280px] md:h-[280px] lg:w-[340px] lg:h-[340px] xl:w-[360px] xl:h-[360px]"
+            className="relative w-[180px] h-[200px] sm:w-[240px] sm:h-[270px] md:w-[320px] md:h-[360px] lg:w-[400px] lg:h-[450px] xl:w-[440px] xl:h-[500px]"
             style={{ transform: "translateZ(50px)" }}
           >
-            {/* Glass platform behind logo */}
+            {/* Glow behind shield */}
             <div
-              className="absolute inset-[-15px] rounded-[32px] border border-white/[0.08] backdrop-blur-sm"
+              className="absolute inset-[-30px] rounded-full opacity-40 blur-[60px] transition-all duration-[2s]"
               style={{
-                background: "linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01))",
-                transform: "translateZ(-20px)",
+                background: `radial-gradient(circle, ${sportColors[activeSport]}40, transparent 70%)`,
+                transform: "translateZ(-30px)",
               }}
             />
 
-            {/* Logo image */}
+            {/* Shield image */}
             <Image
-              src="/images/ft-logo-4x-v2.png"
-              alt="Fundamental Sports Labs"
+              src="/images/sports-hero-3d.png"
+              alt="Fundamental Sports Labs — Basketball, Football, Soccer, Golf, Baseball, and Science"
               fill
-              sizes="(max-width: 640px) 200px, (max-width: 768px) 260px, (max-width: 1024px) 320px, 360px"
-              className="object-contain drop-shadow-[0_15px_40px_rgba(0,0,0,0.6)]"
-              style={{
-                filter: "contrast(1.08) saturate(1.1) brightness(1.1)",
-              }}
+              sizes="(max-width: 640px) 180px, (max-width: 768px) 240px, (max-width: 1024px) 320px, 440px"
+              className="object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.7)]"
               priority
-              placeholder="blur"
-              blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMjAyMDIwIi8+PC9zdmc+"
             />
 
             {/* Highlight reflection on top */}
             <div
               className="absolute inset-0 rounded-[24px] pointer-events-none"
               style={{
-                background: "linear-gradient(170deg, rgba(255,255,255,0.12) 0%, transparent 40%)",
+                background: "linear-gradient(170deg, rgba(255,255,255,0.08) 0%, transparent 35%)",
                 transform: "translateZ(5px)",
               }}
             />
