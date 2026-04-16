@@ -24,6 +24,7 @@ const NAV_LINKS: readonly NavLink[] = [
   },
   { label: "Impact", href: "/impact" },
   { label: "Events", href: "/events" },
+  { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
 ];
 

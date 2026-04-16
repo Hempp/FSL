@@ -49,13 +49,11 @@ export const metadata: Metadata = {
     title: "Fundamental Sports Labs — Leaders of Tomorrow",
     description:
       "Empowering urban youth through sports, wellness, financial responsibility, and cutting-edge technology. Basketball, football, soccer, golf, track & field, and baseball — building fundamental skills and life structure.",
-    images: [{ url: "/images/ft-logo.png", width: 512, height: 512, alt: "Fundamental Sports Labs" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Fundamental Sports Labs — Leaders of Tomorrow",
     description: "Empowering urban youth through sports, wellness, and technology.",
-    images: ["/images/ft-logo.png"],
   },
   robots: {
     index: true,
@@ -63,8 +61,11 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 },
   },
   icons: {
-    icon: "/images/ft-logo.png",
+    icon: "/favicon.svg",
     apple: "/images/ft-logo.png",
+  },
+  other: {
+    "theme-color": "#F4767C",
   },
 };
 

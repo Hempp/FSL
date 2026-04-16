@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Impact",
-  description: "150+ youth empowered in Los Angeles, 85% improved academics, 92% graduate success rate, 5,000 community service hours. Real results from Fundamental Sports Labs' free programs.",
+  title: "Our Impact — Fundamental Sports Labs | Free Youth Sports in Los Angeles",
+  description: "150+ youth athletes across South LA, Inglewood, and Baldwin Hills. Every program free. 85% improved academics, 92% graduate success. Real results from Fundamental Sports Labs' free Los Angeles programs.",
 };
 
 import { NikeHeader } from "@/components/nike/NikeHeader";
@@ -45,10 +45,10 @@ const testimonials = [
 ];
 
 const impactAreas = [
-  { label: "Athletic Development", stat: "6", unit: "Sports", desc: "Golf, football, basketball, soccer, track, and VR training programs", color: "#F4767C" },
-  { label: "Academic Support", stat: "85", unit: "%", desc: "Of participants improved their academic performance within one semester", color: "#0052FE" },
-  { label: "Financial Literacy", stat: "200", unit: "+", desc: "Youth completed our financial responsibility education program", color: "#00D17E" },
-  { label: "Community Impact", stat: "5K", unit: "+", desc: "Volunteer and community service hours contributed by participants", color: "#FF7900" },
+  { label: "Athletic Development", stat: "6", unit: "Sports", desc: "Golf, football, basketball, soccer, track, and VR training — that's 3 basketball squads, 2 football teams, and growing", color: "#F4767C" },
+  { label: "Academic Support", stat: "85", unit: "%", desc: "Of participants improved their grades within one semester — turning Cs into Bs and Bs into As", color: "#0052FE" },
+  { label: "Financial Literacy", stat: "150", unit: "+", desc: "Youth completed our financial responsibility program — learning to budget, save, and plan for college", color: "#00D17E" },
+  { label: "Community Impact", stat: "2.5K", unit: "+", desc: "Volunteer and community service hours given back to South LA, Inglewood, and surrounding neighborhoods", color: "#FF7900" },
 ];
 
 export default function ImpactPage() {
@@ -84,7 +84,7 @@ export default function ImpactPage() {
                 <span className="text-fsl-coral">Impact.</span>
               </h1>
               <p className="font-redhat text-[16px] md:text-[18px] text-white/35 font-normal mt-8 max-w-[500px] leading-[1.85]">
-                Every stat tells a story. Every number represents a young life transformed through sport, discipline, and community.
+                Every stat tells a story. Every number represents a young life transformed through free sports programs, discipline, and community in Los Angeles.
               </p>
             </ScrollReveal>
           </div>
@@ -215,6 +215,62 @@ export default function ImpactPage() {
                 </div>
               </div>
             </ScrollReveal>
+          </div>
+        </section>
+
+        {/* ── Every Program Free ── */}
+        <section className="py-20 md:py-28 bg-white">
+          <div className="max-w-[1600px] mx-auto px-6 md:px-16 lg:px-24 text-center">
+            <ScrollReveal animation="scale">
+              <p className="font-barlow text-[36px] sm:text-[48px] md:text-[64px] lg:text-[80px] font-bold text-fsl-dark uppercase leading-[0.9] tracking-[-0.02em]">
+                Every Program. Every Athlete.<br />
+                <span className="text-fsl-coral">Zero Cost.</span>
+              </p>
+              <p className="font-redhat text-[15px] md:text-[17px] text-[#888] mt-6 max-w-[560px] mx-auto leading-[1.85]">
+                We believe talent shouldn&apos;t have a price tag. Every F.S.L program is completely free so no family has to choose between rent and their child&apos;s future.
+              </p>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* ── Where We Operate ── */}
+        <section className="relative py-24 md:py-36 bg-[#0a0a0a] overflow-hidden">
+          <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "repeating-linear-gradient(90deg, white 0px, white 1px, transparent 1px, transparent 120px), repeating-linear-gradient(0deg, white 0px, white 1px, transparent 1px, transparent 120px)" }} />
+          <div className="relative max-w-[1600px] mx-auto px-6 md:px-16 lg:px-24">
+            <ScrollReveal animation="fade-up">
+              <p className="font-redhat text-[11px] uppercase tracking-[0.5em] text-fsl-coral font-semibold flex items-center gap-3 mb-6">
+                <span className="w-12 h-[2px] bg-fsl-coral" />
+                Our Neighborhoods
+              </p>
+              <h2 className="font-barlow text-[42px] md:text-[56px] lg:text-[72px] font-bold text-white uppercase leading-[0.88] mb-8">
+                Where We<br />
+                <span className="text-fsl-coral">Operate</span>
+              </h2>
+              <p className="font-redhat text-[16px] md:text-[18px] text-white/35 font-normal max-w-[560px] leading-[1.85] mb-16">
+                F.S.L serves youth across Los Angeles&apos;s most underserved communities — neighborhoods where access to organized sports and mentorship can change a life&apos;s trajectory.
+              </p>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-[1px]">
+              {[
+                { name: "South LA", detail: "Our home base" },
+                { name: "Inglewood", detail: "Growing fast" },
+                { name: "Baldwin Hills", detail: "Since day one" },
+                { name: "View Park", detail: "Community partner" },
+                { name: "Ladera Heights", detail: "Newest reach" },
+              ].map((area, i) => (
+                <ScrollReveal key={area.name} animation="fade-up" delay={i * 80}>
+                  <div className="group bg-white/[0.02] border border-white/[0.04] p-6 md:p-8 text-center hover:bg-white/[0.04] transition-all duration-700">
+                    <p className="font-barlow text-[20px] md:text-[24px] font-bold text-white uppercase leading-tight mb-2">
+                      {area.name}
+                    </p>
+                    <p className="font-redhat text-[11px] uppercase tracking-[0.2em] text-fsl-coral/60 font-medium">
+                      {area.detail}
+                    </p>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
         </section>
 

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Mentor Coaching — Every Athlete Deserves Someone in Their Corner",
   description:
-    "Free donation-funded mentorship in Los Angeles pairing top coaches with student athletes. Sponsor real 1-on-1 sessions, goal tracking, and accountability starting at $75/session.",
+    "Fundamental Sports Labs is a Los Angeles nonprofit pairing volunteer mentor coaches with student athletes — all programs free for families. Sponsor a session starting at $75 and 100% of proceeds fund free youth sports programs across LA.",
 };
 
 import { NikeHeader } from "@/components/nike/NikeHeader";
@@ -24,19 +24,19 @@ const steps = [
   {
     num: "01",
     title: "Sponsor Sessions",
-    desc: "Choose a package — from a single session to twice-weekly intensive coaching.",
+    desc: "Choose a sponsorship level — your donation funds free coaching for a Los Angeles student athlete.",
     color: "#0052FE",
   },
   {
     num: "02",
     title: "We Match",
-    desc: "FSL pairs a top certified coach with a student athlete based on sport, location, and goals.",
+    desc: "FSL pairs a background-checked volunteer coach with a student athlete based on sport, neighborhood, and goals.",
     color: "#FF7900",
   },
   {
     num: "03",
     title: "Watch Them Grow",
-    desc: "After every session, coaches log progress. You get monthly impact reports showing real results.",
+    desc: "After every session, coaches log progress. You get monthly impact reports showing real results — funded entirely by your generosity.",
     color: "#00D17E",
   },
 ];
@@ -55,7 +55,7 @@ const tiers = [
       "Session notes & progress logged",
     ],
     breakdown: { coach: "$50", operations: "$19", scholarship: "$6" },
-    hourly: "$50/hr to coach",
+    hourly: "$50/hr volunteer stipend",
   },
   {
     name: "Monthly",
@@ -70,7 +70,7 @@ const tiers = [
       "Monthly progress report to sponsor",
     ],
     breakdown: { coach: "$85", operations: "$31", scholarship: "$9" },
-    hourly: "$42.50/hr to coach",
+    hourly: "$42.50/hr volunteer stipend",
   },
   {
     name: "Weekly",
@@ -86,7 +86,7 @@ const tiers = [
       "Priority text/call access",
     ],
     breakdown: { coach: "$160", operations: "$52", scholarship: "$13" },
-    hourly: "$40/hr to coach",
+    hourly: "$40/hr volunteer stipend",
   },
   {
     name: "Intensive",
@@ -103,7 +103,7 @@ const tiers = [
       "Direct coach phone line",
     ],
     breakdown: { coach: "$280", operations: "$95", scholarship: "$25" },
-    hourly: "$35/hr to coach",
+    hourly: "$35/hr volunteer stipend",
   },
 ];
 
@@ -141,18 +141,20 @@ const coachDuties = [
 ];
 
 const requirements = [
-  "Background check required",
+  "Comprehensive background check required (mandatory, no exceptions)",
   "2+ years coaching or mentoring experience",
-  "Committed to weekly availability",
-  "Passion for youth development",
+  "Committed to weekly volunteer availability",
+  "Passion for youth development in Los Angeles",
+  "Must be 21 or older",
 ];
 
 const benefits = [
-  "Earn $35-50/hr per session",
+  "Volunteer stipend available (funded by sponsors)",
   "Flexible schedule — you set your availability",
-  "Training and certification provided",
-  "Build a caseload of 10-20 athletes",
-  "Make a real, measurable impact",
+  "Free training and certification provided by FSL",
+  "Mentor up to 10-20 athletes across Los Angeles",
+  "Make a real, measurable impact in your community",
+  "All coaching is volunteer-based — this is a calling, not a job",
 ];
 
 const bgCheckSteps = [
@@ -230,9 +232,9 @@ export default function MentorCoachingPage() {
 
             <ScrollReveal animation="fade-up" delay={300} duration={900}>
               <p className="font-redhat text-[14px] md:text-[16px] text-white/35 font-normal leading-[1.85] mt-6 md:mt-10 max-w-[500px]">
-                Every athlete deserves someone in their corner. Fund a coach who
-                checks in, holds them accountable, and helps them reach their
-                goals.
+                Every Los Angeles athlete deserves someone in their corner.
+                As a 501(c)(3) nonprofit, FSL provides free coaching to youth
+                across LA — funded entirely by sponsors like you.
               </p>
             </ScrollReveal>
 
@@ -328,6 +330,15 @@ export default function MentorCoachingPage() {
                   100% of your donation goes to work. We show you exactly where
                   every dollar lands.
                 </p>
+                <div className="mt-8 mx-auto max-w-[600px] bg-[#0052FE]/[0.06] border border-[#0052FE]/[0.12] px-6 py-4">
+                  <p className="font-redhat text-[14px] text-[#555] leading-[1.75]">
+                    <span className="font-semibold text-[#0052FE]">FSL is a 501(c)(3) nonprofit.</span>{" "}
+                    Coaching sessions are always free for families. Sponsorship
+                    donations fund volunteer coach stipends, equipment, and
+                    operations — so every young athlete in Los Angeles can train
+                    with a real mentor at no cost. Your donation may be tax-deductible.
+                  </p>
+                </div>
               </div>
             </ScrollReveal>
 
@@ -414,7 +425,7 @@ export default function MentorCoachingPage() {
                             <span className="font-semibold" style={{ color: t.color }}>
                               {t.breakdown.coach}
                             </span>{" "}
-                            Coach
+                            Coach Stipend
                           </span>
                           <span className="font-redhat text-[12px] text-[#777]">
                             <span className="font-semibold text-fsl-dark">
@@ -464,8 +475,9 @@ export default function MentorCoachingPage() {
                   What Coaches Do
                 </h2>
                 <p className="font-redhat text-[15px] text-[#888] font-normal leading-[1.8] max-w-[480px] mx-auto">
-                  Our mentor coaches aren&apos;t just checking boxes. They&apos;re building
-                  relationships that change trajectories.
+                  Our volunteer mentor coaches across Los Angeles aren&apos;t
+                  just checking boxes. They&apos;re building relationships that
+                  change trajectories — and they do it because they care.
                 </p>
               </div>
             </ScrollReveal>
@@ -537,9 +549,10 @@ export default function MentorCoachingPage() {
                     <span className="text-fsl-coral">Coaching</span> Team
                   </h2>
                   <p className="font-redhat text-[15px] text-white/40 font-normal leading-[1.85] max-w-[460px] mb-12">
-                    We&apos;re looking for dedicated mentors who want to invest
-                    in the next generation. Competitive pay, flexible hours, real
-                    purpose.
+                    We&apos;re looking for dedicated volunteers across Los Angeles
+                    who want to invest in the next generation. Flexible hours,
+                    training provided, and the kind of purpose you can&apos;t put
+                    a price on. Volunteer stipends available through sponsor funding.
                   </p>
                 </ScrollReveal>
 
@@ -739,6 +752,103 @@ export default function MentorCoachingPage() {
                 </ScrollReveal>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ═══════════════════════════════════════════
+            EQUIPMENT DONATIONS
+        ═══════════════════════════════════════════ */}
+        <section className="py-24 md:py-36 bg-white">
+          <div className="max-w-[1200px] mx-auto px-6 md:px-16 lg:px-24">
+            <ScrollReveal animation="fade-up">
+              <div className="text-center mb-16 md:mb-20">
+                <p className="font-redhat text-[11px] uppercase tracking-[0.5em] text-fsl-coral font-semibold mb-5">
+                  Gear Up Our Athletes
+                </p>
+                <h2 className="font-barlow text-[42px] md:text-[56px] lg:text-[72px] font-bold text-fsl-dark uppercase leading-[0.88] mb-5">
+                  Equipment<br />
+                  <span className="text-fsl-coral">Donations</span>
+                </h2>
+                <p className="font-redhat text-[15px] text-[#888] font-normal leading-[1.8] max-w-[540px] mx-auto">
+                  Many families in Los Angeles can&apos;t afford the gear their
+                  kids need to compete. Your gently used or new equipment gives
+                  them a fair shot.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
+              {[
+                {
+                  title: "Sports Equipment",
+                  items: "Basketball shoes, cleats, gloves, bats, balls, helmets, pads, golf clubs, track spikes",
+                  icon: "M13 10V3L4 14h7v7l9-11h-7z",
+                  color: "#0052FE",
+                },
+                {
+                  title: "Training Gear",
+                  items: "Cones, agility ladders, resistance bands, jump ropes, speed parachutes, water bottles",
+                  icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
+                  color: "#FF7900",
+                },
+                {
+                  title: "Apparel & Accessories",
+                  items: "Athletic wear, socks, backpacks, duffle bags, uniforms (any sport), warm-up gear",
+                  icon: "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z",
+                  color: "#00D17E",
+                },
+              ].map((cat, i) => (
+                <ScrollReveal key={cat.title} animation="fade-up" delay={i * 120}>
+                  <div className="group bg-[#fafafa] p-8 md:p-10 transition-all duration-500 hover:bg-white hover:shadow-[0_12px_40px_-10px_rgba(0,0,0,0.08)] h-full">
+                    <div
+                      className="w-12 h-12 rounded-full flex items-center justify-center mb-5 transition-transform duration-500 group-hover:scale-110"
+                      style={{ backgroundColor: `${cat.color}10` }}
+                    >
+                      <svg
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke={cat.color}
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d={cat.icon} />
+                      </svg>
+                    </div>
+                    <h3 className="font-barlow text-[18px] font-bold text-fsl-dark uppercase tracking-[0.03em] mb-3">
+                      {cat.title}
+                    </h3>
+                    <p className="font-redhat text-[13px] text-[#888] leading-[1.75]">
+                      {cat.items}
+                    </p>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+
+            <ScrollReveal animation="fade-up" delay={200}>
+              <div className="bg-[#fafafa] border border-black/[0.04] p-8 md:p-10 text-center max-w-[700px] mx-auto">
+                <p className="font-redhat text-[15px] text-[#666] leading-[1.8] mb-2">
+                  <span className="font-semibold text-fsl-dark">How it helps:</span>{" "}
+                  Every piece of donated equipment goes directly to an FSL athlete
+                  in Los Angeles who needs it. Coaches identify gear gaps during
+                  sessions and we match donations to specific kids — so nothing
+                  sits in a warehouse.
+                </p>
+                <p className="font-redhat text-[13px] text-[#aaa] leading-[1.7] mt-4">
+                  Drop-offs accepted at our Los Angeles training locations.{" "}
+                  <a
+                    href="mailto:info@fundamentalsportslab.com"
+                    className="text-fsl-coral hover:text-fsl-coral/80 transition-colors underline underline-offset-2"
+                  >
+                    Email us
+                  </a>{" "}
+                  to arrange a donation or schedule a pickup in the LA area.
+                </p>
+              </div>
+            </ScrollReveal>
           </div>
         </section>
 

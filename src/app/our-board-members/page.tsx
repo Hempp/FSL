@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Board Members — F.S.L",
+  title: "Our Board Members — Fundamental Sports Labs | Los Angeles Nonprofit",
   description:
-    "Meet the leadership team behind Fundamental Sports Labs. Dedicated to empowering urban youth through sports, wellness, and education.",
+    "Meet the board members who provide governance and strategic direction for Fundamental Sports Labs, a Los Angeles nonprofit empowering youth through free sports, wellness, and education programs.",
 };
 
 import { NikeHeader } from "@/components/nike/NikeHeader";
@@ -69,13 +69,34 @@ export default function BoardMembersPage() {
                     Behind <span className="text-fsl-coral">F.S.L</span>
                   </h2>
                 </div>
-                <p className="font-redhat text-[14px] text-[#999] max-w-[380px] leading-[1.75]">
-                  Dedicated leaders united by a shared vision — empowering youth through sports, education, and community.
+                <p className="font-redhat text-[14px] text-[#999] max-w-[420px] leading-[1.75]">
+                  Our board provides governance, strategic direction, and community accountability for FSL&apos;s mission to empower Los Angeles youth through sports, education, and opportunity.
                 </p>
               </div>
             </ScrollReveal>
 
             <BoardMemberCards />
+
+            {/* ── Board Recruitment CTA ── */}
+            <ScrollReveal animation="fade-up">
+              <div className="mt-20 md:mt-28 border-t border-black/5 pt-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                <div>
+                  <h3 className="font-barlow text-[24px] md:text-[28px] font-bold text-fsl-dark uppercase leading-tight">
+                    Interested in joining our board?
+                  </h3>
+                  <p className="font-redhat text-[14px] text-[#888] leading-[1.75] mt-2 max-w-[460px]">
+                    We&apos;re looking for community leaders, professionals, and advocates who share our commitment to Los Angeles youth.
+                  </p>
+                </div>
+                <Link
+                  href="/contact"
+                  className="group inline-flex items-center justify-center gap-3 font-redhat text-[12px] font-bold uppercase tracking-[0.2em] text-white bg-fsl-dark px-10 py-4 hover:bg-fsl-coral transition-all duration-500 shrink-0"
+                >
+                  Contact Us
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="group-hover:translate-x-1 transition-transform duration-300"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                </Link>
+              </div>
+            </ScrollReveal>
           </div>
         </section>
 
