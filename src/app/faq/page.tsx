@@ -183,7 +183,7 @@ export default function FAQPage() {
             </ScrollReveal>
 
             <ScrollReveal animation="fade-up" delay={100}>
-              <h1 className="font-barlow text-[52px] sm:text-[80px] md:text-[110px] lg:text-[140px] xl:text-[160px] font-bold text-white uppercase leading-[0.85] tracking-[-0.03em]">
+              <h1 className="font-barlow text-[36px] sm:text-[56px] md:text-[80px] lg:text-[110px] xl:text-[140px] font-bold text-white uppercase leading-[0.85] tracking-[-0.03em]">
                 Frequently<br />
                 <span className="relative">
                   Asked

@@ -60,19 +60,19 @@ export function BoardMemberCards() {
             >
               {/* Giant watermark initial */}
               <span
-                className="absolute -top-8 -right-4 font-barlow text-[220px] md:text-[280px] font-bold leading-none opacity-[0.025] select-none pointer-events-none transition-opacity duration-700 group-hover:opacity-[0.05]"
+                className="absolute -top-8 -right-4 font-barlow text-[140px] md:text-[220px] lg:text-[280px] font-bold leading-none opacity-[0.025] select-none pointer-events-none transition-opacity duration-700 group-hover:opacity-[0.05]"
                 style={{ color: member.color }}
               >
                 {member.initials}
               </span>
 
               {/* ── Top: Photo + Identity ── */}
-              <div className="relative z-10 p-8 md:p-10">
+              <div className="relative z-10 p-5 sm:p-8 md:p-10">
                 <div className="flex items-start gap-6">
                   {/* Photo — circle, small, crisp */}
                   <div className="relative shrink-0">
                     <div
-                      className="w-[100px] h-[100px] md:w-[120px] md:h-[120px] rounded-full overflow-hidden ring-[3px] ring-offset-4 ring-offset-[#f6f6f6] transition-all duration-700 group-hover:ring-offset-[#f2f2f2]"
+                      className="w-[72px] h-[72px] sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px] rounded-full overflow-hidden ring-[3px] ring-offset-4 ring-offset-[#f6f6f6] transition-all duration-700 group-hover:ring-offset-[#f2f2f2]"
                       style={{ ringColor: `${member.color}30` } as React.CSSProperties}
                     >
                       <Image

@@ -60,7 +60,7 @@ function Stat({
       {/* Glowing stat number */}
       <p
         ref={ref}
-        className="font-barlow text-[52px] md:text-[72px] lg:text-[96px] font-black leading-none tracking-tight transition-all duration-500"
+        className="font-barlow text-[36px] sm:text-[52px] md:text-[72px] lg:text-[96px] font-black leading-none tracking-tight transition-all duration-500"
         style={{
           color,
           textShadow: `0 0 40px ${color}30, 0 0 80px ${color}15`,

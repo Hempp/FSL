@@ -216,7 +216,7 @@ export default function TournamentsPage() {
         {/* ═══════════════════════════════════
             HERO — 85vh
         ═══════════════════════════════════ */}
-        <section className="relative h-[85vh] min-h-[640px] overflow-hidden bg-black flex items-center justify-center">
+        <section className="relative h-[70vh] sm:h-[80vh] md:h-[85vh] min-h-[550px] overflow-hidden bg-black flex items-center justify-center">
           <Image
             src="/images/sports/basketball-game.jpg"
             alt="Youth athletes competing"
@@ -243,7 +243,7 @@ export default function TournamentsPage() {
             </ScrollReveal>
 
             <ScrollReveal animation="fade-up" delay={100}>
-              <h1 className="font-barlow text-[52px] sm:text-[72px] md:text-[96px] lg:text-[120px] xl:text-[140px] font-bold text-white uppercase leading-[0.85] tracking-[-0.03em]">
+              <h1 className="font-barlow text-[36px] sm:text-[56px] md:text-[80px] lg:text-[100px] xl:text-[120px] font-bold text-white uppercase leading-[0.85] tracking-[-0.03em]">
                 Tournaments<br />
                 <span className="text-fsl-coral">&amp; Clinics</span>
               </h1>

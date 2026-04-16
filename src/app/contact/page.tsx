@@ -100,7 +100,7 @@ export default function ContactPage() {
                 <span className="w-12 h-[2px] bg-fsl-coral" />
                 Get In Touch
               </p>
-              <h1 className="font-barlow text-[56px] sm:text-[80px] md:text-[110px] lg:text-[140px] font-bold text-white uppercase leading-[0.85] tracking-[-0.03em]">
+              <h1 className="font-barlow text-[40px] sm:text-[60px] md:text-[80px] lg:text-[110px] font-bold text-white uppercase leading-[0.85] tracking-[-0.03em]">
                 Let&apos;s<br />
                 <span className="text-fsl-coral">Connect.</span>
               </h1>
@@ -114,7 +114,7 @@ export default function ContactPage() {
         {/* ── Contact Info Cards — Bold Sport-Colored ── */}
         <section className="py-20 md:py-28">
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {contactCards.map((c, i) => (
                 <ScrollReveal key={c.label} animation="fade-up" delay={i * 100}>
                   <div className="group relative bg-[#fafafa] overflow-hidden transition-all duration-700 hover:-translate-y-1 hover:shadow-[0_15px_50px_-12px_rgba(0,0,0,0.1)]">
@@ -293,11 +293,11 @@ export default function ContactPage() {
             </ScrollReveal>
 
             <ScrollReveal animation="fade-up" delay={100}>
-              <div className="w-full overflow-hidden">
+              <div className="w-full aspect-[4/3] sm:aspect-[16/9] md:aspect-[2/1] overflow-hidden">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105944.30649045916!2d-118.39535225!3d33.95798285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b6f3c9c2b9e7%3A0x2b06c3e3c5c1b6e4!2sInglewood%2C%20CA!5e0!3m2!1sen!2sus!4v1"
-                  width="100%"
-                  height="400"
+                  className="w-full h-full"
+                  height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
@@ -330,7 +330,7 @@ export default function ContactPage() {
                 <ScrollReveal key={link.href} animation="fade-up" delay={i * 80}>
                   <Link
                     href={link.href}
-                    className="inline-block border-2 border-fsl-coral text-fsl-coral font-redhat text-[13px] font-semibold uppercase tracking-[0.1em] px-6 py-3 hover:bg-fsl-coral hover:text-white transition-all duration-500"
+                    className="inline-block w-full sm:w-auto text-center border-2 border-fsl-coral text-fsl-coral font-redhat text-[13px] font-semibold uppercase tracking-[0.1em] px-4 sm:px-6 py-3 hover:bg-fsl-coral hover:text-white transition-all duration-500"
                   >
                     {link.label}
                   </Link>

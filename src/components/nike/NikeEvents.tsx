@@ -139,7 +139,7 @@ export function NikeEvents() {
                     </span>
                   </div>
 
-                  {/* Arrow indicator */}
+                  {/* Arrow indicator — desktop */}
                   <div className="hidden md:flex items-center gap-2 mt-5 opacity-0 group-hover:opacity-100 translate-x-0 group-hover:translate-x-2 transition-all duration-500">
                     <span className="font-redhat text-[11px] font-semibold uppercase tracking-[0.2em] text-fsl-coral">
                       View Details
@@ -147,6 +147,13 @@ export function NikeEvents() {
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-fsl-coral">
                       <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
+                  </div>
+                  {/* Mobile CTA */}
+                  <div className="flex md:hidden items-center gap-1.5 mt-4">
+                    <span className="font-redhat text-[12px] font-semibold text-fsl-coral">
+                      View
+                    </span>
+                    <span className="text-fsl-coral text-[14px]">&rarr;</span>
                   </div>
                 </div>
               </div>

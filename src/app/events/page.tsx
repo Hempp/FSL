@@ -61,7 +61,7 @@ export default function EventsPage() {
       <NikeHeader />
       <main id="main-content">
         {/* ── Featured Event Hero ── */}
-        <section className="relative h-[85vh] min-h-[600px] overflow-hidden bg-black flex items-end">
+        <section className="relative h-[60vh] sm:h-[75vh] md:h-[85vh] min-h-[500px] overflow-hidden bg-black flex items-end">
           <Image
             src={featured.image}
             alt={featured.title}
@@ -91,7 +91,7 @@ export default function EventsPage() {
               {/* Giant date */}
               <div className="flex items-end gap-6 md:gap-10 mb-6">
                 <div>
-                  <p className="font-barlow text-[100px] md:text-[160px] lg:text-[200px] font-bold leading-none tracking-[-0.04em]" style={{ color: featured.color }}>
+                  <p className="font-barlow text-[64px] sm:text-[80px] md:text-[120px] lg:text-[160px] font-bold leading-none tracking-[-0.04em]" style={{ color: featured.color }}>
                     {featured.day}
                   </p>
                 </div>
@@ -107,7 +107,7 @@ export default function EventsPage() {
               <p className="font-redhat text-[15px] text-white/40 font-normal leading-[1.8] max-w-[500px] mb-6">
                 {featured.desc}
               </p>
-              <div className="flex items-center gap-6">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
                 <p className="font-redhat text-[13px] text-white/30 flex items-center gap-2">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /><circle cx="12" cy="9" r="2.5" /></svg>
                   {featured.location}

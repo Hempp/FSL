@@ -62,7 +62,7 @@ export function Hero3D() {
   return (
     <section
       ref={containerRef}
-      className="relative h-screen overflow-hidden bg-[#060610] cursor-crosshair select-none"
+      className="relative h-[80vh] sm:h-screen min-h-[550px] overflow-hidden bg-[#060610] cursor-crosshair select-none"
     >
       {/* ── Background image with parallax ── */}
       <div className="absolute inset-0">
@@ -100,7 +100,7 @@ export function Hero3D() {
 
       {/* ── Ambient glow (shifts with active sport, follows logo position) ── */}
       <div
-        className="absolute top-[40%] left-1/2 lg:left-auto lg:right-[15%] -translate-y-1/2 w-[700px] h-[700px] rounded-full opacity-20 blur-[150px] transition-all duration-[2s]"
+        className="absolute top-[40%] left-1/2 lg:left-auto lg:right-[15%] -translate-y-1/2 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] md:w-[700px] md:h-[700px] rounded-full opacity-20 blur-[150px] transition-all duration-[2s]"
         style={{
           background: `radial-gradient(circle, ${sportColors[activeSport]}50, transparent 65%)`,
           transform: `translateY(-50%) translate(${mouse.x * 25}px, ${mouse.y * 25}px)`,
@@ -309,10 +309,10 @@ export function Hero3D() {
       </div>
 
       {/* ── CTA buttons ── */}
-      <div className="absolute bottom-14 sm:bottom-12 left-6 md:left-16 lg:left-24 z-10 flex gap-3">
+      <div className="absolute bottom-14 sm:bottom-12 left-6 md:left-16 lg:left-24 z-10 flex flex-col sm:flex-row gap-3">
         <Link
           href="/join"
-          className="group relative bg-white text-black px-9 py-[14px] rounded-full font-redhat text-[12px] font-semibold uppercase tracking-[0.15em] overflow-hidden transition-shadow duration-500 hover:shadow-[0_0_50px_rgba(244,118,124,0.3)]"
+          className="group relative bg-white text-black px-9 py-4 rounded-full font-redhat text-[12px] font-semibold uppercase tracking-[0.15em] overflow-hidden transition-shadow duration-500 hover:shadow-[0_0_50px_rgba(244,118,124,0.3)]"
         >
           <span className="relative z-10 group-hover:text-white transition-colors duration-500">
             Join Now
@@ -323,7 +323,7 @@ export function Hero3D() {
           href="https://www.zeffy.com/en-US/donation-form/donate-to-make-a-difference-19257"
           target="_blank"
           rel="noopener noreferrer"
-          className="border border-white/25 text-white/70 px-9 py-[14px] rounded-full font-redhat text-[12px] font-medium uppercase tracking-[0.15em] hover:border-white/60 hover:text-white hover:bg-white/5 transition-all duration-500"
+          className="border border-white/25 text-white/70 px-9 py-4 rounded-full font-redhat text-[12px] font-medium uppercase tracking-[0.15em] hover:border-white/60 hover:text-white hover:bg-white/5 transition-all duration-500"
         >
           Donate
         </a>

@@ -53,7 +53,7 @@ export function RegistrationForm() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
             <label htmlFor="programType" className="block font-redhat text-[11px] text-white/40 uppercase tracking-[0.15em] mb-2">Program Type</label>
-            <select id="programType" name="programType" className="w-full bg-white/[0.05] border border-white/[0.1] text-white font-redhat text-[14px] px-4 py-3.5 focus:outline-none focus:border-fsl-coral/50 transition-colors duration-300 appearance-none">
+            <select id="programType" name="programType" className="w-full bg-white/[0.05] border border-white/[0.1] text-white font-redhat text-[14px] px-4 py-3.5 focus:outline-none focus:border-fsl-coral/50 transition-colors duration-300 appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%23999%22%20d%3D%22M6%208L1%203h10z%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_1rem_center]">
               <option value="" className="bg-[#202020]">Select program type</option>
               <option value="tournament" className="bg-[#202020]">Tournament</option>
               <option value="clinic" className="bg-[#202020]">Clinic</option>
@@ -62,7 +62,7 @@ export function RegistrationForm() {
           </div>
           <div>
             <label htmlFor="eventSelection" className="block font-redhat text-[11px] text-white/40 uppercase tracking-[0.15em] mb-2">Event</label>
-            <select id="eventSelection" name="eventSelection" className="w-full bg-white/[0.05] border border-white/[0.1] text-white font-redhat text-[14px] px-4 py-3.5 focus:outline-none focus:border-fsl-coral/50 transition-colors duration-300 appearance-none">
+            <select id="eventSelection" name="eventSelection" className="w-full bg-white/[0.05] border border-white/[0.1] text-white font-redhat text-[14px] px-4 py-3.5 focus:outline-none focus:border-fsl-coral/50 transition-colors duration-300 appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%23999%22%20d%3D%22M6%208L1%203h10z%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_1rem_center]">
               <option value="" className="bg-[#202020]">Select an event</option>
               {allEvents.map((e) => (
                 <option key={e.label} value={e.label} className="bg-[#202020]">
@@ -106,7 +106,7 @@ export function RegistrationForm() {
           </div>
           <div>
             <label htmlFor="gender" className="block font-redhat text-[11px] text-white/40 uppercase tracking-[0.15em] mb-2">Gender</label>
-            <select id="gender" name="gender" className="w-full bg-white/[0.05] border border-white/[0.1] text-white font-redhat text-[14px] px-4 py-3.5 focus:outline-none focus:border-fsl-coral/50 transition-colors duration-300 appearance-none">
+            <select id="gender" name="gender" className="w-full bg-white/[0.05] border border-white/[0.1] text-white font-redhat text-[14px] px-4 py-3.5 focus:outline-none focus:border-fsl-coral/50 transition-colors duration-300 appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%23999%22%20d%3D%22M6%208L1%203h10z%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_1rem_center]">
               <option value="" className="bg-[#202020]">Select</option>
               <option value="male" className="bg-[#202020]">Male</option>
               <option value="female" className="bg-[#202020]">Female</option>
@@ -116,7 +116,7 @@ export function RegistrationForm() {
           </div>
           <div>
             <label htmlFor="tshirtSize" className="block font-redhat text-[11px] text-white/40 uppercase tracking-[0.15em] mb-2">T-Shirt Size</label>
-            <select id="tshirtSize" name="tshirtSize" className="w-full bg-white/[0.05] border border-white/[0.1] text-white font-redhat text-[14px] px-4 py-3.5 focus:outline-none focus:border-fsl-coral/50 transition-colors duration-300 appearance-none">
+            <select id="tshirtSize" name="tshirtSize" className="w-full bg-white/[0.05] border border-white/[0.1] text-white font-redhat text-[14px] px-4 py-3.5 focus:outline-none focus:border-fsl-coral/50 transition-colors duration-300 appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%23999%22%20d%3D%22M6%208L1%203h10z%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_1rem_center]">
               <option value="" className="bg-[#202020]">Select size</option>
               <option value="ys" className="bg-[#202020]">Youth S</option>
               <option value="ym" className="bg-[#202020]">Youth M</option>

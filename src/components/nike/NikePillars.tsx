@@ -124,7 +124,7 @@ export function NikePillars() {
                   </h3>
 
                   {/* Glass-morphism description panel */}
-                  <div className="backdrop-blur-sm bg-white/[0.06] border border-white/[0.08] rounded-sm p-4 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                  <div className="backdrop-blur-sm bg-white/[0.06] border border-white/[0.08] rounded-sm p-4 transform opacity-100 md:opacity-0 md:group-hover:opacity-100 translate-y-0 md:translate-y-2 md:group-hover:translate-y-0 transition-all duration-500">
                     <p className="font-redhat text-[13px] md:text-[14px] text-white/70 font-normal leading-[1.7]">
                       {pillar.desc}
                     </p>

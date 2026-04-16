@@ -48,7 +48,7 @@ export function NikeTestimonial() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="relative py-32 md:py-44 bg-[#0a0a0a] text-white overflow-hidden">
+    <section className="relative py-20 md:py-32 lg:py-44 bg-[#0a0a0a] text-white overflow-hidden">
       {/* Subtle noise texture */}
       <div
         className="absolute inset-0 opacity-[0.02] pointer-events-none"
@@ -75,7 +75,7 @@ export function NikeTestimonial() {
                 key={q.attribution}
                 className="flex-[0_0_100%] min-w-0 text-center px-4"
               >
-                <p className="font-barlow text-[22px] md:text-[32px] lg:text-[40px] font-bold leading-[1.25] tracking-[-0.01em]">
+                <p className="font-barlow text-[18px] sm:text-[22px] md:text-[32px] lg:text-[40px] font-bold leading-[1.25] tracking-[-0.01em]">
                   {q.text}
                 </p>
 
@@ -104,7 +104,7 @@ export function NikeTestimonial() {
             <button
               key={i}
               onClick={() => emblaApi?.scrollTo(i)}
-              className={`rounded-full transition-all duration-600 ${
+              className={`p-3 rounded-full transition-all duration-600 ${
                 selectedIndex === i
                   ? "w-8 h-[5px] bg-fsl-coral"
                   : "w-[5px] h-[5px] bg-white/15 hover:bg-white/30"

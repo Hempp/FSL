@@ -106,7 +106,7 @@ export function NikeFooter() {
         </div>
 
         {/* Top — logo + columns */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-16 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-16 mb-16">
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
               <div className="bg-white/10 rounded-xl p-1.5">

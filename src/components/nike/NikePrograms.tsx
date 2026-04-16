@@ -150,7 +150,7 @@ export function NikePrograms() {
                   style={{ filter: "saturate(0.85) contrast(1.08)" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
+                <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8 md:p-12">
                   <div className="w-10 h-[3px] mb-4" style={{ backgroundColor: p.accent }} />
                   <h3 className="font-barlow text-[32px] md:text-[44px] font-bold text-white uppercase leading-[0.9] mb-3">
                     {p.title}

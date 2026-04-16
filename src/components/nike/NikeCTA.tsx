@@ -51,7 +51,7 @@ export function NikeCTA() {
 
         {/* Nike campaign poster — MASSIVE typography */}
         <ScrollReveal animation="fade-up" delay={100} duration={1200}>
-          <h2 className="font-barlow text-[64px] sm:text-[80px] md:text-[100px] lg:text-[130px] xl:text-[160px] font-black text-white uppercase leading-[0.85] tracking-[-0.03em] max-w-[900px]">
+          <h2 className="font-barlow text-[48px] sm:text-[64px] md:text-[80px] md:text-[100px] lg:text-[130px] xl:text-[160px] font-black text-white uppercase leading-[0.85] tracking-[-0.03em] max-w-[900px]">
             Ready to<br />
             <span className="relative inline-block">
               Play
@@ -93,12 +93,12 @@ export function NikeCTA() {
 
         {/* Bottom edge — campaign tagline */}
         <ScrollReveal animation="fade-up" delay={700} duration={900}>
-          <div className="mt-20 md:mt-28 flex items-center gap-4">
+          <div className="mt-20 md:mt-28 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
             <div className="h-[1px] w-12 bg-white/10" />
             <p className="font-bonvivant text-[18px] md:text-[22px] text-white/15 italic">
               Every athlete deserves a chance
             </p>
-            <span className="mx-4 h-[1px] w-6 bg-white/10" />
+            <span className="hidden sm:block mx-4 h-[1px] w-6 bg-white/10" />
             <p className="font-redhat text-[11px] text-white/20 uppercase tracking-[0.15em]">
               501(c)(3) nonprofit — all programs free for youth athletes
             </p>

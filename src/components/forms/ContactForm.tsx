@@ -75,7 +75,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={pending}
-        className="group relative bg-fsl-dark text-white px-14 py-5 font-redhat text-[13px] font-bold uppercase tracking-[0.2em] overflow-hidden transition-shadow duration-500 hover:shadow-[0_0_50px_rgba(244,118,124,0.15)] disabled:opacity-60"
+        className="w-full sm:w-auto group relative bg-fsl-dark text-white px-14 py-5 font-redhat text-[13px] font-bold uppercase tracking-[0.2em] overflow-hidden transition-shadow duration-500 hover:shadow-[0_0_50px_rgba(244,118,124,0.15)] disabled:opacity-60"
       >
         <span className="relative z-10 flex items-center gap-3">
           {pending ? "Sending..." : "Send Message"}

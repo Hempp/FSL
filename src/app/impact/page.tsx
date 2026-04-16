@@ -74,7 +74,7 @@ export default function ImpactPage() {
       <NikeHeader />
       <main id="main-content">
         {/* ── Cinematic Hero ── */}
-        <section className="relative h-[85vh] min-h-[600px] overflow-hidden bg-black flex items-center">
+        <section className="relative h-[60vh] sm:h-[75vh] md:h-[85vh] min-h-[500px] overflow-hidden bg-black flex items-center">
           <Image
             src="/images/urban/hero-basketball-court.jpg"
             alt="Impact"
@@ -87,7 +87,7 @@ export default function ImpactPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent z-[1]" />
           {/* Glowing stat orbs */}
           <div className="absolute top-[20%] right-[10%] w-[300px] h-[300px] bg-fsl-coral/8 blur-[120px] rounded-full z-[1]" />
-          <div className="absolute bottom-[10%] left-[5%] w-[400px] h-[400px] bg-fsl-blue/5 blur-[150px] rounded-full z-[1]" />
+          <div className="absolute bottom-[10%] left-[5%] w-[200px] h-[200px] sm:w-[400px] sm:h-[400px] bg-fsl-blue/5 blur-[150px] rounded-full z-[1]" />
 
           <div className="relative z-[2] px-6 md:px-16 lg:px-24 max-w-[1600px] mx-auto w-full">
             <ScrollReveal animation="fade-up">
@@ -95,7 +95,7 @@ export default function ImpactPage() {
                 <span className="w-12 h-[2px] bg-fsl-coral" />
                 Measurable Results
               </p>
-              <h1 className="font-barlow text-[56px] sm:text-[80px] md:text-[110px] lg:text-[140px] xl:text-[160px] font-bold text-white uppercase leading-[0.85] tracking-[-0.03em]">
+              <h1 className="font-barlow text-[40px] sm:text-[60px] md:text-[80px] lg:text-[110px] xl:text-[140px] font-bold text-white uppercase leading-[0.85] tracking-[-0.03em]">
                 Real<br />
                 <span className="text-fsl-coral">Impact.</span>
               </h1>

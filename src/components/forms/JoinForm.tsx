@@ -45,7 +45,7 @@ export function JoinForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
         <div>
           <label htmlFor="join-path" className="block font-redhat text-[11px] font-bold uppercase tracking-[0.2em] text-white/50 mb-3">Your Path</label>
-          <select id="join-path" name="path" className="w-full bg-white/[0.04] border border-white/[0.08] px-5 py-4 font-redhat text-[15px] text-white/30 outline-none focus:border-fsl-coral transition-colors duration-500 appearance-none">
+          <select id="join-path" name="path" className="w-full bg-white/[0.04] border border-white/[0.08] px-5 py-4 font-redhat text-[15px] text-white/30 outline-none focus:border-fsl-coral transition-colors duration-500 appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%23999%22%20d%3D%22M6%208L1%203h10z%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_1rem_center]">
             <option value="">Select</option>
             <option value="volunteer">Volunteer</option>
             <option value="partner">Partner</option>
@@ -55,7 +55,7 @@ export function JoinForm() {
         </div>
         <div>
           <label htmlFor="join-sport" className="block font-redhat text-[11px] font-bold uppercase tracking-[0.2em] text-white/50 mb-3">Sport Interest</label>
-          <select id="join-sport" name="sportInterest" className="w-full bg-white/[0.04] border border-white/[0.08] px-5 py-4 font-redhat text-[15px] text-white/30 outline-none focus:border-fsl-coral transition-colors duration-500 appearance-none">
+          <select id="join-sport" name="sportInterest" className="w-full bg-white/[0.04] border border-white/[0.08] px-5 py-4 font-redhat text-[15px] text-white/30 outline-none focus:border-fsl-coral transition-colors duration-500 appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%23999%22%20d%3D%22M6%208L1%203h10z%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_1rem_center]">
             <option value="">Select a sport</option>
             <option value="golf">Golf</option>
             <option value="football">Football</option>

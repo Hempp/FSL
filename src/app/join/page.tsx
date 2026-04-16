@@ -56,7 +56,7 @@ export default function JoinPage() {
       <NikeHeader />
       <main id="main-content">
         {/* ── Nike Recruitment Campaign Hero ── */}
-        <section className="relative h-[90vh] min-h-[650px] overflow-hidden bg-black flex items-center justify-center">
+        <section className="relative h-[70vh] sm:h-[80vh] md:h-[90vh] min-h-[550px] overflow-hidden bg-black flex items-center justify-center">
           <Image
             src="/images/urban/hero-streetball.jpg"
             alt="Youth athletes"
@@ -68,14 +68,14 @@ export default function JoinPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/40 z-[1]" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black z-[1]" />
           {/* Bold glow */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-fsl-coral/10 blur-[180px] z-[1]" />
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[250px] h-[200px] sm:w-[600px] sm:h-[400px] bg-fsl-coral/10 blur-[180px] z-[1]" />
 
           <div className="relative z-[2] text-center px-6 max-w-[1100px] mx-auto">
             <ScrollReveal animation="scale">
               <p className="font-redhat text-[11px] uppercase tracking-[0.6em] text-fsl-coral font-bold mb-8">
                 The Movement Needs You
               </p>
-              <h1 className="font-barlow text-[60px] sm:text-[90px] md:text-[120px] lg:text-[160px] xl:text-[180px] font-bold text-white uppercase leading-[0.82] tracking-[-0.04em]">
+              <h1 className="font-barlow text-[40px] sm:text-[64px] md:text-[90px] lg:text-[120px] xl:text-[150px] font-bold text-white uppercase leading-[0.92] sm:leading-[0.88] md:leading-[0.82] tracking-[-0.04em]">
                 Join The<br />
                 <span className="text-fsl-coral">Movement</span>
               </h1>

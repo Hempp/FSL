@@ -214,7 +214,7 @@ export default function MentorCoachingPage() {
         {/* ═══════════════════════════════════════════
             HERO — 85vh
         ═══════════════════════════════════════════ */}
-        <section className="relative h-[85vh] min-h-[650px] overflow-hidden bg-black flex items-end">
+        <section className="relative h-[65vh] sm:h-[75vh] md:h-[85vh] min-h-[550px] overflow-hidden bg-black flex items-end">
           <Image
             src="/images/premium/coach-mentoring.jpg"
             alt="Coach mentoring a young athlete"
@@ -227,7 +227,7 @@ export default function MentorCoachingPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent z-[1]" />
 
           {/* Glow orbs */}
-          <div className="absolute bottom-[8%] left-[10%] w-[500px] h-[400px] bg-fsl-coral/10 blur-[160px] z-[1]" />
+          <div className="absolute bottom-[8%] left-[10%] w-[250px] h-[200px] sm:w-[500px] sm:h-[400px] bg-fsl-coral/10 blur-[160px] z-[1]" />
           <div className="absolute top-[25%] right-[8%] w-[350px] h-[300px] bg-[#0052FE]/5 blur-[120px] z-[1]" />
 
           {/* Diagonal accent strips */}
@@ -245,7 +245,7 @@ export default function MentorCoachingPage() {
             </ScrollReveal>
 
             <ScrollReveal animation="fade-up" delay={100} duration={1200}>
-              <h1 className="font-barlow text-[52px] sm:text-[72px] md:text-[96px] lg:text-[120px] xl:text-[150px] font-black text-white uppercase leading-[0.85] tracking-[-0.03em] max-w-[1000px]">
+              <h1 className="font-barlow text-[36px] sm:text-[56px] md:text-[80px] lg:text-[100px] xl:text-[120px] font-black text-white uppercase leading-[0.85] tracking-[-0.03em] max-w-[1000px]">
                 Mentor<br />
                 <span className="font-bonvivant normal-case text-[0.45em] text-fsl-coral/80 italic tracking-normal inline-block -mt-2 md:-mt-4">
                   changing lives

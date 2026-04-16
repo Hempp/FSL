@@ -48,7 +48,7 @@ export function EquipmentRequestForm() {
         </div>
         <div>
           <label htmlFor="eq-type" className="block font-redhat text-[11px] font-bold uppercase tracking-[0.2em] text-fsl-dark mb-3">Request Type</label>
-          <select id="eq-type" name="type" className="w-full bg-white border-0 border-b-[3px] border-black/[0.06] px-4 py-4 font-redhat text-[15px] text-fsl-dark outline-none focus:border-fsl-coral transition-colors duration-500 appearance-none">
+          <select id="eq-type" name="type" className="w-full bg-white border-0 border-b-[3px] border-black/[0.06] px-4 py-4 font-redhat text-[15px] text-fsl-dark outline-none focus:border-fsl-coral transition-colors duration-500 appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%23999%22%20d%3D%22M6%208L1%203h10z%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_1rem_center]">
             <option value="">Select type</option>
             <option value="jerseys">Jerseys</option>
             <option value="equipment">Equipment</option>
@@ -72,7 +72,7 @@ export function EquipmentRequestForm() {
       <button
         type="submit"
         disabled={pending}
-        className="group inline-flex items-center gap-3 font-redhat text-[11px] font-bold uppercase tracking-[0.2em] text-white bg-fsl-dark px-8 py-4 hover:bg-fsl-coral transition-all duration-500 disabled:opacity-60"
+        className="w-full sm:w-auto group flex sm:inline-flex items-center justify-center gap-3 font-redhat text-[11px] font-bold uppercase tracking-[0.2em] text-white bg-fsl-dark px-8 py-4 hover:bg-fsl-coral transition-all duration-500 disabled:opacity-60"
       >
         {pending ? "Submitting..." : "Submit Request"}
         {!pending && (

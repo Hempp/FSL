@@ -109,11 +109,11 @@ export default async function BlogPostPage({ params }: Props) {
               <h1 className="font-barlow text-[28px] md:text-[44px] font-bold uppercase leading-[0.95] text-white mb-3">
                 {post.title}
               </h1>
-              <div className="flex items-center gap-4">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
                 <span className="font-redhat text-[13px] text-white/70">
                   {post.author}
                 </span>
-                <span className="text-white/30">|</span>
+                <span className="hidden sm:inline text-white/30">|</span>
                 <time
                   dateTime={post.date}
                   className="font-redhat text-[13px] text-white/70"
@@ -124,7 +124,7 @@ export default async function BlogPostPage({ params }: Props) {
                     day: "numeric",
                   })}
                 </time>
-                <span className="text-white/30">&middot;</span>
+                <span className="hidden sm:inline text-white/30">&middot;</span>
                 <span className="font-redhat text-[13px] text-white/70">
                   {readingTime} min read
                 </span>

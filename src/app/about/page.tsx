@@ -55,7 +55,7 @@ export default function AboutPage() {
       <NikeHeader />
       <main id="main-content">
         {/* ── Cinematic Hero — 85vh ESPN Feature ── */}
-        <section className="relative h-[85vh] min-h-[600px] overflow-hidden bg-black flex items-end">
+        <section className="relative h-[60vh] sm:h-[75vh] md:h-[85vh] min-h-[500px] overflow-hidden bg-black flex items-end">
           <Image
             src="/images/urban/community.jpg"
             alt="Our community"
@@ -67,7 +67,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-[1]" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-transparent z-[1]" />
           {/* Glowing accent orb */}
-          <div className="absolute bottom-0 left-[15%] w-[500px] h-[400px] bg-fsl-coral/10 blur-[150px] z-[1]" />
+          <div className="absolute bottom-0 left-[15%] w-[250px] h-[200px] sm:w-[500px] sm:h-[400px] bg-fsl-coral/10 blur-[150px] z-[1]" />
 
           <div className="relative z-[2] px-6 md:px-16 lg:px-24 pb-16 md:pb-24 max-w-[1600px] mx-auto w-full">
             <ScrollReveal animation="fade-up">
@@ -75,7 +75,7 @@ export default function AboutPage() {
                 <span className="w-12 h-[2px] bg-fsl-coral" />
                 Origin Story
               </p>
-              <h1 className="font-barlow text-[56px] sm:text-[80px] md:text-[110px] lg:text-[140px] xl:text-[160px] font-bold text-white uppercase leading-[0.85] tracking-[-0.03em]">
+              <h1 className="font-barlow text-[36px] sm:text-[56px] md:text-[80px] lg:text-[110px] xl:text-[140px] font-bold text-white uppercase leading-[0.85] tracking-[-0.03em]">
                 Built From<br />
                 <span className="text-fsl-coral">The Ground</span><br />
                 <span className="text-white/20">Up.</span>

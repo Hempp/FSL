@@ -97,7 +97,7 @@ export function CoachApplicationForm() {
         <select
           name="experience"
           required
-          className="w-full bg-white/[0.05] border border-white/[0.08] px-4 py-3 font-redhat text-[14px] text-white/60 focus:outline-none focus:border-fsl-coral/50 transition-colors duration-300 appearance-none"
+          className="w-full bg-white/[0.05] border border-white/[0.08] px-4 py-3 font-redhat text-[14px] text-white/60 focus:outline-none focus:border-fsl-coral/50 transition-colors duration-300 appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%23999%22%20d%3D%22M6%208L1%203h10z%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_1rem_center]"
           defaultValue=""
         >
           <option value="" disabled className="text-black">Select experience level</option>

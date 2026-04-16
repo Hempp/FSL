@@ -73,7 +73,7 @@ export default function DonatePage() {
       <NikeHeader />
       <main id="main-content">
         {/* ── Hero Section ── */}
-        <section className="relative h-[90vh] min-h-[650px] overflow-hidden bg-black flex items-center justify-center">
+        <section className="relative h-[70vh] sm:h-[80vh] md:h-[90vh] min-h-[550px] overflow-hidden bg-black flex items-center justify-center">
           <Image
             src="/images/premium/donate-kids.jpg"
             alt="Support youth athletes"
@@ -85,7 +85,7 @@ export default function DonatePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50 z-[1]" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black z-[1]" />
           {/* Glow orbs */}
-          <div className="absolute bottom-[10%] left-[15%] w-[500px] h-[400px] bg-fsl-coral/10 blur-[160px] z-[1]" />
+          <div className="absolute bottom-[10%] left-[15%] w-[250px] h-[200px] sm:w-[500px] sm:h-[400px] bg-fsl-coral/10 blur-[160px] z-[1]" />
           <div className="absolute top-[20%] right-[10%] w-[300px] h-[300px] bg-fsl-blue/5 blur-[120px] z-[1]" />
 
           <div className="relative z-[2] text-center px-6 max-w-[1000px] mx-auto">
@@ -104,7 +104,7 @@ export default function DonatePage() {
               <p className="font-redhat text-[11px] uppercase tracking-[0.5em] text-fsl-coral font-semibold mb-8">
                 Every Dollar Counts
               </p>
-              <h1 className="font-barlow text-[56px] sm:text-[80px] md:text-[110px] lg:text-[140px] xl:text-[170px] font-bold text-white uppercase leading-[0.82] tracking-[-0.035em] mb-6">
+              <h1 className="font-barlow text-[40px] sm:text-[60px] md:text-[80px] lg:text-[110px] xl:text-[140px] font-bold text-white uppercase leading-[0.92] sm:leading-[0.88] md:leading-[0.82] tracking-[-0.035em] mb-6">
                 Play<br />Your <span className="text-fsl-coral">Part</span>
               </h1>
               <p className="font-redhat text-[16px] md:text-[18px] text-white/35 font-normal leading-[1.85] max-w-[520px] mx-auto mb-4">
@@ -165,7 +165,7 @@ export default function DonatePage() {
         {/* ── Fund a Mentor Coach — Featured Banner ── */}
         <section className="relative py-20 md:py-28 bg-[#0a0a0a] overflow-hidden">
           {/* Ambient glow */}
-          <div className="absolute top-0 left-1/4 w-[600px] h-[400px] bg-fsl-coral/8 blur-[180px] pointer-events-none" />
+          <div className="absolute top-0 left-1/4 w-[250px] h-[200px] sm:w-[600px] sm:h-[400px] bg-fsl-coral/8 blur-[180px] pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 w-[400px] h-[300px] bg-fsl-blue/5 blur-[140px] pointer-events-none" />
 
           <div className="relative z-10 max-w-[1200px] mx-auto px-6 md:px-16 lg:px-24">

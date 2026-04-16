@@ -26,7 +26,7 @@ export function NikeMission() {
             {/* ESPN-style massive pullquote */}
             <ScrollReveal animation="fade-up" delay={100} duration={1000}>
               <div className="relative mb-10">
-                <span className="font-bonvivant text-[80px] md:text-[100px] lg:text-[120px] text-fsl-coral/10 absolute -top-10 -left-4 leading-none select-none">
+                <span className="font-bonvivant text-[80px] md:text-[100px] lg:text-[120px] text-fsl-coral/10 absolute -top-10 left-0 sm:-left-4 leading-none select-none">
                   &ldquo;
                 </span>
                 <h2 className="font-barlow text-[38px] md:text-[52px] lg:text-[64px] xl:text-[72px] font-bold text-fsl-dark uppercase leading-[0.88] tracking-[-0.02em]">
@@ -77,7 +77,7 @@ export function NikeMission() {
             <ScrollReveal animation="fade-left" delay={200} duration={1100}>
               <div className="relative">
                 {/* Main image — dramatic treatment */}
-                <div className="relative aspect-[3/4] md:aspect-[4/5] overflow-hidden">
+                <div className="relative aspect-[3/4] md:aspect-[4/5] overflow-hidden mb-12">
                   <Image
                     src="/images/urban/team-huddle.jpg"
                     alt="Coach mentoring young athletes"
@@ -102,7 +102,7 @@ export function NikeMission() {
                 </div>
 
                 {/* Overlapping stats callout card */}
-                <div className="absolute -bottom-8 -left-4 md:-left-10 lg:-left-16 bg-fsl-dark p-6 md:p-8 z-20 shadow-2xl">
+                <div className="absolute -bottom-8 left-0 sm:-left-4 md:-left-10 lg:-left-16 bg-fsl-dark p-6 md:p-8 z-20 shadow-2xl">
                   <div className="flex gap-8 md:gap-12">
                     <div>
                       <p className="font-barlow text-[36px] md:text-[48px] font-bold text-fsl-coral leading-none">
