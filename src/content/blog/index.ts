@@ -53,7 +53,103 @@ export const blogPosts: BlogPost[] = [
       "sports education",
     ],
   },
+  {
+    slug: "youth-football-safety-tips",
+    title:
+      "Youth Football Safety: What Every Parent in LA Should Know Before Signing Up",
+    description:
+      "Learn about youth football safety, head injury prevention, proper technique, and how Fundamental Sports Labs keeps young athletes safe with trained coaches and free equipment.",
+    date: "2026-04-12",
+    author: "Fundamental Sports Labs",
+    image: "/images/urban/football-play.jpg",
+    tags: [
+      "youth football safety",
+      "football",
+      "los angeles",
+      "youth sports",
+      "safety",
+    ],
+  },
+  {
+    slug: "after-school-programs-los-angeles",
+    title:
+      "The Best Free After-School Programs for Kids in Los Angeles (2026 Guide)",
+    description:
+      "A comprehensive guide to free after-school programs in Los Angeles, including sports, tutoring, and enrichment. Learn why Fundamental Sports Labs is the top choice for LA families.",
+    date: "2026-04-11",
+    author: "Fundamental Sports Labs",
+    image: "/images/urban/community.jpg",
+    tags: [
+      "after school programs",
+      "los angeles",
+      "free programs",
+      "youth activities",
+      "kids",
+    ],
+  },
+  {
+    slug: "golf-for-youth-beginners",
+    title:
+      "Why Golf Is the Best Sport You're Not Signing Your Kid Up For",
+    description:
+      "Golf teaches patience, etiquette, and individual focus like no other sport. Discover how Fundamental Sports Labs makes youth golf accessible and free for kids in Los Angeles.",
+    date: "2026-04-10",
+    author: "Fundamental Sports Labs",
+    image: "/images/urban/cta-athletes.jpg",
+    tags: ["golf", "youth sports", "beginners", "kids", "los angeles"],
+  },
+  {
+    slug: "building-confidence-through-sports",
+    title:
+      "From Shy to Starting Lineup: How Sports Build Confidence in Kids",
+    description:
+      "Youth sports are one of the most powerful tools for building confidence in children. Learn how Fundamental Sports Labs transforms shy kids into confident leaders through its Four Pillars approach.",
+    date: "2026-04-09",
+    author: "Fundamental Sports Labs",
+    image: "/images/urban/team-huddle.jpg",
+    tags: [
+      "confidence",
+      "youth development",
+      "mental health",
+      "youth sports",
+      "kids",
+    ],
+  },
+  {
+    slug: "volunteer-youth-sports-coach-guide",
+    title:
+      "How to Become a Volunteer Youth Sports Coach in Los Angeles",
+    description:
+      "Everything you need to know about volunteering as a youth sports coach in LA. Learn about FSL's volunteer program, background check process, and how coaching changes lives.",
+    date: "2026-04-08",
+    author: "Fundamental Sports Labs",
+    image: "/images/urban/hero-basketball-court.jpg",
+    tags: [
+      "volunteer",
+      "coaching",
+      "los angeles",
+      "youth sports",
+      "community",
+    ],
+  },
 ];
+
+// Approximate word counts per post (from rendered content)
+const wordCounts: Record<string, number> = {
+  "free-youth-sports-los-angeles": 680,
+  "benefits-youth-sports-mental-health": 820,
+  "financial-literacy-youth-athletes": 1050,
+  "youth-football-safety-tips": 700,
+  "after-school-programs-los-angeles": 750,
+  "golf-for-youth-beginners": 600,
+  "building-confidence-through-sports": 650,
+  "volunteer-youth-sports-coach-guide": 700,
+};
+
+export function getReadingTime(slug: string): number {
+  const words = wordCounts[slug] ?? 400;
+  return Math.max(1, Math.ceil(words / 200));
+}
 
 export function getAllPosts(): BlogPost[] {
   return [...blogPosts].sort(

@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { NikeHeader } from "@/components/nike/NikeHeader";
 import { NikeFooter } from "@/components/nike/NikeFooter";
-import { getAllPosts } from "@/content/blog";
+import { getAllPosts, getReadingTime } from "@/content/blog";
 
 export const metadata: Metadata = {
   title: "Blog — Youth Sports, Wellness & Financial Literacy",
@@ -86,16 +86,17 @@ export default function BlogIndex() {
                         {post.description}
                       </p>
                       <div className="flex items-center justify-between">
-                        <time
-                          dateTime={post.date}
-                          className="font-redhat text-[12px] text-[#999] uppercase tracking-[0.1em]"
-                        >
-                          {new Date(post.date).toLocaleDateString("en-US", {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric",
-                          })}
-                        </time>
+                        <span className="font-redhat text-[12px] text-[#999] uppercase tracking-[0.1em]">
+                          <time dateTime={post.date}>
+                            {new Date(post.date).toLocaleDateString("en-US", {
+                              year: "numeric",
+                              month: "long",
+                              day: "numeric",
+                            })}
+                          </time>
+                          {" "}&middot;{" "}
+                          {getReadingTime(post.slug)} min read
+                        </span>
                         <span className="font-redhat text-[12px] font-semibold uppercase tracking-[0.15em] text-fsl-coral group-hover:translate-x-1 transition-transform duration-200">
                           Read More &rarr;
                         </span>

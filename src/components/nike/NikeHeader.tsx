@@ -23,6 +23,7 @@ const NAV_LINKS: readonly NavLink[] = [
     ],
   },
   { label: "Impact", href: "/impact" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Events", href: "/events" },
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },

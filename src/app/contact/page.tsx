@@ -12,6 +12,7 @@ import { SmoothScroll } from "@/components/SmoothScroll";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { ContactForm } from "@/components/forms/ContactForm";
 import Image from "next/image";
+import Link from "next/link";
 
 const contactCards = [
   {
@@ -214,6 +215,127 @@ export default function ContactPage() {
                   </div>
                 </ScrollReveal>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Hours & Availability ── */}
+        <section className="py-20 md:py-28 bg-[#fafafa]">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
+            <ScrollReveal animation="fade-up">
+              <p className="font-redhat text-[11px] uppercase tracking-[0.5em] text-fsl-coral font-semibold flex items-center gap-3 mb-6">
+                <span className="w-12 h-[2px] bg-fsl-coral" />
+                Availability
+              </p>
+              <h2 className="font-barlow text-[36px] md:text-[48px] font-bold text-fsl-dark uppercase leading-[0.9] mb-12">
+                When To Reach Us
+              </h2>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {[
+                {
+                  label: "Office Hours",
+                  value: "Mon — Fri, 9 AM — 5 PM PST",
+                  desc: "Available for calls, emails, and partnership inquiries",
+                  icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
+                  color: "#0052FE",
+                },
+                {
+                  label: "Program Hours",
+                  value: "Sat 9 AM — 12 PM",
+                  desc: "Select weekdays 3:30 — 5:30 PM for after-school sessions",
+                  icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z",
+                  color: "#FF7900",
+                },
+                {
+                  label: "Response Time",
+                  value: "Within 48 Hours",
+                  desc: "We respond to all inquiries — no message goes unanswered",
+                  icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
+                  color: "#00D17E",
+                },
+              ].map((c, i) => (
+                <ScrollReveal key={c.label} animation="fade-up" delay={i * 100}>
+                  <div className="group relative bg-white overflow-hidden transition-all duration-700 hover:-translate-y-1 hover:shadow-[0_15px_50px_-12px_rgba(0,0,0,0.1)]">
+                    <div className="h-[4px] w-full" style={{ backgroundColor: c.color }} />
+                    <div className="p-8 md:p-10">
+                      <div className="w-14 h-14 rounded-full flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110" style={{ backgroundColor: `${c.color}12` }}>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={c.color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d={c.icon} />
+                        </svg>
+                      </div>
+                      <p className="font-redhat text-[11px] uppercase tracking-[0.25em] font-semibold mb-3" style={{ color: c.color }}>{c.label}</p>
+                      <p className="font-barlow text-[22px] md:text-[24px] font-bold text-fsl-dark uppercase leading-tight mb-2">{c.value}</p>
+                      <p className="font-redhat text-[13px] text-[#999] font-normal leading-[1.7]">{c.desc}</p>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Where We Operate — Google Maps ── */}
+        <section className="py-20 md:py-28">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
+            <ScrollReveal animation="fade-up">
+              <p className="font-redhat text-[11px] uppercase tracking-[0.5em] text-fsl-coral font-semibold flex items-center gap-3 mb-6">
+                <span className="w-12 h-[2px] bg-fsl-coral" />
+                Our Area
+              </p>
+              <h2 className="font-barlow text-[36px] md:text-[48px] font-bold text-fsl-dark uppercase leading-[0.9] mb-3">
+                Where We Operate
+              </h2>
+              <p className="font-redhat text-[14px] text-[#999] font-normal leading-[1.85] mb-12 max-w-[600px]">
+                Serving youth across South LA, Inglewood, Baldwin Hills, View Park, and Ladera Heights
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal animation="fade-up" delay={100}>
+              <div className="w-full overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105944.30649045916!2d-118.39535225!3d33.95798285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b6f3c9c2b9e7%3A0x2b06c3e3c5c1b6e4!2sInglewood%2C%20CA!5e0!3m2!1sen!2sus!4v1"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="FSL service area — Los Angeles and Inglewood"
+                />
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* ── Quick Links ── */}
+        <section className="py-16 md:py-20 bg-[#fafafa]">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
+            <ScrollReveal animation="fade-up">
+              <p className="font-redhat text-[11px] uppercase tracking-[0.5em] text-fsl-coral font-semibold flex items-center gap-3 mb-6 justify-center">
+                <span className="w-12 h-[2px] bg-fsl-coral" />
+                Quick Links
+              </p>
+            </ScrollReveal>
+
+            <div className="flex flex-wrap justify-center gap-4">
+              {[
+                { label: "Enroll Your Child (Free)", href: "/join" },
+                { label: "Donate", href: "/donate" },
+                { label: "Become a Volunteer Coach", href: "/mentor-coaching" },
+                { label: "View Programs", href: "/programs" },
+                { label: "Read Our FAQ", href: "/faq" },
+              ].map((link, i) => (
+                <ScrollReveal key={link.href} animation="fade-up" delay={i * 80}>
+                  <Link
+                    href={link.href}
+                    className="inline-block border-2 border-fsl-coral text-fsl-coral font-redhat text-[13px] font-semibold uppercase tracking-[0.1em] px-6 py-3 hover:bg-fsl-coral hover:text-white transition-all duration-500"
+                  >
+                    {link.label}
+                  </Link>
+                </ScrollReveal>
+              ))}
             </div>
           </div>
         </section>

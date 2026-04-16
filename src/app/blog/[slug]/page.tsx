@@ -5,8 +5,9 @@ import Link from "next/link";
 import { NikeHeader } from "@/components/nike/NikeHeader";
 import { NikeFooter } from "@/components/nike/NikeFooter";
 import { JsonLd } from "@/components/JsonLd";
-import { blogPosts, getPostBySlug } from "@/content/blog";
+import { blogPosts, getPostBySlug, getReadingTime } from "@/content/blog";
 import { BlogPostContent } from "@/components/blog/BlogPostContent";
+import { ShareButtons } from "@/components/blog/ShareButtons";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -46,6 +47,10 @@ export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) notFound();
+
+  const readingTime = getReadingTime(slug);
+  const shareUrl = `https://fundamentalsportslabs.org/blog/${slug}`;
+  const relatedPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 2);
 
   return (
     <>
@@ -119,10 +124,19 @@ export default async function BlogPostPage({ params }: Props) {
                     day: "numeric",
                   })}
                 </time>
+                <span className="text-white/30">&middot;</span>
+                <span className="font-redhat text-[13px] text-white/70">
+                  {readingTime} min read
+                </span>
               </div>
             </div>
           </div>
         </section>
+
+        {/* Share buttons */}
+        <div className="max-w-[800px] mx-auto px-6 md:px-12 pt-8">
+          <ShareButtons title={post.title} url={shareUrl} />
+        </div>
 
         {/* Article content */}
         <article className="py-12 md:py-20">
@@ -132,6 +146,47 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           </div>
         </article>
+
+        {/* Related posts */}
+        {relatedPosts.length > 0 && (
+          <section className="pb-12 md:pb-16">
+            <div className="max-w-[800px] mx-auto px-6 md:px-12">
+              <div className="border-t border-black/10 pt-12">
+                <h2 className="font-barlow text-[20px] md:text-[24px] font-bold uppercase text-fsl-dark mb-6">
+                  Related Articles
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {relatedPosts.map((related) => (
+                    <Link
+                      key={related.slug}
+                      href={`/blog/${related.slug}`}
+                      className="group block"
+                    >
+                      <article className="border border-black/5 rounded-xl p-5 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:-translate-y-0.5 transition-all duration-300">
+                        <div className="flex flex-wrap gap-1.5 mb-2">
+                          {related.tags.slice(0, 2).map((tag) => (
+                            <span
+                              key={tag}
+                              className="font-redhat text-[10px] uppercase tracking-[0.1em] text-fsl-coral bg-fsl-coral/10 px-2 py-0.5 rounded-full font-medium"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                        <h3 className="font-barlow text-[16px] md:text-[18px] font-bold uppercase leading-tight text-fsl-dark mb-2 group-hover:text-fsl-coral transition-colors duration-200">
+                          {related.title}
+                        </h3>
+                        <p className="font-redhat text-[13px] text-[#666] leading-relaxed line-clamp-2">
+                          {related.description}
+                        </p>
+                      </article>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Back to blog */}
         <section className="pb-16 md:pb-24">

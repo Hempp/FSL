@@ -1,7 +1,7 @@
 "use server";
 
 import { db } from "@/lib/db";
-import { sendNotification, formatEmailTable } from "@/lib/email";
+import { sendNotification, formatEmailTable, sendConfirmation, buildConfirmationEmail } from "@/lib/email";
 
 /* ────────────────────────────────────────────
    TODO: Add rate limiting in production.
@@ -82,6 +82,16 @@ export async function submitRegistration(_prev: unknown, formData: FormData) {
           `New Registration: ${data.firstName} ${data.lastName} for ${data.eventName || data.programType}`,
           formatEmailTable("New Registration", data),
         ).catch(() => {});
+        sendConfirmation(
+          data.parentEmail,
+          `Registration Confirmed — ${data.eventName || data.programType}`,
+          buildConfirmationEmail(
+            "Registration Confirmed!",
+            `<p>Thank you for registering <strong>${data.firstName}</strong> for <strong>${data.eventName || data.programType}</strong>!</p>
+             <p>We'll send program details as the date approaches. All programs are free — no payment needed.</p>
+             <p style="margin-top: 24px; color: #888;">If you have questions, reply to this email or contact us at Info@fundamentalsportslabs.org.</p>`,
+          ),
+        ).catch(() => {});
         return { success: true };
       },
       data
@@ -118,6 +128,16 @@ export async function submitJoin(_prev: unknown, formData: FormData) {
           `New ${data.path || "Join"} Application: ${data.firstName} ${data.lastName}`,
           formatEmailTable("New Join / Volunteer Application", data),
         ).catch(() => {});
+        sendConfirmation(
+          data.email,
+          "Application Received — Fundamental Sports Labs",
+          buildConfirmationEmail(
+            "Application Received!",
+            `<p>Thanks for your interest in <strong>${data.path || "joining"}</strong> with FSL!</p>
+             <p>Our team will reach out within 48 hours.</p>
+             <p style="margin-top: 24px; color: #888;">If you have questions, reply to this email or contact us at Info@fundamentalsportslabs.org.</p>`,
+          ),
+        ).catch(() => {});
         return { success: true };
       },
       data
@@ -151,6 +171,15 @@ export async function submitContact(_prev: unknown, formData: FormData) {
         sendNotification(
           `New Contact Message from ${data.name}: ${data.subject || "(no subject)"}`,
           formatEmailTable("New Contact Message", data),
+        ).catch(() => {});
+        sendConfirmation(
+          data.email,
+          "We Got Your Message — FSL",
+          buildConfirmationEmail(
+            "We Got Your Message!",
+            `<p>Thanks for reaching out, <strong>${data.name}</strong>. We'll respond within 48 hours.</p>
+             <p style="margin-top: 24px; color: #888;">If you have questions, reply to this email or contact us at Info@fundamentalsportslabs.org.</p>`,
+          ),
         ).catch(() => {});
         return { success: true };
       },
@@ -193,6 +222,16 @@ export async function submitCoachApplication(_prev: unknown, formData: FormData)
           `New Coach Application: ${data.fullName}`,
           formatEmailTable("New Coach Application", data),
         ).catch(() => {});
+        sendConfirmation(
+          data.email,
+          "Coach Application Received — FSL",
+          buildConfirmationEmail(
+            "Coach Application Received!",
+            `<p>Thank you for applying, <strong>${data.fullName}</strong>.</p>
+             <p>We'll review your application and follow up within a week.</p>
+             <p style="margin-top: 24px; color: #888;">If you have questions, reply to this email or contact us at Info@fundamentalsportslabs.org.</p>`,
+          ),
+        ).catch(() => {});
         return { success: true };
       },
       data
@@ -230,6 +269,16 @@ export async function submitEquipmentRequest(_prev: unknown, formData: FormData)
         sendNotification(
           `Equipment Request from ${data.organizationName}`,
           formatEmailTable("New Equipment / Jersey Request", data),
+        ).catch(() => {});
+        sendConfirmation(
+          data.email,
+          "Equipment Request Received — FSL",
+          buildConfirmationEmail(
+            "Equipment Request Received!",
+            `<p>We received your request, <strong>${data.contactName}</strong>.</p>
+             <p>Our equipment team will respond within 5 business days.</p>
+             <p style="margin-top: 24px; color: #888;">If you have questions, reply to this email or contact us at Info@fundamentalsportslabs.org.</p>`,
+          ),
         ).catch(() => {});
         return { success: true };
       },

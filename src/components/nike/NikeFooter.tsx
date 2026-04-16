@@ -63,6 +63,7 @@ const columns = [
     links: [
       { label: "About Us", href: "/about" },
       { label: "Our Impact", href: "/impact" },
+      { label: "Gallery", href: "/gallery" },
       { label: "Board Members", href: "/our-board-members" },
       { label: "FAQ", href: "/faq" },
       { label: "Contact", href: "/contact" },
