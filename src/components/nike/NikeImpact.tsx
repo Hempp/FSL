@@ -1,6 +1,5 @@
 "use client";
 
-import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useCountUp } from "@/hooks/useCountUp";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
@@ -17,7 +16,6 @@ function Stat({
   label,
   color,
   icon,
-  isVisible,
   delay,
 }: {
   end: number;
@@ -25,10 +23,9 @@ function Stat({
   label: string;
   color: string;
   icon: string;
-  isVisible: boolean;
   delay: number;
 }) {
-  const value = useCountUp(end, isVisible, 2500, suffix);
+  const { ref, display } = useCountUp(end, 2500, suffix);
 
   return (
     <div
@@ -62,13 +59,14 @@ function Stat({
 
       {/* Glowing stat number */}
       <p
+        ref={ref}
         className="font-barlow text-[52px] md:text-[72px] lg:text-[96px] font-black leading-none tracking-tight transition-all duration-500"
         style={{
           color,
-          textShadow: isVisible ? `0 0 40px ${color}30, 0 0 80px ${color}15` : "none",
+          textShadow: `0 0 40px ${color}30, 0 0 80px ${color}15`,
         }}
       >
-        {value}
+        {display}
       </p>
 
       {/* Accent line under number */}
@@ -88,8 +86,6 @@ function Stat({
 }
 
 export function NikeImpact() {
-  const { ref, isVisible } = useScrollReveal({ threshold: 0.3 });
-
   return (
     <section id="impact" className="relative py-24 md:py-36 bg-fsl-dark overflow-hidden">
       {/* Background texture — subtle grid lines */}
@@ -133,13 +129,10 @@ export function NikeImpact() {
         </ScrollReveal>
 
         {/* Scoreboard grid */}
-        <div
-          ref={ref}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/[0.06] border border-white/[0.06] rounded-sm overflow-hidden"
-        >
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/[0.06] border border-white/[0.06] rounded-sm overflow-hidden">
           {stats.map((stat, i) => (
             <div key={stat.label} className="bg-fsl-dark">
-              <Stat {...stat} isVisible={isVisible} delay={i * 200} />
+              <Stat {...stat} delay={i * 200} />
             </div>
           ))}
         </div>

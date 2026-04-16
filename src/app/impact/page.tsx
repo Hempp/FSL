@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   description: "150+ youth athletes across South LA, Inglewood, and Baldwin Hills. Every program free. 85% improved academics, 92% graduate success. Real results from Fundamental Sports Labs' free Los Angeles programs.",
 };
 
+import { JsonLd } from "@/components/JsonLd";
 import { NikeHeader } from "@/components/nike/NikeHeader";
 import { NikeFooter } from "@/components/nike/NikeFooter";
 import { NikeImpact } from "@/components/nike/NikeImpact";
@@ -54,6 +55,21 @@ const impactAreas = [
 export default function ImpactPage() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Our Impact — Fundamental Sports Labs",
+          description:
+            "150+ youth athletes across South LA, Inglewood, and Baldwin Hills. Every program free. 85% improved academics, 92% graduate success.",
+          mainEntity: {
+            "@type": "NGO",
+            name: "Fundamental Sports Labs",
+            areaServed: "Los Angeles, CA",
+            nonprofitStatus: "501(c)(3)",
+          },
+        }}
+      />
       <SmoothScroll />
       <NikeHeader />
       <main id="main-content">

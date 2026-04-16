@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Barlow_Condensed, Red_Hat_Display } from "next/font/google";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const barlowCondensed = Barlow_Condensed({
@@ -84,6 +86,8 @@ export default function RootLayout({
           Skip to main content
         </a>
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

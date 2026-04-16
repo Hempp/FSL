@@ -3,6 +3,22 @@
 import { db } from "@/lib/db";
 
 /* ────────────────────────────────────────────
+   TODO: Add rate limiting in production.
+   Use Vercel Edge Middleware, Upstash @upstash/ratelimit,
+   or similar to throttle form submissions per IP.
+   ──────────────────────────────────────────── */
+
+/* ────────────────────────────────────────────
+   Helper: honeypot check — bots fill hidden
+   fields that real users never see. If filled,
+   silently return success to fool the bot.
+   ──────────────────────────────────────────── */
+function isBot(formData: FormData): boolean {
+  const honeypot = formData.get("website") as string;
+  return !!honeypot;
+}
+
+/* ────────────────────────────────────────────
    Helper: check if DB is available
    ──────────────────────────────────────────── */
 type FormResult = { success: boolean; error?: string };
@@ -20,6 +36,8 @@ async function withDb(operation: () => Promise<FormResult>, fallbackData: Record
    1. Registration (Tournament / Clinic)
    ──────────────────────────────────────────── */
 export async function submitRegistration(_prev: unknown, formData: FormData) {
+  if (isBot(formData)) return { success: true };
+
   const data = {
     programType: formData.get("programType") as string,
     eventName: formData.get("eventSelection") as string,
@@ -72,6 +90,8 @@ export async function submitRegistration(_prev: unknown, formData: FormData) {
    2. Join / Volunteer
    ──────────────────────────────────────────── */
 export async function submitJoin(_prev: unknown, formData: FormData) {
+  if (isBot(formData)) return { success: true };
+
   const data = {
     firstName: formData.get("firstName") as string,
     lastName: formData.get("lastName") as string,
@@ -102,6 +122,8 @@ export async function submitJoin(_prev: unknown, formData: FormData) {
    3. Contact
    ──────────────────────────────────────────── */
 export async function submitContact(_prev: unknown, formData: FormData) {
+  if (isBot(formData)) return { success: true };
+
   const data = {
     name: formData.get("name") as string,
     email: formData.get("email") as string,
@@ -130,6 +152,8 @@ export async function submitContact(_prev: unknown, formData: FormData) {
    4. Coach Application
    ──────────────────────────────────────────── */
 export async function submitCoachApplication(_prev: unknown, formData: FormData) {
+  if (isBot(formData)) return { success: true };
+
   const data = {
     fullName: formData.get("fullName") as string,
     email: formData.get("email") as string,
@@ -165,6 +189,8 @@ export async function submitCoachApplication(_prev: unknown, formData: FormData)
    5. Equipment / Jersey Request
    ──────────────────────────────────────────── */
 export async function submitEquipmentRequest(_prev: unknown, formData: FormData) {
+  if (isBot(formData)) return { success: true };
+
   const data = {
     organizationName: formData.get("organizationName") as string,
     contactName: formData.get("contactName") as string,

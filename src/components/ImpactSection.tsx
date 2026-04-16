@@ -95,9 +95,9 @@ function FilledHexagon({ color, number, iconPath, children }: { color: string; n
   );
 }
 
-function AnimatedStat({ end, suffix, isVisible }: { end: number; suffix: string; isVisible: boolean }) {
-  const value = useCountUp(end, isVisible, 2000, suffix);
-  return <>{value}</>;
+function AnimatedStat({ end, suffix }: { end: number; suffix: string; isVisible: boolean }) {
+  const { ref, display } = useCountUp(end, 2000, suffix);
+  return <span ref={ref}>{display}</span>;
 }
 
 export function ImpactSection() {

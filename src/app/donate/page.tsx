@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   description: "Every dollar funds equipment, coaching, and opportunities for young athletes in underserved communities. Tax-deductible donations start at $25.",
 };
 
+import { JsonLd } from "@/components/JsonLd";
 import { NikeHeader } from "@/components/nike/NikeHeader";
 import { NikeFooter } from "@/components/nike/NikeFooter";
 import { SmoothScroll } from "@/components/SmoothScroll";
@@ -55,6 +56,19 @@ const fundAllocation = [
 export default function DonatePage() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "DonateAction",
+          recipient: {
+            "@type": "NGO",
+            name: "Fundamental Sports Labs",
+            taxID: "39-4190687",
+          },
+          description:
+            "Tax-deductible donation to support free youth sports programs in underserved Los Angeles communities. Every dollar funds equipment, coaching, and opportunities for young athletes.",
+        }}
+      />
       <SmoothScroll />
       <NikeHeader />
       <main id="main-content">

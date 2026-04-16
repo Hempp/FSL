@@ -6,6 +6,7 @@ export const metadata: Metadata = {
     "Fundamental Sports Labs is a Los Angeles nonprofit pairing volunteer mentor coaches with student athletes — all programs free for families. Sponsor a session starting at $75 and 100% of proceeds fund free youth sports programs across LA.",
 };
 
+import { JsonLd } from "@/components/JsonLd";
 import { NikeHeader } from "@/components/nike/NikeHeader";
 import { NikeFooter } from "@/components/nike/NikeFooter";
 import { NikeCTA } from "@/components/nike/NikeCTA";
@@ -183,6 +184,30 @@ const impactStats = [
 export default function MentorCoachingPage() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Mentor Coaching — Fundamental Sports Labs",
+          description:
+            "Volunteer mentor coaches paired with student athletes in Los Angeles. All programs free for families. Sponsor a session starting at $75.",
+          provider: {
+            "@type": "SportsOrganization",
+            name: "Fundamental Sports Labs",
+          },
+          areaServed: {
+            "@type": "City",
+            name: "Los Angeles",
+          },
+          serviceType: "Youth Mentor Coaching",
+          offers: {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "USD",
+            description: "Free for all participating youth athletes",
+          },
+        }}
+      />
       <SmoothScroll />
       <NikeHeader />
       <main id="main-content">

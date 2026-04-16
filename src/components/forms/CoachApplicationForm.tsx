@@ -24,6 +24,9 @@ export function CoachApplicationForm() {
 
   return (
     <form action={formAction} className="space-y-6">
+      <div className="absolute -left-[9999px]" aria-hidden="true">
+        <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+      </div>
       {state?.error && (
         <div className="bg-red-500/10 border border-red-500/20 text-red-400 px-4 py-3 font-redhat text-[13px]" role="alert" aria-live="assertive">
           {state.error}

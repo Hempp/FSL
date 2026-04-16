@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   description: "Get in touch with Fundamental Sports Labs, a 501(c)(3) nonprofit offering free youth sports programs. Email info@fundamentalsportslabs.org or send us a message. Based in Los Angeles, California.",
 };
 
+import { JsonLd } from "@/components/JsonLd";
 import { NikeHeader } from "@/components/nike/NikeHeader";
 import { NikeFooter } from "@/components/nike/NikeFooter";
 import { SmoothScroll } from "@/components/SmoothScroll";
@@ -54,6 +55,27 @@ const socials = [
 export default function ContactPage() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: "Contact Fundamental Sports Labs",
+          description:
+            "Get in touch with Fundamental Sports Labs, a 501(c)(3) nonprofit offering free youth sports programs in Los Angeles.",
+          mainEntity: {
+            "@type": "Organization",
+            name: "Fundamental Sports Labs",
+            email: "Info@fundamentalsportslabs.org",
+            areaServed: "Los Angeles, CA",
+            contactPoint: {
+              "@type": "ContactPoint",
+              email: "Info@fundamentalsportslabs.org",
+              contactType: "customer service",
+              availableLanguage: "English",
+            },
+          },
+        }}
+      />
       <SmoothScroll />
       <NikeHeader />
       <main id="main-content">

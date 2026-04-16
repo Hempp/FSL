@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   description: "Founded in Los Angeles, CA by a P.E. teacher, head football coach, and golf director with 15+ years in youth development. FSL combines six sports with mental wellness, financial literacy, and technology education.",
 };
 
+import { JsonLd } from "@/components/JsonLd";
 import { NikeHeader } from "@/components/nike/NikeHeader";
 import { NikeFooter } from "@/components/nike/NikeFooter";
 import { NikeCTA } from "@/components/nike/NikeCTA";
@@ -30,6 +31,26 @@ const timeline = [
 export default function AboutPage() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          name: "About Fundamental Sports Labs",
+          description:
+            "Founded in Los Angeles by a P.E. teacher, head football coach, and golf director with 15+ years in youth development. FSL combines six sports with mental wellness, financial literacy, and technology education.",
+          mainEntity: {
+            "@type": "SportsOrganization",
+            name: "Fundamental Sports Labs",
+            foundingDate: "2023",
+            description:
+              "501(c)(3) nonprofit offering free youth sports programs in Los Angeles combining athletics with mental wellness, financial literacy, and technology education.",
+            areaServed: {
+              "@type": "City",
+              name: "Los Angeles",
+            },
+          },
+        }}
+      />
       <SmoothScroll />
       <NikeHeader />
       <main id="main-content">
