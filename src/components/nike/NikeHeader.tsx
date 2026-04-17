@@ -23,6 +23,7 @@ const NAV_LINKS: readonly NavLink[] = [
     ],
   },
   { label: "Impact", href: "/impact" },
+  { label: "Board", href: "/our-board-members" },
   { label: "Gallery", href: "/gallery" },
   { label: "Events", href: "/events" },
   { label: "Blog", href: "/blog" },
@@ -57,9 +58,9 @@ export function NikeHeader() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 w-full z-50 transition-all duration-500",
+        "fixed top-0 left-0 w-full z-50 transition-colors duration-150",
         mobileOpen
-          ? "bg-white"
+          ? "bg-white shadow-md"
           : scrolled
             ? "bg-white/90 backdrop-blur-xl border-b border-black/5"
             : "bg-transparent"
@@ -178,16 +179,17 @@ export function NikeHeader() {
         </button>
       </div>
 
-      {/* Mobile/Tablet overlay — scrollable, animated */}
+      {/* Mobile/Tablet overlay — scrollable, fast open */}
       <div
         className={cn(
-          "fixed inset-0 bg-white z-40 lg:hidden transition-all duration-300 ease-out",
+          "fixed inset-0 z-40 lg:hidden transition-opacity duration-150",
           mobileOpen
             ? "opacity-100 visible"
             : "opacity-0 invisible pointer-events-none"
         )}
+        style={{ backgroundColor: "#ffffff" }}
       >
-        <div className="h-full overflow-y-auto pt-20 pb-12 px-6 sm:px-12 flex flex-col">
+        <div className="h-full overflow-y-auto pt-20 pb-12 px-6 sm:px-12 flex flex-col bg-white">
           {/* Logo in mobile menu */}
           <div className="flex items-center gap-3 mb-8 pb-6 border-b border-black/10">
             <Image
