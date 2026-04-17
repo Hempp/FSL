@@ -14,8 +14,10 @@ export function Hero3D() {
   const [loaded, setLoaded] = useState(false);
   const [activeSport, setActiveSport] = useState(0);
   const [pulsePhase, setPulsePhase] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const isMobileRef = useRef(false);
   const lastMoveRef = useRef<number>(0);
+  const scrollRafRef = useRef<number>(0);
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
     if (isMobileRef.current) return;
@@ -63,9 +65,32 @@ export function Hero3D() {
     return () => clearInterval(interval);
   }, []);
 
-  const tiltX = -mouse.y * 12;
-  const tiltY = mouse.x * 12;
+  // Scroll-driven parallax — shield reacts to scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      cancelAnimationFrame(scrollRafRef.current);
+      scrollRafRef.current = requestAnimationFrame(() => {
+        const el = containerRef.current;
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const vh = window.innerHeight;
+        // 0 at top, 1 when hero has scrolled fully out
+        const p = Math.max(0, Math.min(1, -rect.top / vh));
+        setScrollProgress(p);
+      });
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      cancelAnimationFrame(scrollRafRef.current);
+    };
+  }, []);
+
+  const tiltX = -mouse.y * 12 + scrollProgress * 15;
+  const tiltY = mouse.x * 12 + scrollProgress * -10;
   const pulseScale = 1 + Math.sin(pulsePhase * 0.05) * 0.03;
+  const scrollScale = 1 + scrollProgress * 0.15;
+  const scrollOpacity = 1 - scrollProgress * 0.8;
 
   return (
     <section
@@ -134,11 +159,12 @@ export function Hero3D() {
           }`}
           style={{
             transformStyle: "preserve-3d",
-            transform: `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`,
+            transform: `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(${scrollScale})`,
+            opacity: scrollOpacity,
             transition: loaded
-              ? "transform 0.15s ease-out, opacity 1.5s cubic-bezier(0.16,1,0.3,1), scale 1.5s cubic-bezier(0.16,1,0.3,1)"
+              ? "transform 0.15s ease-out, opacity 0.15s ease-out"
               : "opacity 1.5s, scale 1.5s",
-            transitionDelay: loaded ? "0s, 0.2s, 0.2s" : "0s",
+            transitionDelay: loaded ? "0s" : "0.2s",
           }}
         >
           {/* ── Animated pulsing rings ── */}
@@ -315,7 +341,13 @@ export function Hero3D() {
       {/* ═══════════════════════════════════════════════
           ══  TEXT & CTA  ══
           ═══════════════════════════════════════════════ */}
-      <div className="absolute inset-0 z-10 flex flex-col justify-end px-4 sm:px-6 md:px-16 lg:px-24 pb-28 sm:pb-36 md:pb-44 pointer-events-none">
+      <div
+        className="absolute inset-0 z-10 flex flex-col justify-end px-4 sm:px-6 md:px-16 lg:px-24 pb-28 sm:pb-36 md:pb-44 pointer-events-none"
+        style={{
+          transform: `translateY(${scrollProgress * -60}px)`,
+          opacity: 1 - scrollProgress * 1.5,
+        }}
+      >
         <div className="max-w-[900px]">
           <p
             className={`font-redhat text-[11px] uppercase tracking-[0.4em] text-fsl-coral/80 font-medium flex items-center gap-3 mb-4 transition-all duration-1000 delay-500 ${
@@ -345,7 +377,13 @@ export function Hero3D() {
       </div>
 
       {/* ── Now Playing badge ── */}
-      <div className="absolute left-4 sm:left-6 md:left-16 lg:left-24 bottom-[56px] sm:bottom-[70px] md:bottom-[135px] z-10 pointer-events-none hidden sm:block">
+      <div
+        className="absolute left-4 sm:left-6 md:left-16 lg:left-24 bottom-[56px] sm:bottom-[70px] md:bottom-[135px] z-10 pointer-events-none hidden sm:block"
+        style={{
+          transform: `translateY(${scrollProgress * -40}px)`,
+          opacity: 1 - scrollProgress * 2,
+        }}
+      >
         {sportNames.map((name, idx) => (
           <div
             key={name}
@@ -381,7 +419,13 @@ export function Hero3D() {
       </div>
 
       {/* ── CTA buttons ── */}
-      <div className="absolute bottom-10 sm:bottom-12 left-4 sm:left-6 md:left-16 lg:left-24 z-10 flex flex-row gap-3">
+      <div
+        className="absolute bottom-10 sm:bottom-12 left-4 sm:left-6 md:left-16 lg:left-24 z-10 flex flex-row gap-3"
+        style={{
+          transform: `translateY(${scrollProgress * -30}px)`,
+          opacity: 1 - scrollProgress * 2,
+        }}
+      >
         <Link
           href="/join"
           className="group relative bg-white text-black px-6 sm:px-9 py-3 sm:py-4 rounded-full font-redhat text-[11px] sm:text-[12px] font-semibold uppercase tracking-[0.15em] overflow-hidden transition-shadow duration-500 hover:shadow-[0_0_50px_rgba(244,118,124,0.3)]"
