@@ -58,16 +58,18 @@ export function NikeHeader() {
     <header
       className={cn(
         "fixed top-0 left-0 w-full z-50 transition-all duration-500",
-        scrolled
-          ? "bg-white/90 backdrop-blur-xl border-b border-black/5"
-          : "bg-transparent"
+        mobileOpen
+          ? "bg-white"
+          : scrolled
+            ? "bg-white/90 backdrop-blur-xl border-b border-black/5"
+            : "bg-transparent"
       )}
     >
       <div className="max-w-[1800px] mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-12 py-3 sm:py-4">
         <Link href="/" className="shrink-0 flex items-center gap-2.5">
           <div className={cn(
             "rounded-xl p-1.5 transition-all duration-500",
-            scrolled ? "bg-white shadow-sm" : "bg-white/10 backdrop-blur-sm"
+            scrolled || mobileOpen ? "bg-white shadow-sm" : "bg-white/10 backdrop-blur-sm"
           )}>
             <Image
               src="/images/ft-logo.png"
@@ -80,7 +82,7 @@ export function NikeHeader() {
           </div>
           <span className={cn(
             "hidden sm:block font-barlow text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.12em] leading-tight transition-colors duration-500",
-            scrolled ? "text-fsl-dark" : "text-white"
+            scrolled || mobileOpen ? "text-fsl-dark" : "text-white"
           )}>
             Fundamental<br />Sports Labs
           </span>
@@ -188,7 +190,29 @@ export function NikeHeader() {
             : "opacity-0 invisible pointer-events-none"
         )}
       >
-        <div className="h-full overflow-y-auto pt-24 pb-12 px-6 sm:px-12 flex flex-col">
+        <div className="h-full overflow-y-auto pt-20 pb-12 px-6 sm:px-12 flex flex-col">
+          {/* Logo in mobile menu */}
+          <div className="flex items-center gap-3 mb-8 pb-6 border-b border-black/10">
+            <Image
+              src="/images/ft-logo.png"
+              alt="FSL"
+              width={60}
+              height={60}
+              className="h-[50px] w-auto"
+            />
+            <div>
+              <p className="font-barlow text-[14px] font-bold uppercase tracking-[0.1em] text-fsl-dark leading-tight">
+                Fundamental
+              </p>
+              <p className="font-barlow text-[14px] font-bold uppercase tracking-[0.1em] text-fsl-dark leading-tight">
+                Sports Labs
+              </p>
+              <p className="font-redhat text-[10px] text-fsl-coral uppercase tracking-[0.2em] mt-1">
+                Free Youth Sports · LA
+              </p>
+            </div>
+          </div>
+
           {/* Nav links */}
           <nav className="flex-1 flex flex-col gap-1">
             {NAV_LINKS.map((link) => (
