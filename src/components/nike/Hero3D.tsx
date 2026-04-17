@@ -203,7 +203,7 @@ export function Hero3D() {
 
           {/* ── THE 3D SHIELD — Main logo with floating animation ── */}
           <div
-            className="relative w-[180px] h-[200px] sm:w-[220px] sm:h-[245px] md:w-[300px] md:h-[335px] lg:w-[380px] lg:h-[425px] xl:w-[420px] xl:h-[470px]"
+            className="relative w-[220px] h-[245px] sm:w-[280px] sm:h-[310px] md:w-[340px] md:h-[380px] lg:w-[400px] lg:h-[450px] xl:w-[440px] xl:h-[490px]"
             style={{
               transform: `translateZ(60px) translateY(${Math.sin(pulsePhase * 0.03) * 6}px)`,
               transition: "width 0.3s, height 0.3s",
