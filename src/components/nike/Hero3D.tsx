@@ -150,7 +150,7 @@ export function Hero3D() {
           ══  3D LOGO STAGE — PREMIUM ANIMATION  ══
           ═══════════════════════════════════════════════ */}
       <div
-        className="absolute inset-0 flex items-start sm:items-center justify-center lg:justify-end lg:pr-[8%] xl:pr-[12%] pt-[10vh] sm:pt-0 sm:pb-16 pointer-events-none"
+        className="absolute inset-0 flex items-start sm:items-center justify-center lg:justify-end lg:pr-[8%] xl:pr-[12%] pt-[8vh] sm:pt-0 sm:pb-16 pointer-events-none"
         style={{ perspective: "1200px" }}
       >
         <div
@@ -203,7 +203,7 @@ export function Hero3D() {
 
           {/* ── THE 3D SHIELD — Main logo with floating animation ── */}
           <div
-            className="relative w-[130px] h-[145px] sm:w-[210px] sm:h-[235px] md:w-[300px] md:h-[335px] lg:w-[380px] lg:h-[425px] xl:w-[420px] xl:h-[470px]"
+            className="relative w-[180px] h-[200px] sm:w-[220px] sm:h-[245px] md:w-[300px] md:h-[335px] lg:w-[380px] lg:h-[425px] xl:w-[420px] xl:h-[470px]"
             style={{
               transform: `translateZ(60px) translateY(${Math.sin(pulsePhase * 0.03) * 6}px)`,
               transition: "width 0.3s, height 0.3s",
@@ -342,7 +342,7 @@ export function Hero3D() {
           ══  TEXT & CTA  ══
           ═══════════════════════════════════════════════ */}
       <div
-        className="absolute inset-0 z-10 flex flex-col justify-end px-4 sm:px-6 md:px-16 lg:px-24 pb-28 sm:pb-36 md:pb-44 pointer-events-none"
+        className="absolute inset-0 z-10 flex flex-col justify-end px-4 sm:px-6 md:px-16 lg:px-24 pb-24 sm:pb-36 md:pb-44 pointer-events-none"
         style={{
           transform: `translateY(${scrollProgress * -60}px)`,
           opacity: 1 - scrollProgress * 1.5,
