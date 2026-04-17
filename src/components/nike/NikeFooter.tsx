@@ -108,22 +108,28 @@ export function NikeFooter() {
         {/* Top — logo + columns */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-16 mb-16">
           <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="bg-white/10 rounded-xl p-1.5">
-                <Image
-                  src="/images/ft-logo.png"
-                  alt="F.S.L"
-                  width={80}
-                  height={36}
-                  className="h-[32px] w-auto"
-                />
+            <div className="flex items-center gap-3 mb-5">
+              <Image
+                src="/images/ft-logo.png"
+                alt="Fundamental Sports Labs"
+                width={70}
+                height={70}
+                className="h-[56px] w-auto"
+              />
+              <div>
+                <p className="font-barlow text-[13px] font-bold uppercase tracking-[0.1em] text-white leading-tight">
+                  Fundamental
+                </p>
+                <p className="font-barlow text-[13px] font-bold uppercase tracking-[0.1em] text-white leading-tight">
+                  Sports Labs
+                </p>
+                <p className="font-redhat text-[9px] text-fsl-coral uppercase tracking-[0.2em] mt-1">
+                  Free Youth Sports · Los Angeles
+                </p>
               </div>
-              <span className="font-barlow text-[11px] font-bold uppercase tracking-[0.12em] leading-tight text-white">
-                Fundamental<br />Sports Labs
-              </span>
             </div>
-            <p className="font-redhat text-[14px] text-white/50 font-light leading-relaxed max-w-[240px]">
-              Empowering youth through sports, wellness, financial responsibility, and technology.
+            <p className="font-redhat text-[14px] text-white/50 font-light leading-relaxed max-w-[260px]">
+              Empowering youth through sports, wellness, financial responsibility, and technology. 501(c)(3) nonprofit.
             </p>
           </div>
 
