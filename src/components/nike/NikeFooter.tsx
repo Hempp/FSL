@@ -112,9 +112,9 @@ export function NikeFooter() {
               <Image
                 src="/images/ft-logo.png"
                 alt="Fundamental Sports Labs"
-                width={70}
-                height={70}
-                className="h-[56px] w-auto"
+                width={80}
+                height={80}
+                className="h-[64px] w-auto"
               />
               <div>
                 <p className="font-barlow text-[13px] font-bold uppercase tracking-[0.1em] text-white leading-tight">

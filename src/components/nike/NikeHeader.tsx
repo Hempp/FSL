@@ -66,26 +66,23 @@ export function NikeHeader() {
       )}
     >
       <div className="max-w-[1800px] mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-12 py-3 sm:py-4">
-        <Link href="/" className="shrink-0 flex items-center gap-2.5">
-          <div className={cn(
-            "rounded-xl p-1.5 transition-all duration-500",
-            scrolled || mobileOpen ? "bg-white shadow-sm" : "bg-white/10 backdrop-blur-sm"
-          )}>
-            <Image
-              src="/images/ft-logo.png"
-              alt="F.S.L"
-              width={80}
-              height={36}
-              className="h-[28px] sm:h-[32px] w-auto"
-              priority
-            />
+        <Link href="/" className="shrink-0 flex items-center gap-2">
+          <Image
+            src="/images/ft-logo.png"
+            alt="Fundamental Sports Labs"
+            width={80}
+            height={80}
+            className="h-[40px] sm:h-[46px] w-auto"
+            priority
+          />
+          <div className="hidden sm:block">
+            <p className={cn(
+              "font-barlow text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.12em] leading-tight transition-colors duration-500",
+              scrolled || mobileOpen ? "text-fsl-dark" : "text-white"
+            )}>
+              Fundamental<br />Sports Labs
+            </p>
           </div>
-          <span className={cn(
-            "hidden sm:block font-barlow text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.12em] leading-tight transition-colors duration-500",
-            scrolled || mobileOpen ? "text-fsl-dark" : "text-white"
-          )}>
-            Fundamental<br />Sports Labs
-          </span>
         </Link>
 
         {/* Desktop nav — hidden below lg to avoid cramping on tablets */}
