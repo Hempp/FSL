@@ -218,8 +218,8 @@ export default function TournamentsPage() {
         ═══════════════════════════════════ */}
         <section className="relative h-[70vh] sm:h-[80vh] md:h-[85vh] min-h-[550px] overflow-hidden bg-black flex items-center justify-center">
           <Image
-            src="/images/real/basketball-blue-jerseys.jpg"
-            alt="FSL team in blue jerseys number 10 during game"
+            src="/images/sports/basketball-game.jpg"
+            alt="Youth athletes competing"
             fill
             className="object-cover scale-110"
             style={{ filter: "contrast(1.2) brightness(0.18) saturate(0.3)" }}

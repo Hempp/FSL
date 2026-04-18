@@ -17,7 +17,7 @@ export const blogPosts: BlogPost[] = [
       "Discover free youth sports programs in Los Angeles, including basketball camps, after-school sports, and more. Learn how Fundamental Sports Labs is making athletics accessible to every kid in LA.",
     date: "2026-04-15",
     author: "Fundamental Sports Labs",
-    image: "/images/real/basketball-drills-gym.jpg",
+    image: "/images/urban/hero-basketball-court.jpg",
     tags: [
       "youth sports",
       "los angeles",
@@ -34,7 +34,7 @@ export const blogPosts: BlogPost[] = [
       "Research shows youth sports improve mental health, build resilience, and reduce anxiety in teens. Learn how Fundamental Sports Labs uses its Four Pillars to develop the whole athlete.",
     date: "2026-04-14",
     author: "Fundamental Sports Labs",
-    image: "/images/real/lakers-group-photo.jpg",
+    image: "/images/urban/team-huddle.jpg",
     tags: ["youth sports", "mental health", "resilience", "wellness"],
   },
   {
@@ -45,7 +45,7 @@ export const blogPosts: BlogPost[] = [
       "Financial literacy is one of the most overlooked skills in youth development. Discover how Fundamental Sports Labs teaches money management alongside basketball, football, and soccer.",
     date: "2026-04-13",
     author: "Fundamental Sports Labs",
-    image: "/images/real/basketball-training.jpg",
+    image: "/images/urban/friends-group.jpg",
     tags: [
       "financial literacy",
       "youth development",
@@ -61,7 +61,7 @@ export const blogPosts: BlogPost[] = [
       "Learn about youth football safety, head injury prevention, proper technique, and how Fundamental Sports Labs keeps young athletes safe with trained coaches and free equipment.",
     date: "2026-04-12",
     author: "Fundamental Sports Labs",
-    image: "/images/real/football-field-huddle.jpg",
+    image: "/images/urban/football-play.jpg",
     tags: [
       "youth football safety",
       "football",
@@ -78,7 +78,7 @@ export const blogPosts: BlogPost[] = [
       "A comprehensive guide to free after-school programs in Los Angeles, including sports, tutoring, and enrichment. Learn why Fundamental Sports Labs is the top choice for LA families.",
     date: "2026-04-11",
     author: "Fundamental Sports Labs",
-    image: "/images/real/lakers-facility-warmup.jpg",
+    image: "/images/action/teens-learning.jpg",
     tags: [
       "after school programs",
       "los angeles",
@@ -95,7 +95,7 @@ export const blogPosts: BlogPost[] = [
       "Golf teaches patience, etiquette, and individual focus like no other sport. Discover how Fundamental Sports Labs makes youth golf accessible and free for kids in Los Angeles.",
     date: "2026-04-10",
     author: "Fundamental Sports Labs",
-    image: "/images/real/golf-driving-range.jpg",
+    image: "/images/action/coach-training.jpg",
     tags: ["golf", "youth sports", "beginners", "kids", "los angeles"],
   },
   {
@@ -106,7 +106,7 @@ export const blogPosts: BlogPost[] = [
       "Youth sports are one of the most powerful tools for building confidence in children. Learn how Fundamental Sports Labs transforms shy kids into confident leaders through its Four Pillars approach.",
     date: "2026-04-09",
     author: "Fundamental Sports Labs",
-    image: "/images/real/basketball-game-action.jpg",
+    image: "/images/action/teen-basketball.jpg",
     tags: [
       "confidence",
       "youth development",
@@ -123,7 +123,7 @@ export const blogPosts: BlogPost[] = [
       "Everything you need to know about volunteering as a youth sports coach in LA. Learn about FSL's volunteer program, background check process, and how coaching changes lives.",
     date: "2026-04-08",
     author: "Fundamental Sports Labs",
-    image: "/images/real/basketball-players-court.jpg",
+    image: "/images/action/teens-collab.jpg",
     tags: [
       "volunteer",
       "coaching",
@@ -140,7 +140,7 @@ export const blogPosts: BlogPost[] = [
       "Name, Image, and Likeness (NIL) deals are changing youth sports forever. Learn how high school and college athletes in Los Angeles can prepare for NIL opportunities — and why financial literacy matters more than ever.",
     date: "2026-04-16",
     author: "Fundamental Sports Labs",
-    image: "/images/real/basketball-blue-jerseys.jpg",
+    image: "/images/action/teen-football.jpg",
     tags: [
       "NIL",
       "college athletes",

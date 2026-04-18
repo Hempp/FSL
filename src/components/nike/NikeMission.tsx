@@ -79,8 +79,8 @@ export function NikeMission() {
                 {/* Main image — dramatic treatment */}
                 <div className="relative aspect-[3/4] md:aspect-[4/5] overflow-hidden mb-12">
                   <Image
-                    src="/images/real/football-field-huddle.jpg"
-                    alt="Coach talking to youth athletes on football field with palm trees"
+                    src="/images/urban/team-huddle.jpg"
+                    alt="Coach mentoring young athletes"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"

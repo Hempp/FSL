@@ -76,8 +76,8 @@ export default function ImpactPage() {
         {/* ── Cinematic Hero ── */}
         <section className="relative h-[60vh] sm:h-[75vh] md:h-[85vh] min-h-[500px] overflow-hidden bg-black flex items-center">
           <Image
-            src="/images/real/lakers-facility-warmup.jpg"
-            alt="Kids warming up at Lakers facility wearing KeepPlaying shirts"
+            src="/images/urban/hero-basketball-court.jpg"
+            alt="Impact"
             fill
             className="object-cover scale-110"
             style={{ filter: "contrast(1.2) brightness(0.2) saturate(0.3)" }}
