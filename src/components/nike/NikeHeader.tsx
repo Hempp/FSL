@@ -207,7 +207,7 @@ export function NikeHeader() {
                 Sports Labs
               </p>
               <p className="font-redhat text-[10px] text-fsl-coral uppercase tracking-[0.2em] mt-1">
-                Free Youth Sports · LA
+                Los Angeles, CA
               </p>
             </div>
           </div>

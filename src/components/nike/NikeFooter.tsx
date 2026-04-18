@@ -124,7 +124,7 @@ export function NikeFooter() {
                   Sports Labs
                 </p>
                 <p className="font-redhat text-[9px] text-fsl-coral uppercase tracking-[0.2em] mt-1">
-                  Free Youth Sports · Los Angeles
+                  Los Angeles, CA
                 </p>
               </div>
             </div>
