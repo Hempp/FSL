@@ -58,8 +58,8 @@ export default function JoinPage() {
         {/* ── Nike Recruitment Campaign Hero ── */}
         <section className="relative h-[70vh] sm:h-[80vh] md:h-[90vh] min-h-[550px] overflow-hidden bg-black flex items-center justify-center">
           <Image
-            src="/images/urban/hero-streetball.jpg"
-            alt="Youth athletes"
+            src="/images/real/football-field-huddle.jpg"
+            alt="Coach talking to youth athletes on football field with palm trees"
             fill
             className="object-cover scale-110"
             style={{ filter: "contrast(1.15) brightness(0.2) saturate(0.4)" }}

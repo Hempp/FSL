@@ -83,8 +83,8 @@ export default function ContactPage() {
         {/* ── Bold Hero ── */}
         <section className="relative h-[70vh] min-h-[500px] overflow-hidden bg-black flex items-end">
           <Image
-            src="/images/urban/community.jpg"
-            alt="Contact"
+            src="/images/real/basketball-training.jpg"
+            alt="Youth athletes training and dribbling in gym"
             fill
             className="object-cover scale-105"
             style={{ filter: "contrast(1.15) brightness(0.22) saturate(0.4)" }}

@@ -75,8 +75,8 @@ export default function DonatePage() {
         {/* ── Hero Section ── */}
         <section className="relative h-[70vh] sm:h-[80vh] md:h-[90vh] min-h-[550px] overflow-hidden bg-black flex items-center justify-center">
           <Image
-            src="/images/premium/donate-kids.jpg"
-            alt="Support youth athletes"
+            src="/images/real/golf-driving-range.jpg"
+            alt="Youth at driving range with coach in FSL uniforms"
             fill
             className="object-cover scale-105"
             style={{ filter: "contrast(1.15) brightness(0.2) saturate(0.35)" }}

@@ -57,8 +57,8 @@ export default function AboutPage() {
         {/* ── Cinematic Hero — 85vh ESPN Feature ── */}
         <section className="relative h-[60vh] sm:h-[75vh] md:h-[85vh] min-h-[500px] overflow-hidden bg-black flex items-end">
           <Image
-            src="/images/urban/community.jpg"
-            alt="Our community"
+            src="/images/real/lakers-group-photo.jpg"
+            alt="FSL youth group photo at Lakers UCLA Health facility"
             fill
             className="object-cover scale-105"
             style={{ filter: "contrast(1.15) brightness(0.25) saturate(0.4)" }}
@@ -131,8 +131,8 @@ export default function AboutPage() {
                 <ScrollReveal animation="fade-left" delay={200}>
                   <div className="relative aspect-[4/5] lg:aspect-[3/4] overflow-hidden">
                     <Image
-                      src="/images/urban/friends-group.jpg"
-                      alt="Youth community"
+                      src="/images/real/football-field-huddle.jpg"
+                      alt="Coach talking to youth on football field with palm trees"
                       fill
                       className="object-cover"
                       style={{ filter: "saturate(0.85) contrast(1.08)" }}
@@ -257,7 +257,7 @@ export default function AboutPage() {
         {/* ── Mission Pullquote Banner ── */}
         <section className="relative py-24 md:py-32 bg-fsl-coral overflow-hidden">
           <div className="absolute inset-0 opacity-10">
-            <Image src="/images/urban/hero-streetball.jpg" alt="" fill className="object-cover" style={{ filter: "grayscale(1)" }} />
+            <Image src="/images/real/basketball-training.jpg" alt="" fill className="object-cover" style={{ filter: "grayscale(1)" }} />
           </div>
           <div className="relative max-w-[1200px] mx-auto px-6 md:px-16 lg:px-24 text-center">
             <ScrollReveal animation="scale">

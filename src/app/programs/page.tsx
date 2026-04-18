@@ -163,8 +163,8 @@ export default function ProgramsPage() {
             ═══════════════════════════════════════ */}
         <section className="relative h-[60vh] sm:h-[75vh] md:h-[85vh] min-h-[500px] max-h-[1000px] bg-black flex items-end overflow-hidden">
           <Image
-            src="/images/urban/hero-track-race.jpg"
-            alt="Athletes racing on track"
+            src="/images/real/basketball-drills-gym.jpg"
+            alt="Youth athletes doing basketball drills with cones in gym"
             fill
             className="object-cover"
             style={{ filter: "contrast(1.2) brightness(0.2) saturate(0.3)" }}

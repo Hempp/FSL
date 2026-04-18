@@ -216,8 +216,8 @@ export default function MentorCoachingPage() {
         ═══════════════════════════════════════════ */}
         <section className="relative h-[65vh] sm:h-[75vh] md:h-[85vh] min-h-[550px] overflow-hidden bg-black flex items-end">
           <Image
-            src="/images/premium/coach-mentoring.jpg"
-            alt="Coach mentoring a young athlete"
+            src="/images/real/golf-putting-green.jpg"
+            alt="Kid putting on real golf course"
             fill
             className="object-cover scale-105"
             style={{ filter: "contrast(1.15) brightness(0.18) saturate(0.3)" }}

@@ -7,8 +7,8 @@ export function NikeCTA() {
     <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center overflow-hidden bg-black">
       {/* Background image */}
       <Image
-        src="/images/premium/cta-dramatic.jpg"
-        alt=""
+        src="/images/real/basketball-game-action.jpg"
+        alt="Youth basketball player driving to the basket"
         fill
         sizes="100vw"
         className="object-cover"
